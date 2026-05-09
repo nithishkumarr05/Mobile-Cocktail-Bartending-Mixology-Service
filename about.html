@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Liquid Arts | About — Mobile Cocktail Bartending & Mixology</title>
+  <link rel="icon" href="/assets/fav.jpg" type="image/jpeg">
+  <meta name="description"
+    content="Liquid Arts — Learn about our mobile mixology philosophy, master bartenders, and the art of elevated cocktail experiences for your event.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'theme-accent': '#F59E0B',
+            'theme-accent-dark': '#D97706',
+            'theme-accent-light': '#FCD34D',
+            'dark-gray': '#0a0a0a',
+            'light-peach': '#fdfbf7',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          letterSpacing: {
+            'widest-xl': '0.3em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] {
+      direction: rtl;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-10px) scale(1.01);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .animate-float {
+      animation: slowFloat 10s ease-in-out infinite;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #mobile-menu {
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+      transition: all 0.3s ease;
+    }
+
+    /* Ensure smooth dropdown transition for mobile home menu */
+    .mobile-dropdown-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-dropdown-icon.rotate {
+      transform: rotate(180deg);
+    }
+
+    .img-hover-zoom {
+      overflow: hidden;
+    }
+
+    .img-hover-zoom img {
+      transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .img-hover-zoom:hover img {
+      transform: scale(1.07);
+    }
+
+    .section-spacing {
+      scroll-margin-top: 100px;
+    }
+
+    /* PROFESSIONAL FONT FOR STATISTICS NUMBERS - clean, modern, responsive */
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    /* Enhanced responsive text sizing */
+    @media (max-width: 640px) {
+      .stat-number {
+        font-size: 2rem !important;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .stat-number {
+        font-size: 2.5rem !important;
+      }
+    }
+
+    /* Ensure all text scales gracefully */
+    .responsive-headline {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+
+    .responsive-subhead {
+      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    }
+  </style>
+</head>
+
+<body
+  class="font-sans text-gray-700 antialiased transition-colors duration-300 bg-white dark:bg-dark-gray dark:text-gray-300">
+
+  <!-- ========== HEADER (MATCHING HOMEPAGE STYLE WITH BARTENDERS REMOVED) ========== -->
+  <nav
+    class="bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <span
+              class="text-2xl font-serif font-bold text-dark-gray dark:text-white tracking-wide transition-colors duration-300 group-hover:opacity-80">
+              <span class="text-theme-accent italic">Liquid Arts</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-center flex-1 mx-4">
+          <div
+            class="flex items-center gap-1 lg:gap-2 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
+            <div class="relative group">
+              <button
+                class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest flex items-center gap-1">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[9px] ms-1"></i>
+              </button>
+              <div
+                class="absolute start-0 mt-3 w-40 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden">
+                <a href="index.html"
+                  class="block px-4 py-3 text-theme-accent bg-gray-50 dark:bg-white/5 transition duration-300 text-[11px] uppercase tracking-widest font-bold">Home
+                  Page 1</a>
+                <a href="home2.html"
+                  class="block px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white transition duration-300 text-[11px] uppercase tracking-widest font-medium">Home
+                  Page 2</a>
+              </div>
+            </div>
+            <a href="about.html"
+              class="nav-link bg-white dark:bg-[#1a1a1a] shadow-sm text-theme-accent font-bold transition duration-300 px-4 py-2 rounded-full text-[11px] uppercase tracking-widest">About</a>
+            <a href="service.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Services</a>
+            <a href="menu.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Cocktail</a>
+            <a href="packages.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Packages</a>
+            <!-- BARTENDERS LINK REMOVED from desktop nav -->
+            <a href="gallery.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Gallery</a>
+            <a href="events.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Events</a>
+            <a href="contact.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Contact</a>
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-between w-full gap-4">
+          <!-- Left side: RTL + Dark mode toggles -->
+          <div class="flex items-center">
+            <div
+              class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5">
+              <button id="rtl-toggle"
+                class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+                title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
+              <button id="theme-toggle"
+                class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+                title="Toggle Theme">
+                <i class="fas fa-moon dark:hidden text-xs"></i>
+                <i class="fas fa-sun hidden dark:inline text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right side: Login + Register (last) -->
+          <div class="flex items-center gap-4">
+            <a href="login.html"
+              class="text-dark-gray dark:text-white hover:text-theme-accent font-medium transition duration-300 text-xs uppercase tracking-widest">Login</a>
+            <a href="signup.html"
+              class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-2.5 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">Register</a>
+          </div>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button"
+            class="text-dark-gray dark:text-white focus:outline-none p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition duration-300"
+            aria-label="Menu">
+            <i id="menu-icon" class="fas fa-bars text-lg"></i>
+            <i id="close-icon" class="fas fa-times text-lg hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIXED MOBILE MENU: Home dropdown is fully collapsible; BARTENDERS LINK REMOVED -->
+    <div id="mobile-menu"
+      class="hidden xl:hidden bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-gray-200 dark:border-white/10 transition-colors duration-300 shadow-2xl absolute w-full">
+      <div class="px-6 pt-4 pb-8 space-y-1">
+
+        <!-- HOME DROPDOWN (COLLAPSIBLE) - SUB-ITEMS INITIALLY HIDDEN -->
+        <div class="mobile-home-dropdown-wrapper">
+          <button id="mobile-home-dropdown-btn"
+            class="w-full flex justify-between items-center px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">
+            <span>Home</span>
+            <i id="mobile-home-icon"
+              class="fas fa-chevron-down text-xs mobile-dropdown-icon transition-transform duration-300"></i>
+          </button>
+          <div id="mobile-home-submenu"
+            class="hidden pl-8 pr-4 py-2 space-y-3 border-l-2 border-theme-accent/20 ml-6 mt-1 mb-2">
+            <a href="index.html"
+              class="block text-theme-accent text-sm font-bold tracking-wider uppercase transition duration-300">Home
+              Page 1</a>
+            <a href="home2.html"
+              class="block text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white transition duration-300 text-sm font-medium tracking-wider uppercase">Home
+              Page 2</a>
+          </div>
+        </div>
+
+        <!-- Regular menu items (non-dropdown) - BARTENDERS REMOVED -->
+        <a href="about.html"
+          class="block px-4 py-3.5 text-theme-accent bg-gray-50/80 dark:bg-white/5 rounded-xl transition duration-300 text-sm font-bold tracking-wider uppercase">About</a>
+        <a href="service.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Services</a>
+        <a href="menu.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Cocktail</a>
+        <a href="packages.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Packages</a>
+        <!-- BARTENDERS LINK REMOVED from mobile menu -->
+        <a href="gallery.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Gallery</a>
+        <a href="events.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Events</a>
+        <a href="contact.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Contact</a>
+
+        <div class="pt-6 mt-6 border-t border-gray-100 dark:border-white/10">
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <button id="mobile-rtl-toggle"
+              class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">RTL
+              Mode</button>
+            <button id="mobile-theme-toggle"
+              class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Theme</button>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <a href="login.html"
+              class="block w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Login</a>
+            <a href="signup.html"
+              class="block w-full bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest font-bold shadow-lg shadow-theme-accent/20">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION - LIQUID ARTS BRAND STORY ========== -->
+  <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden section-spacing">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/about1.jpg" alt="Cocktail bar ambiance" class="w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/90"></div>
+    </div>
+    <div class="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 text-center">
+      <p class="text-theme-accent text-xs md:text-sm uppercase tracking-[0.4em] font-semibold mb-5 animate-fade-in">The
+        Liquid Arts Story</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 animate-fade-in">
+        Where Cocktails<br>
+        <span class="italic text-theme-accent">Become Performance</span>
+      </h1>
+      <p class="text-gray-300 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed animate-fade-in">
+        Since 2012, Liquid Arts has redefined mobile bartending — blending theatrical flair, artisanal ingredients, and
+        world-class mixology to transform ordinary events into extraordinary experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== PHILOSOPHY SECTION ========== -->
+  <section class="py-20 md:py-28 max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 section-spacing">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="order-2 lg:order-1 reveal-on-scroll">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-px bg-theme-accent"></div>
+          <span class="text-theme-accent text-xs uppercase tracking-[0.3em] font-bold">Our Philosophy</span>
+        </div>
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white leading-tight mb-6">
+          Beyond the Pour:<br>
+          <span class="italic text-theme-accent">The Art of Elevation</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed mb-6 text-lg">
+          Liquid Arts was founded on a simple truth: a cocktail is more than a drink — it's a moment, a memory, a
+          crafted emotion. We bring the energy of a high-end cocktail lounge directly to your venue, complete with
+          dramatic smoke infusions, hand-carved ice, and mixologists who perform.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed mb-8">
+          Every member of our team has been trained in the world's most prestigious bars. We don't just serve — we
+          captivate. From intimate gatherings to grand galas, our mobile bars become the heart of your celebration.
+        </p>
+        <div class="grid grid-cols-3 gap-4 pt-4">
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-theme-accent stat-number" data-target="13">13+
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Years Excellence</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-theme-accent stat-number" data-target="28">28k+
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Cocktails Crafted</p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-theme-accent stat-number" data-target="6">6
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Master Mixologists</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="order-1 lg:order-2 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl img-hover-zoom reveal-on-scroll">
+        <img src="assets/about2.jpeg" alt="Mixologist in action" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM SECTION ========== -->
+  <section class="py-20 md:py-28 bg-light-peach dark:bg-[#111] transition-colors duration-300 section-spacing">
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="text-center mb-16 reveal-on-scroll">
+        <span class="text-theme-accent text-xs uppercase tracking-[0.3em] font-bold block mb-4">The Architects of
+          Flavor</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white">Meet Our
+          Mixologists</h2>
+        <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-4 font-light">Passionate craftsmen who turn
+          every pour into a performance.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+        <div class="text-center group reveal-on-scroll">
+          <div
+            class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mb-5 border-4 border-theme-accent/30 group-hover:border-theme-accent transition-all duration-300 img-hover-zoom shadow-lg">
+            <img src="assets/Ab1.jpg" alt="Master Mixologist" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">Marcus Boudreau</h3>
+          <p class="text-theme-accent text-sm font-semibold mt-1">Head of Mixology</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-3 font-light max-w-xs mx-auto">18 years crafting bespoke
+            cocktail experiences. Formerly of NYC's top speakeasies.</p>
+        </div>
+
+        <div class="text-center group reveal-on-scroll">
+          <div
+            class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mb-5 border-4 border-theme-accent/30 group-hover:border-theme-accent transition-all duration-300 img-hover-zoom shadow-lg">
+            <img src="assets/Ab2.jpg" alt="Beverage Director" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">Sofia Laurent</h3>
+          <p class="text-theme-accent text-sm font-semibold mt-1">Beverage Director</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-3 font-light max-w-xs mx-auto">Flavor architect & rare
+            spirit hunter. Creates our signature collections.</p>
+        </div>
+
+        <div class="text-center group reveal-on-scroll">
+          <div
+            class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mb-5 border-4 border-theme-accent/30 group-hover:border-theme-accent transition-all duration-300 img-hover-zoom shadow-lg">
+            <img src="assets/Ab4.jpg" alt="Lead Bartender" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">Elena Vasquez</h3>
+          <p class="text-theme-accent text-sm font-semibold mt-1">Lead Bartender</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-3 font-light max-w-xs mx-auto">Flair & theatrical
+            presentation expert — the energy of your event.</p>
+        </div>
+
+        <div class="text-center group reveal-on-scroll">
+          <div
+            class="w-44 h-44 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mb-5 border-4 border-theme-accent/30 group-hover:border-theme-accent transition-all duration-300 img-hover-zoom shadow-lg">
+            <img src="assets/Ab3.jpg" alt="Prep Specialist" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">David Kim</h3>
+          <p class="text-theme-accent text-sm font-semibold mt-1">Culinary Mixologist</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-3 font-light max-w-xs mx-auto">Specializes in housemade
+            syrups, infusions & botanical garnishes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOBILE BAR EXPERIENCE SECTION ========== -->
+  <section class="py-20 md:py-28 max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 section-spacing">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div
+        class="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl img-hover-zoom order-2 lg:order-1 reveal-on-scroll">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&q=90&w=2070"
+          alt="Mobile bar setup" class="w-full h-full object-cover">
+      </div>
+      <div class="order-1 lg:order-2 reveal-on-scroll">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-px bg-theme-accent"></div>
+          <span class="text-theme-accent text-xs uppercase tracking-[0.3em] font-bold">The Liquid Arts Difference</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white leading-tight mb-6">
+          The Ultimate Mobile<br>
+          <span class="italic text-theme-accent">Cocktail Bar Experience</span>
+        </h2>
+        <div class="space-y-5 mb-8">
+          <div class="flex items-start gap-4">
+            <i class="fas fa-champagne-glasses text-theme-accent text-xl mt-1"></i>
+            <div>
+              <h4 class="font-bold text-dark-gray dark:text-white">Custom-Built Mobile Bars</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light">Elegant, portable bar structures designed
+                to complement any venue — from rustic barns to luxury rooftops.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="fas fa-book-open text-theme-accent text-xl mt-1"></i>
+            <div>
+              <h4 class="font-bold text-dark-gray dark:text-white">Bespoke Cocktail Menus</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light">We craft 3-5 signature cocktails tailored
+                specifically to your event's theme, season, and preferences.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i class="fas fa-gem text-theme-accent text-xl mt-1"></i>
+            <div>
+              <h4 class="font-bold text-dark-gray dark:text-white">Premium Ingredients Only</h4>
+              <p class="text-gray-500 dark:text-gray-400 text-sm font-light">Small-batch spirits, fresh-pressed juices,
+                hand-cut garnishes — no shortcuts, ever.</p>
+            </div>
+          </div>
+        </div>
+        <a href="service.html"
+          class="inline-flex items-center text-theme-accent hover:text-theme-accent-dark font-bold text-xs uppercase tracking-widest transition duration-300 border-b border-theme-accent pb-1">
+          Explore Full Services <i class="fas fa-arrow-right ms-2 text-[10px]"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS / RECOGNITION SECTION WITH PROFESSIONAL FONTS ========== -->
+  <section class="py-20 bg-light-peach dark:bg-[#080808] transition-colors duration-300">
+    <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center">
+        <div class="reveal-on-scroll"><i class="fas fa-trophy text-3xl md:text-4xl text-theme-accent mb-5"></i>
+          <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-gray dark:text-white mb-2 stat-number"
+            data-target="5">5+</h3>
+          <p class="text-[10px] md:text-xs uppercase tracking-wider text-gray-500 font-semibold">Industry Awards</p>
+        </div>
+        <div class="reveal-on-scroll"><i class="fas fa-calendar-alt text-3xl md:text-4xl text-theme-accent mb-5"></i>
+          <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-gray dark:text-white mb-2 stat-number"
+            data-target="420">420+</h3>
+          <p class="text-[10px] md:text-xs uppercase tracking-wider text-gray-500 font-semibold">Events Served</p>
+        </div>
+        <div class="reveal-on-scroll"><i class="fas fa-heart text-3xl md:text-4xl text-theme-accent mb-5"></i>
+          <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-gray dark:text-white mb-2 stat-number"
+            data-target="100">100%</h3>
+          <p class="text-[10px] md:text-xs uppercase tracking-wider text-gray-500 font-semibold">5-Star Reviews</p>
+        </div>
+        <div class="reveal-on-scroll"><i class="fas fa-globe-americas text-3xl md:text-4xl text-theme-accent mb-5"></i>
+          <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-gray dark:text-white mb-2 stat-number"
+            data-target="8">8</h3>
+          <p class="text-[10px] md:text-xs uppercase tracking-wider text-gray-500 font-semibold">States Served</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="py-24 bg-dark-gray text-white section-spacing">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <i class="fas fa-cocktail text-4xl md:text-5xl text-theme-accent mb-6 animate-float"></i>
+      <h2 class="text-2xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">Ready to Elevate Your Event?</h2>
+      <p class="text-gray-400 font-light mb-10 max-w-lg mx-auto text-sm md:text-base">From intimate cocktail parties to
+        large-scale celebrations — let's create an unforgettable liquid experience together.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <a href="service.html"
+          class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 md:px-8 py-3 md:py-4 uppercase text-[10px] md:text-xs font-bold tracking-widest transition-all duration-300 shadow-xl rounded-full">View
+          Our Services</a>
+        <a href="contact.html"
+          class="border border-white hover:bg-white hover:text-dark-gray text-white px-6 md:px-8 py-3 md:py-4 uppercase text-[10px] md:text-xs font-bold tracking-widest transition-all duration-300 rounded-full">Contact
+          Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-[#050505] text-white pt-20 pb-8 relative overflow-hidden border-t border-white/5">
+    <div
+      class="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden opacity-[0.03] translate-y-1/4">
+      <h2 class="font-serif font-black text-[15vw] whitespace-nowrap text-white">LIQUID ARTS</h2>
+    </div>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid md:grid-cols-12 gap-12 mb-16">
+        <div class="md:col-span-4"><a href="index.html" class="inline-block mb-6"><span
+              class="text-2xl md:text-3xl font-serif font-bold tracking-wide"><span
+                class="text-theme-accent italic">Liquid Arts</span></span></a>
+          <p class="text-gray-400 mb-6 text-sm leading-relaxed font-light max-w-sm">Elevating events globally with
+            handcrafted cocktails, theatrical presentation, and exceptional service.</p>
+          <div class="flex gap-4"><a href="#"
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-instagram"></i></a><a href="#"
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-facebook-f"></i></a></div>
+        </div>
+        <div class="md:col-span-2 md:col-start-6">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-white">Explore</h4>
+          <ul class="space-y-3 text-sm text-gray-400 font-light">
+            <li><a href="about.html" class="hover:text-theme-accent transition-colors">About Us</a></li>
+            <li><a href="service.html" class="hover:text-theme-accent transition-colors">Services</a></li>
+            <li><a href="gallery.html" class="hover:text-theme-accent transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="hover:text-theme-accent transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-white">Connect</h4>
+          <ul class="space-y-3 text-sm text-gray-400 font-light">
+            <li><a href="mailto:cheers@liquidarts.com"
+                class="text-theme-accent hover:text-white transition-colors">cheers@liquidarts.com</a></li>
+            <li><a href="tel:+13105550199" class="hover:text-theme-accent transition-colors">+1 (310) 555-0199</a></li>
+            <li>Los Angeles, CA<br>Available Worldwide</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">© 2026 Liquid Arts. All rights
+          reserved.</p>
+        <div class="flex gap-8 text-[10px] text-gray-600 uppercase tracking-[0.2em] font-bold"><a href="#"
+            class="hover:text-theme-accent transition-colors">Privacy</a><a href="#"
+            class="hover:text-theme-accent transition-colors">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      (function () {
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const html = document.documentElement;
+        function toggleTheme() {
+          if (html.classList.contains('dark')) {
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          } else {
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          }
+        }
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+        if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+        else if (localStorage.getItem('theme') === 'light') html.classList.remove('dark');
+        else html.classList.add('dark');
+
+        // RTL Toggle
+        const rtlToggle = document.getElementById('rtl-toggle');
+        const mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+        function toggleRTL() {
+          if (html.getAttribute('dir') === 'rtl') {
+            html.removeAttribute('dir');
+            localStorage.setItem('direction', 'ltr');
+          } else {
+            html.setAttribute('dir', 'rtl');
+            localStorage.setItem('direction', 'rtl');
+          }
+        }
+        if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+        if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+        if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+          mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+              mobileMenu.classList.remove('hidden');
+              menuIcon.classList.add('hidden');
+              closeIcon.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+            } else {
+              mobileMenu.classList.add('hidden');
+              menuIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+              document.body.style.overflow = '';
+            }
+          });
+        }
+
+        // Close mobile menu when clicking on any link
+        const allMobileLinks = document.querySelectorAll('#mobile-menu a, #mobile-menu button');
+        allMobileLinks.forEach(link => {
+          if (link.id === 'mobile-home-dropdown-btn') return;
+          link.addEventListener('click', (e) => {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              if (menuIcon && closeIcon) {
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+              }
+              document.body.style.overflow = '';
+            }
+          });
+        });
+
+        // Mobile HOME dropdown toggle
+        const homeBtn = document.getElementById('mobile-home-dropdown-btn');
+        const homeSub = document.getElementById('mobile-home-submenu');
+        const homeIcon = document.getElementById('mobile-home-icon');
+        if (homeBtn && homeSub && homeIcon) {
+          homeSub.classList.add('hidden');
+          homeIcon.classList.remove('rotate');
+          homeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isHiddenNow = homeSub.classList.contains('hidden');
+            if (isHiddenNow) {
+              homeSub.classList.remove('hidden');
+              homeIcon.classList.add('rotate');
+            } else {
+              homeSub.classList.add('hidden');
+              homeIcon.classList.remove('rotate');
+            }
+          });
+        }
+
+        // Click outside to close
+        document.addEventListener('click', function (event) {
+          const isClickInsideMenu = mobileMenu?.contains(event.target);
+          const isClickOnButton = mobileMenuButton?.contains(event.target);
+          if (mobileMenu && !mobileMenu.classList.contains('hidden') && !isClickInsideMenu && !isClickOnButton) {
+            mobileMenu.classList.add('hidden');
+            if (menuIcon && closeIcon) {
+              menuIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+            }
+            document.body.style.overflow = '';
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 1280 && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            if (menuIcon && closeIcon) {
+              menuIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+            }
+            document.body.style.overflow = '';
+          }
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -30px 0px" });
+        revealElements.forEach(el => observer.observe(el));
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        let counted = false;
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !counted) {
+              counted = true;
+              counters.forEach(counter => {
+                const targetText = counter.getAttribute('data-target');
+                if (!targetText) return;
+                let targetVal = parseInt(targetText, 10);
+                let current = 0;
+                const updateCounter = () => {
+                  if (current < targetVal) {
+                    current += Math.ceil(targetVal / 40);
+                    if (current > targetVal) current = targetVal;
+                    if (targetVal === 28) counter.innerText = current + (current < targetVal ? '+' : 'k+');
+                    else if (targetVal === 13) counter.innerText = current + '+';
+                    else if (targetVal === 420) counter.innerText = current + '+';
+                    else if (targetVal === 8) counter.innerText = current;
+                    else counter.innerText = current;
+                    setTimeout(updateCounter, 20);
+                  } else {
+                    if (targetVal === 28) counter.innerText = '28k+';
+                    else if (targetVal === 13) counter.innerText = '13+';
+                    else if (targetVal === 420) counter.innerText = '420+';
+                    else if (targetVal === 5) counter.innerText = '5+';
+                    else if (targetVal === 100) counter.innerText = '100%';
+                    else counter.innerText = targetVal;
+                  }
+                };
+                updateCounter();
+              });
+              counterObserver.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        if (counters.length) counterObserver.observe(counters[0]);
+      })();
+  </script>
+</body>
+
+</html>

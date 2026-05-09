@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cocktail Collection | Liquid Arts — Signature Mixology Library</title>
+  <link rel="icon" href="/assets/fav.jpg" type="image/jpeg">
+  <meta name="description"
+    content="Explore Liquid Arts' signature cocktail collection — avant-garde house creations, classics reimagined, and seasonal botanical elixirs.">
+
+  <!-- Tailwind + Fonts + FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'theme-accent': '#F59E0B',
+            'theme-accent-dark': '#D97706',
+            'theme-accent-light': '#FCD34D',
+            'dark-gray': '#0a0a0a',
+            'light-peach': '#fdfbf7',
+            white: '#FFFFFF'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [dir="rtl"] {
+      direction: rtl;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowZoom {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.08);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeInUp 0.9s ease forwards;
+    }
+
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-500 {
+      animation-delay: 0.5s;
+    }
+
+    .cocktail-card {
+      transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .cocktail-card:hover {
+      transform: translateY(-12px);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F59E0B 0%, #FCD34D 50%, #D97706 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass-morphism {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .dark .glass-morphism {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* 🔥 ULTRA RESPONSIVE OVERRIDES — fixes for ALL dimensions */
+    @media (max-width: 640px) {
+      .container-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      h1 {
+        font-size: 2.75rem !important;
+        line-height: 1.2 !important;
+      }
+
+      h2 {
+        font-size: 1.75rem !important;
+      }
+
+      /* Newsletter fix for mobile */
+      .newsletter-flex-fix {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+      }
+
+      .newsletter-button-fix {
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .newsletter-image-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)) !important;
+      }
+
+      /* Mobile image gallery */
+      .cocktail-card .h-56,
+      .cocktail-card .h-64 {
+        height: 220px !important;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 768px) {
+      h1 {
+        font-size: 4rem !important;
+      }
+
+      .newsletter-flex-fix {
+        flex-direction: row !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .newsletter-stack {
+        flex-direction: column !important;
+      }
+
+      .newsletter-image-col {
+        height: 220px !important;
+        min-height: 220px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .newsletter-image-col {
+        height: auto !important;
+      }
+    }
+
+    /* Extra small devices (320px-480px) */
+    @media (max-width: 480px) {
+      .nav-container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+
+      h1 {
+        font-size: 2.25rem !important;
+        line-height: 1.15 !important;
+      }
+
+      h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .glass-morphism {
+        padding: 1.25rem !important;
+      }
+
+      .cocktail-card .p-5 {
+        padding: 1rem !important;
+      }
+
+      .cocktail-card h3 {
+        font-size: 1.25rem !important;
+      }
+
+      footer .grid {
+        gap: 2rem !important;
+      }
+    }
+
+    /* Landscape orientation fixes for mobile */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .hero-section {
+        min-height: 70vh !important;
+      }
+
+      .cocktail-card .h-56,
+      .cocktail-card .h-64 {
+        height: 180px !important;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .dropdown-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .group:hover .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .mobile-dropdown-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-dropdown-icon.rotate {
+      transform: rotate(180deg);
+    }
+
+    /* Prevent overflow issues */
+    .max-w-\[1400px\] {
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Fix for extremely small devices */
+    @media (max-width: 360px) {
+      .hero-section h1 {
+        font-size: 1.85rem !important;
+      }
+
+      .text-gray-100 {
+        font-size: 0.875rem !important;
+      }
+
+      .nav-container .flex {
+        gap: 0.5rem;
+      }
+    }
+
+    /* Fix newsletter image on all breakpoints */
+    .newsletter-image-fix {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Ensure all grids are responsive */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        gap: 2rem;
+      }
+    }
+
+    /* RTL support for all elements */
+    [dir="rtl"] .flex-row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .space-x-4> :not([hidden])~ :not([hidden]) {
+      margin-right: 1rem;
+      margin-left: 0;
+    }
+
+    /* Ensure smooth scaling on all devices */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+
+<body
+  class="font-sans text-gray-700 antialiased transition-colors duration-300 bg-white dark:bg-dark-gray dark:text-gray-300">
+
+  <!-- HEADER - HOME DROPDOWN (FULLY FUNCTIONAL & RESPONSIVE) -->
+  <nav
+    class="bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+    <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="flex flex-col">
+              <span
+                class="text-2xl font-serif font-bold text-dark-gray dark:text-white nav-logo-text tracking-wide transition-colors duration-300 group-hover:opacity-80"><span
+                  class="text-theme-accent italic">Liquid Arts</span></span>
+            </div>
+          </a>
+        </div>
+
+        <!-- DESKTOP NAVIGATION - HOME with DROPDOWN -->
+        <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+          <div
+            class="flex items-center gap-1 lg:gap-2 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
+
+            <!-- HOME DROPDOWN (Desktop) -->
+            <div class="relative group">
+              <button
+                class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest flex items-center gap-1">
+                <span>Home</span>
+                <i class="fas fa-chevron-down text-[9px] dropdown-arrow"></i>
+              </button>
+              <div
+                class="absolute start-0 mt-3 w-44 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden">
+                <a href="index.html"
+                  class="block px-5 py-3 text-theme-accent bg-gray-50 dark:bg-white/5 transition duration-300 text-[11px] uppercase tracking-widest font-bold hover:bg-gray-100 dark:hover:bg-white/10">Home
+                  Page 1</a>
+                <a href="home2.html"
+                  class="block px-5 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white transition duration-300 text-[11px] uppercase tracking-widest font-medium">Home
+                  Page 2</a>
+              </div>
+            </div>
+
+            <a href="about.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">About</a>
+            <a href="service.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Services</a>
+            <a href="menu.html"
+              class="nav-link text-theme-accent bg-white/30 dark:bg-white/5 font-bold transition duration-300 px-4 py-2 rounded-full text-[11px] uppercase tracking-widest">Cocktail</a>
+            <a href="packages.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Packages</a>
+            <a href="gallery.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Gallery</a>
+            <a href="events.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Events</a>
+            <a href="contact.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Contact</a>
+          </div>
+        </div>
+
+        <div class="hidden xl:flex items-center justify-between w-full gap-4">
+          <div class="flex items-center">
+            <div
+              class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5">
+              <button id="rtl-toggle"
+                class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+                title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
+              <button id="theme-toggle"
+                class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+                title="Toggle Theme">
+                <i class="fas fa-moon dark:hidden text-xs"></i>
+                <i class="fas fa-sun hidden dark:inline text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a href="login.html"
+              class="text-dark-gray dark:text-white hover:text-theme-accent font-medium transition duration-300 text-xs uppercase tracking-widest">Login</a>
+            <a href="signup.html"
+              class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-2.5 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">Register</a>
+          </div>
+        </div>
+
+        <div class="xl:hidden flex items-center">
+          <button id="mobile-menu-button"
+            class="text-dark-gray dark:text-white focus:outline-none p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition duration-300"
+            aria-label="Menu">
+            <i id="menu-icon" class="fas fa-bars text-lg"></i>
+            <i id="close-icon" class="fas fa-times text-lg hidden"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU - HOME with COLLAPSIBLE DROPDOWN -->
+    <div id="mobile-menu"
+      class="hidden xl:hidden bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-gray-200 dark:border-white/10 transition-colors duration-300 shadow-2xl absolute w-full max-h-[calc(100vh-80px)] overflow-y-auto">
+      <div class="px-6 pt-4 pb-8 space-y-1">
+        <div class="mobile-home-dropdown-wrapper">
+          <button id="mobile-home-dropdown-btn"
+            class="w-full flex justify-between items-center px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">
+            <span>Home</span>
+            <i id="mobile-home-icon"
+              class="fas fa-chevron-down text-xs mobile-dropdown-icon transition-transform duration-300"></i>
+          </button>
+          <div id="mobile-home-submenu"
+            class="hidden pl-8 pr-4 py-2 space-y-3 border-l-2 border-theme-accent/20 ml-6 mt-1 mb-2">
+            <a href="index.html"
+              class="block text-theme-accent text-sm font-bold tracking-wider uppercase transition duration-300 hover:opacity-80">Home
+              Page 1</a>
+            <a href="home2.html"
+              class="block text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white transition duration-300 text-sm font-medium tracking-wider uppercase">Home
+              Page 2</a>
+          </div>
+        </div>
+        <a href="about.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">About</a>
+        <a href="service.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Services</a>
+        <a href="menu.html"
+          class="block px-4 py-3.5 text-theme-accent bg-gray-50/80 dark:bg-white/5 rounded-xl transition duration-300 text-sm font-bold tracking-wider uppercase">Cocktail</a>
+        <a href="packages.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Packages</a>
+        <a href="gallery.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Gallery</a>
+        <a href="events.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Events</a>
+        <a href="contact.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Contact</a>
+
+        <div class="pt-6 mt-6 border-t border-gray-100 dark:border-white/10">
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <button id="mobile-rtl-toggle"
+              class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">RTL
+              Mode</button>
+            <button id="mobile-theme-toggle"
+              class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Theme</button>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <a href="login.html"
+              class="block w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Login</a>
+            <a href="signup.html"
+              class="block w-full bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest font-bold shadow-lg shadow-theme-accent/20">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION (fully responsive) -->
+  <section
+    class="relative min-h-[85vh] flex items-center justify-center pt-20 overflow-hidden bg-light-peach dark:bg-dark-gray">
+    <div class="absolute inset-0 z-0">
+      <img src="http://avatars.mds.yandex.net/get-vthumb/3138583/1b1646d52867133c7aa66f0fe6076394/800x450"
+        alt="Cocktail Masterclass Background" class="w-full h-full object-cover object-center" />
+    </div>
+    <div
+      class="absolute inset-0 z-1 bg-gradient-to-t from-black/60 via-black/20 to-transparent dark:from-black/70 dark:via-black/30 dark:to-transparent">
+    </div>
+    <div class="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6">
+      <h1
+        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-black text-white leading-[1.1] mb-6 animate-fade-up opacity-0 delay-100 px-2 drop-shadow-lg">
+        Cocktail <span class="gold-gradient-text">Mastery</span>
+      </h1>
+      <p
+        class="text-gray-100 max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-light px-4 animate-fade-up opacity-0 delay-200 drop-shadow">
+        A curated collection of signature elixirs — each sip tells a story of craftsmanship, rare ingredients, and
+        artistic flair.
+      </p>
+    </div>
+  </section>
+
+  <!-- SIGNATURE COCKTAILS (responsive grid) -->
+  <section id="signature" class="py-16 sm:py-20 md:py-24 bg-white dark:bg-dark-gray">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 sm:mb-16 reveal">
+        <span class="text-theme-accent text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold">House
+          signatures</span>
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4">
+          Iconic Originals</h2>
+        <div class="w-12 sm:w-16 h-[2px] bg-theme-accent mx-auto mt-5 sm:mt-6"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div
+          class="cocktail-card group bg-light-peach dark:bg-[#0f0f0f] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 reveal">
+          <div class="h-56 sm:h-64 overflow-hidden"><img src="assets/smoke.jpg" alt="Smoked Old Fashioned"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
+          <div class="p-5 sm:p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-dark-gray dark:text-white">Smoked Old Fashioned
+              </h3><i class="fas fa-fire text-theme-accent"></i>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Bourbon, smoked maple, bitters, flamed orange zest
+              — a theatrical tribute to tradition.</p>
+            <div class="flex flex-wrap items-center gap-2 text-xs text-theme-accent font-semibold"><i
+                class="fas fa-wine-glass-alt"></i><span>Barrel-aged</span><span
+                class="mx-1 hidden sm:inline">•</span><span>Tableside smoke</span></div>
+          </div>
+        </div>
+        <div
+          class="cocktail-card group bg-light-peach dark:bg-[#0f0f0f] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 reveal delay-100">
+          <div class="h-56 sm:h-64 overflow-hidden"><img
+              src="https://images.pexels.com/photos/21263529/pexels-photo-21263529.jpeg" alt="Rose Petal Martini"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
+          <div class="p-5 sm:p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-dark-gray dark:text-white">Rose Petal Martini
+              </h3><i class="fas fa-feather-alt text-theme-accent"></i>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Botanical gin, rose water, Lillet Blanc, edible
+              rose petals — delicate & aromatic.</p>
+            <div class="flex flex-wrap items-center gap-2 text-xs text-theme-accent font-semibold"><i
+                class="fas fa-leaf"></i><span>House-infused</span><span
+                class="mx-1 hidden sm:inline">•</span><span>Vegan-friendly</span></div>
+          </div>
+        </div>
+        <div
+          class="cocktail-card group bg-light-peach dark:bg-[#0f0f0f] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/5 reveal delay-200">
+          <div class="h-56 sm:h-64 overflow-hidden"><img src="assets/gold.jpg" alt="Golden Hour Spritz"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
+          <div class="p-5 sm:p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-dark-gray dark:text-white">Golden Hour Spritz
+              </h3><i class="fas fa-sun text-theme-accent"></i>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Aperol, prosecco, saffron honey, soda —
+              effervescent with a luminous finish.</p>
+            <div class="flex flex-wrap items-center gap-2 text-xs text-theme-accent font-semibold"><i
+                class="fas fa-champagne-glasses"></i><span>Brunch favorite</span><span
+                class="mx-1 hidden sm:inline">•</span><span>Citrus forward</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL SECTION (responsive) -->
+  <section id="seasonal" class="py-16 sm:py-20 md:py-24 bg-light-peach dark:bg-[#080808] relative">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="reveal order-2 lg:order-1"><img
+            src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Botanical cocktails"
+            class="rounded-2xl sm:rounded-3xl shadow-2xl w-full object-cover h-72 sm:h-80 lg:h-[450px]"></div>
+        <div class="reveal order-1 lg:order-2 px-2"><span
+            class="text-theme-accent text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold">Harvest &
+            terroir</span>
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-5 sm:mb-6">
+            Seasonal Elixirs</h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-5 sm:mb-6 leading-relaxed text-sm sm:text-base">Our rotating
+            seasonal menu celebrates local farms, foraged botanicals, and rare small-batch spirits. Each recipe is
+            crafted to capture the essence of the season — from spring blooms to winter spice.</p>
+          <ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+            <li class="flex items-center gap-3 text-sm"><i
+                class="fas fa-check-circle text-theme-accent text-xs sm:text-sm"></i><span>Spring — Lavender Bee's
+                Knees</span></li>
+            <li class="flex items-center gap-3 text-sm"><i
+                class="fas fa-check-circle text-theme-accent text-xs sm:text-sm"></i><span>Summer — Watermelon & Basil
+                Cooler</span></li>
+            <li class="flex items-center gap-3 text-sm"><i
+                class="fas fa-check-circle text-theme-accent text-xs sm:text-sm"></i><span>Autumn — Spiced Pear
+                Manhattan</span></li>
+            <li class="flex items-center gap-3 text-sm"><i
+                class="fas fa-check-circle text-theme-accent text-xs sm:text-sm"></i><span>Winter — Cinnamon Cardamom
+                Nog</span></li>
+          </ul>
+          <a href="#"
+            class="inline-flex items-center gap-2 text-theme-accent font-semibold border-b border-theme-accent pb-1 hover:gap-3 transition-all text-sm">View
+            full seasonal menu <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLES GRID (fully responsive) -->
+  <section class="py-16 sm:py-20 md:py-24 bg-white dark:bg-dark-gray">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center reveal"><span
+        class="text-theme-accent text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold">Curated by
+        style</span>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4">
+        Find your spirit</h2>
+    </div>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div class="group relative rounded-xl sm:rounded-2xl overflow-hidden h-64 sm:h-80 cursor-pointer reveal"><img
+            src="https://s.yimg.com/ny/api/res/1.2/n4Q8PQlSIAo7ni4Hwn4S8Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk7Y2Y9d2VicA--/https://media.zenfs.com/en/robb_report_967/5e962e18880c4f1f5a53fbd4143cdbc7"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
+            <div class="text-center text-white"><i
+                class="fas fa-whiskey-glass text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">Whiskey</h3>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Bold & Smoky</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group relative rounded-xl sm:rounded-2xl overflow-hidden h-64 sm:h-80 cursor-pointer reveal delay-100">
+          <img src="assets/gin.png"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
+            <div class="text-center text-white"><i
+                class="fas fa-wine-glass text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">Gin & Vodka</h3>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Botanical & Crisp</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group relative rounded-xl sm:rounded-2xl overflow-hidden h-64 sm:h-80 cursor-pointer reveal delay-200">
+          <img
+            src="https://images.buyagift.co.uk/common/client/Images/Product/Extralarge/en-GB/distilling_spirit_flight_for_two_BAG_4.jpg"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
+            <div class="text-center text-white"><i
+                class="fas fa-cocktail text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">Tiki & Rum</h3>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Tropical & complex</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="group relative rounded-xl sm:rounded-2xl overflow-hidden h-64 sm:h-80 cursor-pointer reveal delay-300">
+          <img src="assets/home.jpg"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
+            <div class="text-center text-white"><i
+                class="fas fa-wine-bottle text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold">Zero-Proof</h3>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Mindful & layered</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESPOKE PROCESS -->
+  <section class="py-16 sm:py-20 md:py-24 bg-light-peach dark:bg-[#0a0a0a]">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 sm:mb-16 reveal"><span
+          class="text-theme-accent text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold">Create your
+          signature</span>
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4">
+          The Bespoke Process</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div class="glass-morphism rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center reveal">
+          <div
+            class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-theme-accent/20 flex items-center justify-center text-xl sm:text-2xl font-bold text-theme-accent mb-4 sm:mb-5 border border-theme-accent/40">
+            01</div>
+          <h3 class="text-lg sm:text-xl font-serif font-bold mb-2 sm:mb-3 dark:text-white">Flavor Discovery</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">We explore your taste preferences, event theme,
+            and desired sensory journey.</p>
+        </div>
+        <div class="glass-morphism rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center reveal delay-100">
+          <div
+            class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-theme-accent/20 flex items-center justify-center text-xl sm:text-2xl font-bold text-theme-accent mb-4 sm:mb-5 border border-theme-accent/40">
+            02</div>
+          <h3 class="text-lg sm:text-xl font-serif font-bold mb-2 sm:mb-3 dark:text-white">R&D & Tasting</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Our lab creates 3-5 prototypes using
+            small-batch & seasonal ingredients.</p>
+        </div>
+        <div class="glass-morphism rounded-xl sm:rounded-2xl p-6 sm:p-8 text-center reveal delay-200">
+          <div
+            class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-theme-accent/20 flex items-center justify-center text-xl sm:text-2xl font-bold text-theme-accent mb-4 sm:mb-5 border border-theme-accent/40">
+            03</div>
+          <h3 class="text-lg sm:text-xl font-serif font-bold mb-2 sm:mb-3 dark:text-white">Final Composition</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Refined recipe, naming, custom menu cards, and
+            full backbar integration.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 sm:mt-12 reveal"><a href="contact.html"
+          class="inline-flex items-center gap-2 bg-theme-accent hover:bg-theme-accent-dark text-white px-6 sm:px-8 py-3 rounded-full text-[10px] sm:text-xs uppercase tracking-widest font-bold transition">Start
+          your bespoke cocktail <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </section>
+
+  <!-- MASTERCLASS PROMO -->
+  <section class="py-16 sm:py-20 md:py-24 bg-white dark:bg-dark-gray relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-theme-accent/10 rounded-full blur-3xl"></div>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="reveal order-2 lg:order-1 px-2"><span
+            class="text-theme-accent text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-semibold">Interactive
+            experiences</span>
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-5 sm:mb-6">
+            Mixology Masterclasses</h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-5 sm:mb-6 leading-relaxed text-sm sm:text-base">Learn the art of
+            balance, shaking techniques, and presentation from world-class bartenders.</p>
+          <ul class="space-y-2 mb-6 sm:mb-8">
+            <li class="flex gap-2 text-sm"><i
+                class="fas fa-check-circle text-theme-accent mt-1 text-xs sm:text-sm"></i><span>2-hour hands-on workshop
+                with premium spirits</span></li>
+            <li class="flex gap-2 text-sm"><i
+                class="fas fa-check-circle text-theme-accent mt-1 text-xs sm:text-sm"></i><span>Includes recipe cards &
+                take-home kit</span></li>
+            <li class="flex gap-2 text-sm"><i
+                class="fas fa-check-circle text-theme-accent mt-1 text-xs sm:text-sm"></i><span>Groups from 10 to 200
+                guests</span></li>
+          </ul><a href="events.html"
+            class="inline-flex items-center gap-2 border-b-2 border-theme-accent pb-1 text-dark-gray dark:text-white font-semibold hover:gap-3 transition-all text-sm">Inquire
+            about a private class <i class="fas fa-long-arrow-alt-right"></i></a>
+        </div>
+        <div class="relative reveal order-1 lg:order-2"><img src="assets/mix.jpg" alt="masterclass"
+            class="rounded-2xl sm:rounded-3xl shadow-2xl w-full object-cover h-72 sm:h-96"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔥 NEWSLETTER SECTION — FULLY RESPONSIVE (FIXED) -->
+  <section
+    class="py-16 sm:py-20 md:py-24 bg-light-peach dark:bg-[#050505] transition-colors duration-300 relative px-4 sm:px-6">
+    <div
+      class="absolute top-0 right-0 w-full md:w-1/2 h-[300px] bg-theme-accent/10 filter blur-[100px] rounded-full pointer-events-none">
+    </div>
+    <div
+      class="max-w-[1200px] mx-auto bg-white dark:bg-[#0f0f0f] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row relative z-10 border border-gray-100 dark:border-white/5">
+      <!-- LEFT COLUMN (Text + Form) -->
+      <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-10 lg:p-14 flex flex-col justify-center relative">
+        <span
+          class="text-theme-accent text-[10px] sm:text-xs uppercase tracking-[0.4em] font-semibold mb-3 sm:mb-4">Join
+          The Society</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white mb-4 sm:mb-5">
+          The Inner Circle</h2>
+        <p class="text-gray-500 dark:text-gray-400 font-light mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">An
+          exclusive dispatch of seasonal recipes, masterclass invitations, and access to limited-edition spirit
+          releases.</p>
+        <!-- Email input only, no subscribe button -->
+        <div class="relative z-10 w-full">
+          <input type="email" placeholder="Email Address"
+            class="w-full px-5 py-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-dark-gray dark:text-white rounded-full focus:outline-none focus:border-theme-accent transition-colors text-sm placeholder-gray-400">
+        </div>
+      </div>
+      <!-- RIGHT COLUMN (Image) — height auto on desktop, fixed on mobile for better display -->
+      <div class="w-full md:w-1/2 h-[240px] sm:h-[280px] md:h-auto relative overflow-hidden">
+        <img src="assets/mix.jpg" alt="Newsletter"
+          class="absolute inset-0 w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 scale-105">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent md:bg-gradient-to-l md:from-black/20 md:to-transparent">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (already responsive) -->
+  <footer class="bg-[#050505] text-white pt-16 sm:pt-20 md:pt-24 pb-8 relative overflow-hidden border-t border-white/5">
+    <div
+      class="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden opacity-[0.03] translate-y-1/4">
+      <h2 class="font-serif font-black text-[12vw] sm:text-[15vw] whitespace-nowrap text-white">LIQUID ARTS</h2>
+    </div>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
+        <div class="md:col-span-4"><a href="index.html" class="inline-block mb-6"><span
+              class="text-2xl sm:text-3xl font-serif font-bold tracking-wide"><span
+                class="text-theme-accent italic">Liquid Arts</span></span></a>
+          <p class="text-gray-400 mb-6 text-sm leading-relaxed font-light max-w-sm">Curating high-end beverage
+            experiences. Elevating events globally with handcrafted cocktails.</p>
+          <div class="flex gap-4"><a href="#"
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-instagram"></i></a><a href="#"
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-facebook-f"></i></a><a href="#"
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-pinterest-p"></i></a></div>
+        </div>
+        <div class="md:col-span-2 md:col-start-6">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-white">Sitemap</h4>
+          <ul class="space-y-3 text-sm text-gray-400 font-light">
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Studio</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Capabilities</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Journal</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">The Emporium</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-white">Services</h4>
+          <ul class="space-y-3 text-sm text-gray-400 font-light">
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Event Bartending</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Menu Design</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Masterclasses</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Consulting</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-white">Headquarters</h4>
+          <ul class="space-y-3 text-sm text-gray-400 font-light">
+            <li>Los Angeles, CA<br>Available Worldwide</li>
+            <li class="pt-2"><a href="mailto:cheers@liquidarts.com"
+                class="text-theme-accent hover:text-white transition-colors border-b border-theme-accent/30 hover:border-white pb-1">cheers@liquidarts.com</a>
+            </li>
+            <li><a href="tel:+1234567890" class="hover:text-theme-accent transition-colors">+1 (310) 555-0199</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">© 2026 Liquid Arts. All rights
+          reserved.</p>
+        <div class="flex gap-8 text-[10px] text-gray-600 uppercase tracking-[0.2em] font-bold"><a href="#"
+            class="hover:text-theme-accent transition-colors">Privacy</a><a href="#"
+            class="hover:text-theme-accent transition-colors">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      (function () {
+        const themeToggle = document.getElementById('theme-toggle'), mobileThemeToggle = document.getElementById('mobile-theme-toggle'), html = document.documentElement;
+        function toggleTheme() { html.classList.contains('dark') ? (html.classList.remove('dark'), localStorage.setItem('theme', 'light')) : (html.classList.add('dark'), localStorage.setItem('theme', 'dark')); }
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+        if (localStorage.getItem('theme') === 'dark') html.classList.add('dark'); else if (localStorage.getItem('theme') === 'light') html.classList.remove('dark'); else html.classList.add('dark');
+
+        const rtlToggle = document.getElementById('rtl-toggle'), mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+        function toggleRTL() { html.getAttribute('dir') === 'rtl' ? (html.removeAttribute('dir'), localStorage.setItem('direction', 'ltr')) : (html.setAttribute('dir', 'rtl'), localStorage.setItem('direction', 'rtl')); }
+        if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+        if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+        if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-button'), mobileMenu = document.getElementById('mobile-menu'), menuIcon = document.getElementById('menu-icon'), closeIcon = document.getElementById('close-icon');
+        if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', (e) => { e.stopPropagation(); const hidden = mobileMenu.classList.contains('hidden'); if (hidden) { mobileMenu.classList.remove('hidden'); menuIcon.classList.add('hidden'); closeIcon.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } else { mobileMenu.classList.add('hidden'); menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); document.body.style.overflow = ''; } });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => { if (mobileMenu && !mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } document.body.style.overflow = ''; } }));
+
+        const homeBtn = document.getElementById('mobile-home-dropdown-btn'), homeSub = document.getElementById('mobile-home-submenu'), homeIcon = document.getElementById('mobile-home-icon');
+        if (homeBtn && homeSub && homeIcon) { homeSub.classList.add('hidden'); homeIcon.classList.remove('rotate'); homeBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); homeSub.classList.toggle('hidden'); homeIcon.classList.toggle('rotate'); }); }
+
+        document.addEventListener('click', function (event) { const isClickInsideMenu = mobileMenu?.contains(event.target); const isClickOnButton = mobileMenuBtn?.contains(event.target); if (mobileMenu && !mobileMenu.classList.contains('hidden') && !isClickInsideMenu && !isClickOnButton) { mobileMenu.classList.add('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } document.body.style.overflow = ''; } });
+
+        window.addEventListener('resize', function () { if (window.innerWidth >= 1280 && mobileMenu && !mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } document.body.style.overflow = ''; } });
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      })();
+  </script>
+</body>
+
+</html>
