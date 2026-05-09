@@ -244,23 +244,38 @@
         </div>
 
         <div class="hidden xl:flex items-center gap-4">
-          <a href="login.html"
-            class="text-dark-gray dark:text-white hover:text-theme-accent font-medium transition duration-300 text-xs uppercase tracking-widest">Login</a>
-          <a href="signup.html"
-            class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-2.5 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">Register
-          </a>
+
+          <!-- RTL & Dark Mode Left Side -->
           <div
-            class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5 ms-2">
+            class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5">
+
             <button id="rtl-toggle"
               class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
-              title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
+              title="Toggle RTL">
+              <span class="text-[10px] font-bold">RTL</span>
+            </button>
+
             <button id="theme-toggle"
               class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
               title="Toggle Theme">
               <i class="fas fa-moon dark:hidden text-xs"></i>
               <i class="fas fa-sun hidden dark:inline text-xs"></i>
             </button>
+
           </div>
+
+          <!-- Login -->
+          <a href="login.html"
+            class="text-dark-gray dark:text-white hover:text-theme-accent font-medium transition duration-300 text-xs uppercase tracking-widest">
+            Login
+          </a>
+
+          <!-- Register -->
+          <a href="signup.html"
+            class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-2.5 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
+            Register
+          </a>
+
         </div>
 
         <div class="xl:hidden flex items-center">

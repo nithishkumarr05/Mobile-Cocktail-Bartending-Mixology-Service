@@ -52,6 +52,7 @@
         opacity: 0;
         transform: translateY(40px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -63,6 +64,7 @@
         opacity: 0;
         transform: scale(0.96);
       }
+
       100% {
         opacity: 1;
         transform: scale(1);
@@ -73,14 +75,26 @@
       animation: fadeInUp 0.9s ease forwards;
     }
 
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-    .delay-400 { animation-delay: 0.4s; }
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
 
     .service-card {
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
+
     .service-card:hover {
       transform: translateY(-8px);
     }
@@ -89,75 +103,105 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
+
     body {
       overflow-x: hidden;
     }
+
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.9s ease;
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .card-img-overlay {
-      background: linear-gradient(185deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
+      background: linear-gradient(185deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%);
     }
 
     .process-step {
       transition: all 0.3s ease;
     }
+
     .process-step:hover {
       transform: translateY(-5px);
     }
   </style>
 </head>
 
-<body class="font-sans text-gray-700 antialiased transition-colors duration-300 bg-white dark:bg-dark-gray dark:text-gray-300">
+<body
+  class="font-sans text-gray-700 antialiased transition-colors duration-300 bg-white dark:bg-dark-gray dark:text-gray-300">
 
   <!-- ========== HEADER (IDENTICAL TO INDEX) ========== -->
-  <nav class="bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+  <nav
+    class="bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
     <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <div class="flex-shrink-0">
           <a href="index.html" class="flex items-center gap-3 group">
             <div class="flex flex-col">
-              <span class="text-2xl font-serif font-bold text-dark-gray dark:text-white nav-logo-text tracking-wide transition-colors duration-300 group-hover:opacity-80"><span class="text-theme-accent italic">Liquid Arts</span></span>
+              <span
+                class="text-2xl font-serif font-bold text-dark-gray dark:text-white nav-logo-text tracking-wide transition-colors duration-300 group-hover:opacity-80"><span
+                  class="text-theme-accent italic">Liquid Arts</span></span>
             </div>
           </a>
         </div>
 
         <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
-          <div class="flex items-center gap-1 lg:gap-2 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
+          <div
+            class="flex items-center gap-1 lg:gap-2 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
             <div class="relative group">
-              <button class="nav-link bg-white dark:bg-[#1a1a1a] shadow-sm text-theme-accent font-bold transition duration-300 px-4 py-2 rounded-full flex items-center gap-1 text-[11px] uppercase tracking-widest focus:outline-none">
+              <button
+                class="nav-link bg-white dark:bg-[#1a1a1a] shadow-sm text-theme-accent font-bold transition duration-300 px-4 py-2 rounded-full flex items-center gap-1 text-[11px] uppercase tracking-widest focus:outline-none">
                 <span>Home</span>
                 <i class="fas fa-chevron-down text-[9px] ms-1"></i>
               </button>
-              <div class="absolute start-0 mt-3 w-40 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden">
-                <a href="index.html" class="block px-4 py-3 text-theme-accent bg-gray-50 dark:bg-white/5 transition duration-300 text-[11px] uppercase tracking-widest font-bold">Home Page 1</a>
-                <a href="home2.html" class="block px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white transition duration-300 text-[11px] uppercase tracking-widest font-medium">Home Page 2</a>
+              <div
+                class="absolute start-0 mt-3 w-40 bg-white dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50 overflow-hidden">
+                <a href="index.html"
+                  class="block px-4 py-3 text-theme-accent bg-gray-50 dark:bg-white/5 transition duration-300 text-[11px] uppercase tracking-widest font-bold">Home
+                  Page 1</a>
+                <a href="home2.html"
+                  class="block px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white transition duration-300 text-[11px] uppercase tracking-widest font-medium">Home
+                  Page 2</a>
               </div>
             </div>
-            <a href="about.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">About</a>
-            <a href="service.html" class="nav-link text-theme-accent bg-white/30 dark:bg-white/5 font-bold transition duration-300 px-4 py-2 rounded-full text-[11px] uppercase tracking-widest">Services</a>
-            <a href="menu.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Cocktail</a>
-            <a href="packages.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Packages</a>
-            <a href="bartenders.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Bartenders</a>
-            <a href="gallery.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Gallery</a>
-            <a href="events.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Events</a>
-            <a href="contact.html" class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Contact</a>
+            <a href="about.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">About</a>
+            <a href="service.html"
+              class="nav-link text-theme-accent bg-white/30 dark:bg-white/5 font-bold transition duration-300 px-4 py-2 rounded-full text-[11px] uppercase tracking-widest">Services</a>
+            <a href="menu.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Cocktail</a>
+            <a href="packages.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Packages</a>
+            <a href="bartenders.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Bartenders</a>
+            <a href="gallery.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Gallery</a>
+            <a href="events.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Events</a>
+            <a href="contact.html"
+              class="nav-link text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white font-medium transition duration-300 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] uppercase tracking-widest">Contact</a>
           </div>
         </div>
 
         <div class="hidden xl:flex items-center gap-4">
-          <a href="login.html" class="text-dark-gray dark:text-white hover:text-theme-accent font-medium transition duration-300 text-xs uppercase tracking-widest">Login</a>
-          <a href="signup.html" class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-2.5 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">Register</a>
-          <div class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5 ms-2">
-            <button id="rtl-toggle" class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300" title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
-            <button id="theme-toggle" class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300" title="Toggle Theme">
+          <a href="login.html"
+            class="text-dark-gray dark:text-white hover:text-theme-accent font-medium transition duration-300 text-xs uppercase tracking-widest">Login</a>
+          <a href="signup.html"
+            class="bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-2.5 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">Register</a>
+          <div
+            class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5 ms-2">
+            <button id="rtl-toggle"
+              class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+              title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
+            <button id="theme-toggle"
+              class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+              title="Toggle Theme">
               <i class="fas fa-moon dark:hidden text-xs"></i>
               <i class="fas fa-sun hidden dark:inline text-xs"></i>
             </button>
@@ -165,7 +209,9 @@
         </div>
 
         <div class="xl:hidden flex items-center">
-          <button id="mobile-menu-button" class="text-dark-gray dark:text-white focus:outline-none p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition duration-300" aria-label="Menu">
+          <button id="mobile-menu-button"
+            class="text-dark-gray dark:text-white focus:outline-none p-3 rounded-full bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition duration-300"
+            aria-label="Menu">
             <i id="menu-icon" class="fas fa-bars text-lg"></i>
             <i id="close-icon" class="fas fa-times text-lg hidden"></i>
           </button>
@@ -174,34 +220,55 @@
     </div>
 
     <!-- MOBILE MENU (SAME BEHAVIOR) -->
-    <div id="mobile-menu" class="hidden xl:hidden bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-gray-200 dark:border-white/10 transition-colors duration-300 shadow-2xl absolute w-full">
+    <div id="mobile-menu"
+      class="hidden xl:hidden bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-gray-200 dark:border-white/10 transition-colors duration-300 shadow-2xl absolute w-full">
       <div class="px-6 pt-4 pb-8 space-y-1">
         <div class="mobile-home-dropdown-wrapper">
-          <button id="mobile-home-dropdown-btn" class="w-full flex justify-between items-center px-4 py-3.5 text-theme-accent bg-gray-50/80 dark:bg-white/5 rounded-xl transition duration-300 text-sm font-bold tracking-wider uppercase">
+          <button id="mobile-home-dropdown-btn"
+            class="w-full flex justify-between items-center px-4 py-3.5 text-theme-accent bg-gray-50/80 dark:bg-white/5 rounded-xl transition duration-300 text-sm font-bold tracking-wider uppercase">
             <span>Home</span>
-            <i id="mobile-home-icon" class="fas fa-chevron-down text-xs mobile-dropdown-icon transition-transform duration-300"></i>
+            <i id="mobile-home-icon"
+              class="fas fa-chevron-down text-xs mobile-dropdown-icon transition-transform duration-300"></i>
           </button>
-          <div id="mobile-home-submenu" class="hidden pl-8 pr-4 py-2 space-y-3 border-l-2 border-theme-accent/20 ml-6 mt-1 mb-2">
-            <a href="index.html" class="block text-theme-accent text-sm font-bold tracking-wider uppercase transition duration-300">Home Page 1</a>
-            <a href="home2.html" class="block text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white transition duration-300 text-sm font-medium tracking-wider uppercase">Home Page 2</a>
+          <div id="mobile-home-submenu"
+            class="hidden pl-8 pr-4 py-2 space-y-3 border-l-2 border-theme-accent/20 ml-6 mt-1 mb-2">
+            <a href="index.html"
+              class="block text-theme-accent text-sm font-bold tracking-wider uppercase transition duration-300">Home
+              Page 1</a>
+            <a href="home2.html"
+              class="block text-gray-500 dark:text-gray-400 hover:text-dark-gray dark:hover:text-white transition duration-300 text-sm font-medium tracking-wider uppercase">Home
+              Page 2</a>
           </div>
         </div>
-        <a href="about.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">About</a>
-        <a href="service.html" class="block px-4 py-3.5 text-theme-accent bg-gray-50/80 dark:bg-white/5 rounded-xl transition duration-300 text-sm font-bold tracking-wider uppercase">Services</a>
-        <a href="menu.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Cocktail</a>
-        <a href="packages.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Packages</a>
-        <a href="bartenders.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Bartenders</a>
-        <a href="gallery.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Gallery</a>
-        <a href="events.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Events</a>
-        <a href="contact.html" class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Contact</a>
+        <a href="about.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">About</a>
+        <a href="service.html"
+          class="block px-4 py-3.5 text-theme-accent bg-gray-50/80 dark:bg-white/5 rounded-xl transition duration-300 text-sm font-bold tracking-wider uppercase">Services</a>
+        <a href="menu.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Cocktail</a>
+        <a href="packages.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Packages</a>
+        <a href="bartenders.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Bartenders</a>
+        <a href="gallery.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Gallery</a>
+        <a href="events.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Events</a>
+        <a href="contact.html"
+          class="block px-4 py-3.5 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-dark-gray dark:hover:text-white rounded-xl transition duration-300 text-sm font-medium tracking-wider uppercase">Contact</a>
         <div class="pt-6 mt-6 border-t border-gray-100 dark:border-white/10">
           <div class="grid grid-cols-2 gap-4 mb-4">
-            <button id="mobile-rtl-toggle" class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">RTL Mode</button>
-            <button id="mobile-theme-toggle" class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Theme</button>
+            <button id="mobile-rtl-toggle"
+              class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">RTL
+              Mode</button>
+            <button id="mobile-theme-toggle"
+              class="w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Theme</button>
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <a href="login.html" class="block w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Login</a>
-            <a href="signup.html" class="block w-full bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest font-bold shadow-lg shadow-theme-accent/20">Register</a>
+            <a href="login.html"
+              class="block w-full bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest hover:bg-gray-100 dark:hover:bg-white/10 font-bold border border-gray-100 dark:border-white/5">Login</a>
+            <a href="signup.html"
+              class="block w-full bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-3.5 rounded-xl text-center transition duration-300 text-xs uppercase tracking-widest font-bold shadow-lg shadow-theme-accent/20">Register</a>
           </div>
         </div>
       </div>
@@ -209,17 +276,27 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-light-peach dark:bg-dark-gray">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.2),transparent_70%)]"></div>
-    <div class="absolute top-0 left-0 w-full h-full opacity-15 mix-blend-multiply dark:mix-blend-luminosity"><img src="assets/home10.jpg" alt="abstract" class="w-full h-full object-cover"></div>
+  <section
+    class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-light-peach dark:bg-dark-gray">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.12),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.2),transparent_70%)]">
+    </div>
+    <div class="absolute top-0 left-0 w-full h-full opacity-15 mix-blend-multiply dark:mix-blend-luminosity"><img
+        src="assets/home10.jpg" alt="abstract" class="w-full h-full object-cover"></div>
     <div class="relative z-10 text-center max-w-5xl mx-auto px-4">
       <div class="inline-flex items-center gap-4 mb-6 animate-fade-up opacity-0">
         <span class="w-10 h-[1px] bg-theme-accent"></span>
-        <span class="text-theme-accent text-[11px] md:text-sm uppercase tracking-[0.4em] font-semibold">Premium Offerings</span>
+        <span class="text-theme-accent text-[11px] md:text-sm uppercase tracking-[0.4em] font-semibold">Premium
+          Offerings</span>
         <span class="w-10 h-[1px] bg-theme-accent"></span>
       </div>
-      <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif font-bold text-dark-gray dark:text-white leading-[1.1] mb-6 animate-fade-up opacity-0 delay-100">Elevated <span class="italic text-theme-accent">Mixology</span></h1>
-      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed animate-fade-up opacity-0 delay-200">Precision, theater, and hospitality — Liquid Arts delivers an unparalleled bar experience for discerning hosts and global brands.</p>
+      <h1
+        class="text-5xl sm:text-7xl md:text-8xl font-serif font-bold text-dark-gray dark:text-white leading-[1.1] mb-6 animate-fade-up opacity-0 delay-100">
+        Elevated <span class="italic text-theme-accent">Mixology</span></h1>
+      <p
+        class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed animate-fade-up opacity-0 delay-200">
+        Precision, theater, and hospitality — Liquid Arts delivers an unparalleled bar experience for discerning hosts
+        and global brands.</p>
     </div>
   </section>
 
@@ -228,75 +305,107 @@
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-20 reveal">
         <span class="text-theme-accent text-[11px] uppercase tracking-[0.3em] font-semibold">Crafted Experiences</span>
-        <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">Every detail, perfected</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-base">From intimate gatherings to large-scale galas, our services are tailored to exceed expectations.</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">Every detail,
+          perfected</h2>
+        <p class="text-gray-500 dark:text-gray-400 text-base">From intimate gatherings to large-scale galas, our
+          services are tailored to exceed expectations.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal">
-          <img src="assets/home1.4.jpg" alt="Mobile bar setup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div
+          class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal">
+          <img src="assets/home1.4.jpg" alt="Mobile bar setup"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 card-img-overlay"></div>
           <div class="relative z-10 flex flex-col justify-end h-full p-7 text-white">
             <div class="mb-3"><i class="fas fa-cocktail text-3xl text-theme-accent"></i></div>
             <h3 class="text-2xl font-serif font-bold mb-2">Mobile Bar Setup</h3>
-            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Fully equipped, bespoke bars designed for any venue. Includes premium glassware, garnishes, and professional-grade equipment.</p>
-            <div class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all"><span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
+            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Fully equipped, bespoke bars designed for
+              any venue. Includes premium glassware, garnishes, and professional-grade equipment.</p>
+            <div
+              class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+              <span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
           </div>
         </div>
         <!-- Card 2 -->
-        <div class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-100">
-          <img src="assets/home1.5.jpg" alt="Signature cocktail" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div
+          class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-100">
+          <img src="assets/home1.5.jpg" alt="Signature cocktail"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 card-img-overlay"></div>
           <div class="relative z-10 flex flex-col justify-end h-full p-7 text-white">
             <div class="mb-3"><i class="fas fa-leaf text-3xl text-theme-accent"></i></div>
             <h3 class="text-2xl font-serif font-bold mb-2">Signature Cocktails</h3>
-            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Custom flavor profiles, house-made syrups, and personalized naming. We craft cocktails that tell your story.</p>
-            <div class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all"><span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
+            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Custom flavor profiles, house-made syrups,
+              and personalized naming. We craft cocktails that tell your story.</p>
+            <div
+              class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+              <span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
           </div>
         </div>
         <!-- Card 3 -->
-        <div class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-200">
-          <img src="assets/home1.6.jpg" alt="Mixology class" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div
+          class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-200">
+          <img src="assets/home1.6.jpg" alt="Mixology class"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 card-img-overlay"></div>
           <div class="relative z-10 flex flex-col justify-end h-full p-7 text-white">
             <div class="mb-3"><i class="fas fa-chalkboard-user text-3xl text-theme-accent"></i></div>
             <h3 class="text-2xl font-serif font-bold mb-2">Mixology Masterclasses</h3>
-            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Interactive workshops led by award-winning bartenders. Perfect for team building or private groups.</p>
-            <div class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all"><span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
+            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Interactive workshops led by award-winning
+              bartenders. Perfect for team building or private groups.</p>
+            <div
+              class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+              <span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
           </div>
         </div>
         <!-- Card 4 -->
-        <div class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal">
-          <img src="assets/home.jpg" alt="Bartending staff" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div
+          class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal">
+          <img src="assets/home.jpg" alt="Bartending staff"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 card-img-overlay"></div>
           <div class="relative z-10 flex flex-col justify-end h-full p-7 text-white">
             <div class="mb-3"><i class="fas fa-champagne-glasses text-3xl text-theme-accent"></i></div>
             <h3 class="text-2xl font-serif font-bold mb-2">Elite Bartending Staff</h3>
-            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Charismatic, highly trained mixologists who blend service excellence with craft precision.</p>
-            <div class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all"><span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
+            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Charismatic, highly trained mixologists who
+              blend service excellence with craft precision.</p>
+            <div
+              class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+              <span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
           </div>
         </div>
         <!-- Card 5 -->
-        <div class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-100">
-          <img src="assets/home 1.2.jpg" alt="Consulting" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div
+          class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-100">
+          <img src="assets/home 1.2.jpg" alt="Consulting"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 card-img-overlay"></div>
           <div class="relative z-10 flex flex-col justify-end h-full p-7 text-white">
             <div class="mb-3"><i class="fas fa-wine-bottle text-3xl text-theme-accent"></i></div>
             <h3 class="text-2xl font-serif font-bold mb-2">Beverage Consulting</h3>
-            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Strategic menu engineering, operational audits, and concept development for venues worldwide.</p>
-            <div class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all"><span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
+            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">Strategic menu engineering, operational
+              audits, and concept development for venues worldwide.</p>
+            <div
+              class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+              <span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
           </div>
         </div>
         <!-- Card 6 -->
-        <div class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-200">
-          <img src="assets/home 1.3.jpg" alt="Event planning" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div
+          class="service-card group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-dark-gray h-[440px] reveal delay-200">
+          <img src="assets/home 1.3.jpg" alt="Event planning"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 card-img-overlay"></div>
           <div class="relative z-10 flex flex-col justify-end h-full p-7 text-white">
             <div class="mb-3"><i class="fas fa-calendar-star text-3xl text-theme-accent"></i></div>
             <h3 class="text-2xl font-serif font-bold mb-2">Full-Service Planning</h3>
-            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">End-to-end coordination: permits, logistics, decor, staffing, and breakdown. Truly turnkey.</p>
-            <div class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all"><span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
+            <p class="text-gray-200 text-sm opacity-90 leading-relaxed mb-4">End-to-end coordination: permits,
+              logistics, decor, staffing, and breakdown. Truly turnkey.</p>
+            <div
+              class="flex items-center gap-2 text-theme-accent text-xs font-semibold uppercase tracking-wider group-hover:gap-3 transition-all">
+              <span>Learn more</span><i class="fas fa-arrow-right text-xs"></i></div>
           </div>
         </div>
       </div>
@@ -308,30 +417,43 @@
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
         <span class="text-theme-accent text-[11px] uppercase tracking-[0.3em] font-semibold">Seamless execution</span>
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white mt-4">The Liquid Arts Process</h2>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white mt-4">The Liquid Arts
+          Process</h2>
         <div class="w-16 h-[2px] bg-theme-accent mx-auto mt-6"></div>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6 lg:gap-8">
         <div class="process-step text-center reveal">
-          <div class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5"><span class="text-3xl font-serif font-bold text-theme-accent">01</span></div>
+          <div
+            class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5">
+            <span class="text-3xl font-serif font-bold text-theme-accent">01</span></div>
           <h3 class="text-lg font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-2">Discovery</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">We consult deeply to understand your vision, guest profile, and flavor preferences.</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">We consult deeply to understand your vision, guest
+            profile, and flavor preferences.</p>
         </div>
         <div class="process-step text-center reveal delay-100">
-          <div class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5"><span class="text-3xl font-serif font-bold text-theme-accent">02</span></div>
+          <div
+            class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5">
+            <span class="text-3xl font-serif font-bold text-theme-accent">02</span></div>
           <h3 class="text-lg font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-2">Curation</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">We craft signature recipes, source premium ingredients, and design the bar layout.</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">We craft signature recipes, source premium ingredients,
+            and design the bar layout.</p>
         </div>
         <div class="process-step text-center reveal delay-200">
-          <div class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5"><span class="text-3xl font-serif font-bold text-theme-accent">03</span></div>
+          <div
+            class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5">
+            <span class="text-3xl font-serif font-bold text-theme-accent">03</span></div>
           <h3 class="text-lg font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-2">Orchestration</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">Logistics, staffing, permits — we handle every operational detail behind the scenes.</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Logistics, staffing, permits — we handle every operational
+            detail behind the scenes.</p>
         </div>
         <div class="process-step text-center reveal delay-300">
-          <div class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5"><span class="text-3xl font-serif font-bold text-theme-accent">04</span></div>
+          <div
+            class="w-20 h-20 mx-auto rounded-full bg-theme-accent/10 flex items-center justify-center border-2 border-theme-accent/30 mb-5">
+            <span class="text-3xl font-serif font-bold text-theme-accent">04</span></div>
           <h3 class="text-lg font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-2">Performance</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">Flawless on-site execution with theatrical flair and impeccable hospitality.</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">Flawless on-site execution with theatrical flair and
+            impeccable hospitality.</p>
         </div>
       </div>
     </div>
@@ -343,26 +465,57 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
           <span class="text-theme-accent text-[11px] uppercase tracking-[0.3em] font-semibold">Trusted partners</span>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">Industries we serve</h2>
-          <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">Liquid Arts has delivered elevated beverage experiences across a diverse range of sectors, from luxury weddings to corporate activations and hospitality venues.</p>
-          
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">
+            Industries we serve</h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">Liquid Arts has delivered elevated beverage
+            experiences across a diverse range of sectors, from luxury weddings to corporate activations and hospitality
+            venues.</p>
+
           <div class="grid grid-cols-2 gap-5 mb-8">
-            <div class="flex items-center gap-3"><i class="fas fa-ring text-theme-accent w-5"></i><span class="text-sm font-medium">Luxury Weddings</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-building text-theme-accent w-5"></i><span class="text-sm font-medium">Corporate Events</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-hotel text-theme-accent w-5"></i><span class="text-sm font-medium">Hotels & Resorts</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-calendar-alt text-theme-accent w-5"></i><span class="text-sm font-medium">Private Parties</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-champagne-glass text-theme-accent w-5"></i><span class="text-sm font-medium">Festivals & Galas</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-film text-theme-accent w-5"></i><span class="text-sm font-medium">Production Launches</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-ring text-theme-accent w-5"></i><span
+                class="text-sm font-medium">Luxury Weddings</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-building text-theme-accent w-5"></i><span
+                class="text-sm font-medium">Corporate Events</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-hotel text-theme-accent w-5"></i><span
+                class="text-sm font-medium">Hotels & Resorts</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-calendar-alt text-theme-accent w-5"></i><span
+                class="text-sm font-medium">Private Parties</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-champagne-glass text-theme-accent w-5"></i><span
+                class="text-sm font-medium">Festivals & Galas</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-film text-theme-accent w-5"></i><span
+                class="text-sm font-medium">Production Launches</span></div>
           </div>
-          
-          <a href="contact.html" class="inline-flex items-center gap-2 bg-theme-accent hover:bg-theme-accent-dark text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg">Request a consultation <i class="fas fa-arrow-right"></i></a>
+
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 bg-theme-accent hover:bg-theme-accent-dark text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg">Request
+            a consultation <i class="fas fa-arrow-right"></i></a>
         </div>
-        
+
         <div class="grid grid-cols-2 gap-4 reveal">
-          <div class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5"><i class="fas fa-star-of-life text-3xl text-theme-accent mb-3 block"></i><p class="text-xs uppercase tracking-wider font-bold">Michelin-Starred</p><p class="text-gray-500 text-xs mt-1">Partnerships</p></div>
-          <div class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5"><i class="fas fa-globe-americas text-3xl text-theme-accent mb-3 block"></i><p class="text-xs uppercase tracking-wider font-bold">Global Reach</p><p class="text-gray-500 text-xs mt-1">4 Continents</p></div>
-          <div class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5"><i class="fas fa-trophy text-3xl text-theme-accent mb-3 block"></i><p class="text-xs uppercase tracking-wider font-bold">Industry Awards</p><p class="text-gray-500 text-xs mt-1">Best Mobile Bar 2025</p></div>
-          <div class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5"><i class="fas fa-heart text-3xl text-theme-accent mb-3 block"></i><p class="text-xs uppercase tracking-wider font-bold">100% Custom</p><p class="text-gray-500 text-xs mt-1">Tailored experiences</p></div>
+          <div
+            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
+            <i class="fas fa-star-of-life text-3xl text-theme-accent mb-3 block"></i>
+            <p class="text-xs uppercase tracking-wider font-bold">Michelin-Starred</p>
+            <p class="text-gray-500 text-xs mt-1">Partnerships</p>
+          </div>
+          <div
+            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
+            <i class="fas fa-globe-americas text-3xl text-theme-accent mb-3 block"></i>
+            <p class="text-xs uppercase tracking-wider font-bold">Global Reach</p>
+            <p class="text-gray-500 text-xs mt-1">4 Continents</p>
+          </div>
+          <div
+            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
+            <i class="fas fa-trophy text-3xl text-theme-accent mb-3 block"></i>
+            <p class="text-xs uppercase tracking-wider font-bold">Industry Awards</p>
+            <p class="text-gray-500 text-xs mt-1">Best Mobile Bar 2025</p>
+          </div>
+          <div
+            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
+            <i class="fas fa-heart text-3xl text-theme-accent mb-3 block"></i>
+            <p class="text-xs uppercase tracking-wider font-bold">100% Custom</p>
+            <p class="text-gray-500 text-xs mt-1">Tailored experiences</p>
+          </div>
         </div>
       </div>
     </div>
@@ -374,22 +527,39 @@
       <div class="flex flex-col lg:flex-row gap-12 items-center">
         <div class="flex-1 reveal">
           <span class="text-theme-accent text-[11px] uppercase tracking-[0.3em] font-semibold">By the numbers</span>
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">Crafted with precision, delivered with passion</h2>
-          <p class="text-gray-600 dark:text-gray-400 mb-8">Trusted by Fortune 500 brands, luxury wedding planners, and renowned hospitality groups worldwide.</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">Crafted with
+            precision, delivered with passion</h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-8">Trusted by Fortune 500 brands, luxury wedding planners, and
+            renowned hospitality groups worldwide.</p>
           <div class="grid grid-cols-2 gap-6">
-            <div><div class="text-4xl font-serif font-bold text-theme-accent">450+</div><p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Events annually</p></div>
-            <div><div class="text-4xl font-serif font-bold text-theme-accent">32</div><p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Award-winning team</p></div>
-            <div><div class="text-4xl font-serif font-bold text-theme-accent">100%</div><p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Bespoke menus</p></div>
-            <div><div class="text-4xl font-serif font-bold text-theme-accent">5★</div><p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Client satisfaction</p></div>
+            <div>
+              <div class="text-4xl font-serif font-bold text-theme-accent">450+</div>
+              <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Events annually</p>
+            </div>
+            <div>
+              <div class="text-4xl font-serif font-bold text-theme-accent">32</div>
+              <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Award-winning team</p>
+            </div>
+            <div>
+              <div class="text-4xl font-serif font-bold text-theme-accent">100%</div>
+              <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Bespoke menus</p>
+            </div>
+            <div>
+              <div class="text-4xl font-serif font-bold text-theme-accent">5★</div>
+              <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Client satisfaction</p>
+            </div>
           </div>
         </div>
         <div class="flex-1 relative rounded-2xl overflow-hidden shadow-2xl reveal">
           <img src="assets/home1.6.jpg" alt="testimonial" class="w-full h-96 object-cover">
           <div class="absolute inset-0 bg-theme-accent/10 flex items-end p-8">
-            <div class="bg-white/90 dark:bg-dark-gray/90 backdrop-blur-sm p-6 rounded-xl border-l-4 border-theme-accent">
+            <div
+              class="bg-white/90 dark:bg-dark-gray/90 backdrop-blur-sm p-6 rounded-xl border-l-4 border-theme-accent">
               <i class="fas fa-quote-left text-theme-accent/50 text-2xl mb-2"></i>
-              <p class="text-gray-700 dark:text-gray-300 italic">"Liquid Arts didn't just serve drinks — they curated an atmosphere. Our guests are still raving about the smoked old fashioned station."</p>
-              <p class="mt-3 text-xs uppercase tracking-wider font-bold text-dark-gray dark:text-white">— Four Seasons, Los Angeles</p>
+              <p class="text-gray-700 dark:text-gray-300 italic">"Liquid Arts didn't just serve drinks — they curated an
+                atmosphere. Our guests are still raving about the smoked old fashioned station."</p>
+              <p class="mt-3 text-xs uppercase tracking-wider font-bold text-dark-gray dark:text-white">— Four Seasons,
+                Los Angeles</p>
             </div>
           </div>
         </div>
@@ -399,61 +569,120 @@
 
   <!-- NEWSLETTER SECTION (IDENTICAL) -->
   <section class="py-24 md:py-32 bg-light-peach dark:bg-[#050505] transition-colors duration-300 relative px-4 sm:px-6">
-    <div class="absolute top-0 right-0 w-full md:w-1/2 h-[300px] bg-theme-accent/10 filter blur-[100px] rounded-full pointer-events-none"></div>
-    <div class="max-w-[1200px] mx-auto bg-white dark:bg-[#0f0f0f] rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row relative z-10 border border-gray-100 dark:border-white/5">
+    <div
+      class="absolute top-0 right-0 w-full md:w-1/2 h-[300px] bg-theme-accent/10 filter blur-[100px] rounded-full pointer-events-none">
+    </div>
+    <div
+      class="max-w-[1200px] mx-auto bg-white dark:bg-[#0f0f0f] rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row relative z-10 border border-gray-100 dark:border-white/5">
       <div class="w-full md:w-1/2 p-10 sm:p-16 md:p-20 flex flex-col justify-center relative">
-        <span class="text-theme-accent text-[10px] md:text-xs uppercase tracking-[0.4em] font-semibold mb-4">Join The Society</span>
+        <span class="text-theme-accent text-[10px] md:text-xs uppercase tracking-[0.4em] font-semibold mb-4">Join The
+          Society</span>
         <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark-gray dark:text-white mb-6">The Inner Circle</h2>
-        <p class="text-gray-500 dark:text-gray-400 font-light mb-10 text-sm md:text-base leading-relaxed">An exclusive dispatch of seasonal recipes, masterclass invitations, and access to limited-edition spirit releases. Elevate your inbox.</p>
+        <p class="text-gray-500 dark:text-gray-400 font-light mb-10 text-sm md:text-base leading-relaxed">An exclusive
+          dispatch of seasonal recipes, masterclass invitations, and access to limited-edition spirit releases. Elevate
+          your inbox.</p>
         <form class="flex flex-col sm:flex-row gap-4 relative z-10 w-full">
-          <input type="email" placeholder="Email Address" class="flex-1 px-6 py-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-dark-gray dark:text-white rounded-full focus:outline-none focus:border-theme-accent transition-colors text-sm placeholder-gray-400" required>
-          <button type="submit" class="bg-theme-accent hover:bg-dark-gray dark:hover:bg-white text-white dark:hover:text-dark-gray px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-colors shadow-lg">Subscribe</button>
+          <input type="email" placeholder="Email Address"
+            class="flex-1 px-6 py-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-dark-gray dark:text-white rounded-full focus:outline-none focus:border-theme-accent transition-colors text-sm placeholder-gray-400"
+            required>
+          <button type="submit"
+            class="bg-theme-accent hover:bg-dark-gray dark:hover:bg-white text-white dark:hover:text-dark-gray px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-colors shadow-lg">Subscribe</button>
         </form>
       </div>
       <div class="w-full md:w-1/2 h-[300px] md:h-auto relative overflow-hidden">
-        <img src="assets/hero_mixology_1778065512088.png" alt="Newsletter" class="absolute inset-0 w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 scale-105">
-        <div class="absolute inset-0 bg-gradient-to-t from-dark-gray/60 via-transparent to-transparent md:bg-gradient-to-l md:from-transparent md:to-white dark:md:to-[#0f0f0f]"></div>
+        <img src="assets/hero_mixology_1778065512088.png" alt="Newsletter"
+          class="absolute inset-0 w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 scale-105">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-dark-gray/60 via-transparent to-transparent md:bg-gradient-to-l md:from-transparent md:to-white dark:md:to-[#0f0f0f]">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER (IDENTICAL) -->
   <footer class="bg-[#050505] text-white pt-24 pb-8 relative overflow-hidden border-t border-white/5">
-    <div class="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden opacity-[0.03] translate-y-1/4"><h2 class="font-serif font-black text-[15vw] whitespace-nowrap text-white">LIQUID ARTS</h2></div>
+    <div
+      class="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none select-none overflow-hidden opacity-[0.03] translate-y-1/4">
+      <h2 class="font-serif font-black text-[15vw] whitespace-nowrap text-white">LIQUID ARTS</h2>
+    </div>
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid md:grid-cols-12 gap-12 mb-20">
-        <div class="md:col-span-4"><a href="index.html" class="inline-block mb-8"><span class="text-3xl font-serif font-bold tracking-wide"><span class="text-theme-accent italic">Liquid Arts</span></span></a><p class="text-gray-400 mb-8 text-sm leading-relaxed font-light max-w-sm">Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails, aesthetic perfection, and exceptional service.</p><div class="flex gap-4"><a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i class="fab fa-instagram"></i></a><a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i class="fab fa-facebook-f"></i></a><a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i class="fab fa-pinterest-p"></i></a></div></div>
-        <div class="md:col-span-2 md:col-start-6"><h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-white">Sitemap</h4><ul class="space-y-4 text-sm text-gray-400 font-light"><li><a href="#" class="hover:text-theme-accent transition-colors">Studio</a></li><li><a href="#" class="hover:text-theme-accent transition-colors">Capabilities</a></li><li><a href="#" class="hover:text-theme-accent transition-colors">Journal</a></li><li><a href="#" class="hover:text-theme-accent transition-colors">The Emporium</a></li></ul></div>
-        <div class="md:col-span-2"><h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-white">Services</h4><ul class="space-y-4 text-sm text-gray-400 font-light"><li><a href="#" class="hover:text-theme-accent transition-colors">Event Bartending</a></li><li><a href="#" class="hover:text-theme-accent transition-colors">Menu Design</a></li><li><a href="#" class="hover:text-theme-accent transition-colors">Masterclasses</a></li><li><a href="#" class="hover:text-theme-accent transition-colors">Consulting</a></li></ul></div>
-        <div class="md:col-span-3 text-right md:text-left"><h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-white">Headquarters</h4><ul class="space-y-4 text-sm text-gray-400 font-light"><li>Los Angeles, CA<br>Available Worldwide</li><li class="pt-2"><a href="mailto:cheers@liquidarts.com" class="text-theme-accent hover:text-white transition-colors border-b border-theme-accent/30 hover:border-white pb-1">cheers@liquidarts.com</a></li><li><a href="tel:+1234567890" class="hover:text-theme-accent transition-colors">+1 (310) 555-0199</a></li></ul></div>
+        <div class="md:col-span-4"><a href="index.html" class="inline-block mb-8"><span
+              class="text-3xl font-serif font-bold tracking-wide"><span class="text-theme-accent italic">Liquid
+                Arts</span></span></a>
+          <p class="text-gray-400 mb-8 text-sm leading-relaxed font-light max-w-sm">Curating high-end beverage
+            experiences. Elevating events globally with handcrafted cocktails, aesthetic perfection, and exceptional
+            service.</p>
+          <div class="flex gap-4"><a href="#"
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-instagram"></i></a><a href="#"
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-facebook-f"></i></a><a href="#"
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all"><i
+                class="fab fa-pinterest-p"></i></a></div>
+        </div>
+        <div class="md:col-span-2 md:col-start-6">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-white">Sitemap</h4>
+          <ul class="space-y-4 text-sm text-gray-400 font-light">
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Studio</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Capabilities</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Journal</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">The Emporium</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-white">Services</h4>
+          <ul class="space-y-4 text-sm text-gray-400 font-light">
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Event Bartending</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Menu Design</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Masterclasses</a></li>
+            <li><a href="#" class="hover:text-theme-accent transition-colors">Consulting</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3 text-right md:text-left">
+          <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-white">Headquarters</h4>
+          <ul class="space-y-4 text-sm text-gray-400 font-light">
+            <li>Los Angeles, CA<br>Available Worldwide</li>
+            <li class="pt-2"><a href="mailto:cheers@liquidarts.com"
+                class="text-theme-accent hover:text-white transition-colors border-b border-theme-accent/30 hover:border-white pb-1">cheers@liquidarts.com</a>
+            </li>
+            <li><a href="tel:+1234567890" class="hover:text-theme-accent transition-colors">+1 (310) 555-0199</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"><p class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">© 2026 Liquid Arts. All rights reserved.</p><div class="flex gap-8 text-[10px] text-gray-600 uppercase tracking-[0.2em] font-bold"><a href="#" class="hover:text-theme-accent transition-colors">Privacy</a><a href="#" class="hover:text-theme-accent transition-colors">Terms</a></div></div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">© 2026 Liquid Arts. All rights
+          reserved.</p>
+        <div class="flex gap-8 text-[10px] text-gray-600 uppercase tracking-[0.2em] font-bold"><a href="#"
+            class="hover:text-theme-accent transition-colors">Privacy</a><a href="#"
+            class="hover:text-theme-accent transition-colors">Terms</a></div>
+      </div>
     </div>
   </footer>
 
   <script>
-    (function() {
-      const themeToggle = document.getElementById('theme-toggle'), mobileThemeToggle = document.getElementById('mobile-theme-toggle'), html = document.documentElement;
-      function toggleTheme() { html.classList.contains('dark') ? (html.classList.remove('dark'), localStorage.setItem('theme','light')) : (html.classList.add('dark'), localStorage.setItem('theme','dark')); }
-      if(themeToggle) themeToggle.addEventListener('click', toggleTheme);
-      if(mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
-      if(localStorage.getItem('theme') === 'dark') html.classList.add('dark'); else if(localStorage.getItem('theme') === 'light') html.classList.remove('dark'); else html.classList.add('dark');
-      
-      const rtlToggle = document.getElementById('rtl-toggle'), mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
-      function toggleRTL() { html.getAttribute('dir') === 'rtl' ? (html.removeAttribute('dir'), localStorage.setItem('direction','ltr')) : (html.setAttribute('dir','rtl'), localStorage.setItem('direction','rtl')); }
-      if(rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
-      if(mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
-      if(localStorage.getItem('direction') === 'rtl') html.setAttribute('dir','rtl');
-      
-      const mobileMenuBtn = document.getElementById('mobile-menu-button'), mobileMenu = document.getElementById('mobile-menu'), menuIcon = document.getElementById('menu-icon'), closeIcon = document.getElementById('close-icon');
-      if(mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', (e) => { e.stopPropagation(); const hidden = mobileMenu.classList.contains('hidden'); if(hidden) { mobileMenu.classList.remove('hidden'); menuIcon.classList.add('hidden'); closeIcon.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } else { mobileMenu.classList.add('hidden'); menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); document.body.style.overflow = ''; } });
-      document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => { if(mobileMenu && !mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); if(menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } document.body.style.overflow = ''; } }));
-      const homeBtn = document.getElementById('mobile-home-dropdown-btn'), homeSub = document.getElementById('mobile-home-submenu'), homeIcon = document.getElementById('mobile-home-icon');
-      if(homeBtn && homeSub) { homeSub.classList.add('hidden'); homeIcon.classList.remove('rotate'); homeBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); homeSub.classList.toggle('hidden'); homeIcon.classList.toggle('rotate'); }); }
-      
-      const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    })();
+      (function () {
+        const themeToggle = document.getElementById('theme-toggle'), mobileThemeToggle = document.getElementById('mobile-theme-toggle'), html = document.documentElement;
+        function toggleTheme() { html.classList.contains('dark') ? (html.classList.remove('dark'), localStorage.setItem('theme', 'light')) : (html.classList.add('dark'), localStorage.setItem('theme', 'dark')); }
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+        if (localStorage.getItem('theme') === 'dark') html.classList.add('dark'); else if (localStorage.getItem('theme') === 'light') html.classList.remove('dark'); else html.classList.add('dark');
+
+        const rtlToggle = document.getElementById('rtl-toggle'), mobileRtlToggle = document.getElementById('mobile-rtl-toggle');
+        function toggleRTL() { html.getAttribute('dir') === 'rtl' ? (html.removeAttribute('dir'), localStorage.setItem('direction', 'ltr')) : (html.setAttribute('dir', 'rtl'), localStorage.setItem('direction', 'rtl')); }
+        if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+        if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+        if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-button'), mobileMenu = document.getElementById('mobile-menu'), menuIcon = document.getElementById('menu-icon'), closeIcon = document.getElementById('close-icon');
+        if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', (e) => { e.stopPropagation(); const hidden = mobileMenu.classList.contains('hidden'); if (hidden) { mobileMenu.classList.remove('hidden'); menuIcon.classList.add('hidden'); closeIcon.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } else { mobileMenu.classList.add('hidden'); menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); document.body.style.overflow = ''; } });
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => { if (mobileMenu && !mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } document.body.style.overflow = ''; } }));
+        const homeBtn = document.getElementById('mobile-home-dropdown-btn'), homeSub = document.getElementById('mobile-home-submenu'), homeIcon = document.getElementById('mobile-home-icon');
+        if (homeBtn && homeSub) { homeSub.classList.add('hidden'); homeIcon.classList.remove('rotate'); homeBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); homeSub.classList.toggle('hidden'); homeIcon.classList.toggle('rotate'); }); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      })();
   </script>
 </body>
 
