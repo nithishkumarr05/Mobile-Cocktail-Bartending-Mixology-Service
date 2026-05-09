@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
   <title>Liquid Arts | 404 — Cocktail Not Found</title>
   <link rel="icon" href="/assets/fav.png" type="image/jpeg">
-  <meta name="description" content="Page not found — The cocktail you're looking for has been shaken, stirred, and lost in transit. Return to Liquid Arts for premium mobile bartending experiences.">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description"
+    content="Page not found — The cocktail you're looking for has been shaken, stirred, and lost in transit. Return to Liquid Arts for premium mobile bartending experiences.">
+
+  <script src="tailwind.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+
   <style>
     /* CRITICAL: COMPLETELY STATIC — NO MOVEMENT, FULLY RESPONSIVE, NO TOP COCKTAIL ICON */
     * {
@@ -22,7 +27,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -117,21 +123,22 @@
       margin-bottom: clamp(0.5rem, 3vw, 1.25rem);
       text-align: center;
     }
-    
+
     .glow-text {
       color: #F59E0B;
       font-family: 'Playfair Display', serif;
       font-weight: 800;
       font-size: clamp(65px, 14vw, 160px);
       line-height: 1;
-      text-shadow: 0 0 8px rgba(245,158,11,0.25);
+      text-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
       display: inline-block;
       position: relative;
       z-index: 10;
     }
-    
+
     /* Decorative lines - responsive positioning, smaller */
-    .decor-left, .decor-right {
+    .decor-left,
+    .decor-right {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -140,37 +147,51 @@
       gap: clamp(3px, 1.2vw, 8px);
       pointer-events: none;
     }
-    
+
     .decor-left {
       left: clamp(-28px, -6vw, -15px);
     }
-    
+
     .decor-right {
       right: clamp(-28px, -6vw, -15px);
     }
-    
+
     @media (max-width: 640px) {
       .decor-left {
         left: clamp(-18px, -4vw, -10px);
       }
+
       .decor-right {
         right: clamp(-18px, -4vw, -10px);
       }
+
       .decor-line {
         width: 3px;
       }
     }
-    
+
     .decor-line {
       width: clamp(2px, 0.7vw, 4px);
       height: clamp(6px, 2vw, 12px);
       background: #F59E0B;
       border-radius: 3px;
     }
-    
-    .decor-line:nth-child(1), .decor-line:nth-child(5) { opacity: 0.25; height: clamp(5px, 1.6vw, 9px); }
-    .decor-line:nth-child(2), .decor-line:nth-child(4) { opacity: 0.5; }
-    .decor-line:nth-child(3) { opacity: 1; height: clamp(8px, 2.4vw, 15px); }
+
+    .decor-line:nth-child(1),
+    .decor-line:nth-child(5) {
+      opacity: 0.25;
+      height: clamp(5px, 1.6vw, 9px);
+    }
+
+    .decor-line:nth-child(2),
+    .decor-line:nth-child(4) {
+      opacity: 0.5;
+    }
+
+    .decor-line:nth-child(3) {
+      opacity: 1;
+      height: clamp(8px, 2.4vw, 15px);
+    }
 
     /* Navigation cards - responsive, no movement, compact */
     .nav-card {
@@ -186,17 +207,17 @@
       align-items: center;
       gap: clamp(3px, 1.2vw, 6px);
     }
-    
+
     .nav-card:hover {
       border-color: #F59E0B;
       background-color: rgba(245, 158, 11, 0.1);
     }
-    
+
     .nav-card i {
       font-size: clamp(1rem, 4vw, 1.5rem);
       color: #F59E0B;
     }
-    
+
     .nav-card span {
       font-size: clamp(7px, 2.5vw, 10px);
       color: #d1d5db;
@@ -225,7 +246,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .btn-shine::after {
       content: '';
       position: absolute;
@@ -237,15 +258,15 @@
       transition: left 0.4s ease;
       pointer-events: none;
     }
-    
+
     .btn-shine:hover::after {
       left: 100%;
     }
-    
+
     .btn-shine:hover {
       background: #D97706;
     }
-    
+
     .btn-shine i {
       font-size: clamp(0.6rem, 2.2vw, 0.8rem);
     }
@@ -258,7 +279,7 @@
       letter-spacing: -0.025em;
       margin-bottom: 0.5rem;
     }
-    
+
     .message-text {
       font-size: clamp(0.7rem, 3vw, 0.95rem);
       color: #d1d5db;
@@ -266,19 +287,19 @@
       max-width: 460px;
       margin: 0 auto;
     }
-    
+
     .help-text {
       font-size: clamp(0.65rem, 2.6vw, 0.8rem);
       color: #6b7280;
       margin-top: clamp(1.2rem, 5vw, 2rem);
     }
-    
+
     .help-text a {
       color: #F59E0B;
       text-decoration: none;
       transition: color 0.2s ease;
     }
-    
+
     .help-text a:hover {
       text-decoration: underline;
     }
@@ -292,95 +313,111 @@
       width: 100%;
       margin: clamp(1.2rem, 5vw, 2rem) auto;
     }
-    
+
     /* Ensure no scrollbars */
     ::-webkit-scrollbar {
       display: none;
     }
-    
+
     /* Responsive adjustments for very small devices */
     @media (max-width: 480px) {
       .nav-grid {
         max-width: 210px;
         gap: 0.65rem;
       }
+
       .btn-shine {
         white-space: normal;
         text-align: center;
         line-height: 1.3;
         padding: 0.5rem 1rem;
       }
+
       .content-wrapper {
         padding: 0.8rem;
       }
     }
-    
+
     /* Medium screens fine tuning */
     @media (min-width: 1280px) {
       .glow-text {
         font-size: 160px;
       }
+
       .decor-left {
         left: -38px;
       }
+
       .decor-right {
         right: -38px;
       }
+
       .content-wrapper {
         max-width: 880px;
       }
     }
-    
+
     /* Extra small devices (phones < 380px) */
     @media (max-width: 380px) {
       .glow-text {
         font-size: 55px;
       }
-      .decor-left, .decor-right {
+
+      .decor-left,
+      .decor-right {
         gap: 3px;
       }
+
       .decor-left {
         left: -12px;
       }
+
       .decor-right {
         right: -12px;
       }
+
       .message-title {
         font-size: 1.1rem;
       }
+
       .message-text {
         font-size: 0.7rem;
       }
     }
-    
+
     /* No movement anywhere */
-    .glow-text, .decor-line, .nav-card i, .btn-shine i {
+    .glow-text,
+    .decor-line,
+    .nav-card i,
+    .btn-shine i {
       animation: none !important;
       transform: translateZ(0);
     }
-    
+
     .nav-card:hover .nav-icon {
       transform: none !important;
     }
-    
+
     .btn-shine:hover .arrow-icon,
     .btn-shine:hover .cocktail-icon-btn {
       transform: none !important;
     }
-    
+
     /* Ensure no floating or extra icons */
     .removed-icon-space {
       display: none;
     }
   </style>
 </head>
+
 <body>
 
   <!-- Background Image Container -->
   <div class="background-container">
-    <img src="assets/about1.jpg" alt="Cocktail background" onerror="this.style.opacity='0'; this.parentElement.style.backgroundColor='#0a0a0a';">
+    <img src="assets/about1.jpg" alt="Cocktail background"
+      onerror="this.style.opacity='0'; this.parentElement.style.backgroundColor='#0a0a0a';">
   </div>
-  
+
   <!-- Static Overlay Gradients -->
   <div class="overlay-gradient"></div>
   <div class="overlay-gradient-bottom"></div>
@@ -389,7 +426,7 @@
   <div class="fixed-container">
     <div class="content-wrapper">
       <div class="text-center w-full">
-        
+
         <!-- 404 Number with Decorative Lines - ICON COMPLETELY REMOVED -->
         <div class="four-zero-four">
           <div class="decor-left">
@@ -415,11 +452,11 @@
             <span class="text-[#F59E0B]">Cocktail Not Found</span>
           </h1>
           <p class="message-text">
-            This page has been shaken, stirred, and lost in transit. 
+            This page has been shaken, stirred, and lost in transit.
             The cocktail you're looking for might have evaporated or moved to another menu.
           </p>
         </div>
-    
+
         <!-- Quick Navigation Links - Responsive Grid, smaller card sizing -->
         <div class="nav-grid">
           <a href="index.html" class="nav-card">
@@ -451,7 +488,7 @@
 
   <!-- NO MOVEMENT SCRIPT - completely static page, fully responsive, ensures no floating icon -->
   <script>
-    (function() {
+    (function () {
       // Lock body to ensure no scrolling whatsoever
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
@@ -463,44 +500,44 @@
       document.body.style.bottom = '0';
       document.body.style.width = '100%';
       document.body.style.height = '100%';
-      
+
       // Prevent all touch movements that could cause scrolling
       function preventAllMovement(e) {
         e.preventDefault();
         return false;
       }
-      
+
       // Prevent touchmove on entire document (only if needed, but keep static)
       document.body.addEventListener('touchmove', preventAllMovement, { passive: false });
       // Allow taps but no drag scrolling: we still want links to be clickable, so only prevent touchmove but not touchstart completely
       // We adjust: touchstart only blocks if it's a two-finger or non-link element? to keep UX we only block move, not all touches.
       // Refine: Let links be clickable but no scrolling: we already lock body position fixed. Touchmove prevents accidental scroll.
-      
+
       // Prevent wheel scrolling
-      window.addEventListener('wheel', function(e) {
+      window.addEventListener('wheel', function (e) {
         e.preventDefault();
         return false;
       }, { passive: false });
-      
+
       // Prevent keyboard scrolling
-      window.addEventListener('keydown', function(e) {
+      window.addEventListener('keydown', function (e) {
         const keys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' ', 'Space', 'PageUp', 'PageDown', 'Home', 'End'];
         if (keys.includes(e.key) || e.key === 'Space' || e.key === ' ') {
           e.preventDefault();
           return false;
         }
       });
-      
+
       // Constantly reset scroll position to 0,0
       function resetScroll() {
         window.scrollTo(0, 0);
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
       }
-      
+
       resetScroll();
       window.addEventListener('scroll', resetScroll);
-      
+
       // Fix for any elements that might inadvertently cause overflow
       const allParents = [document.documentElement, document.body];
       allParents.forEach(el => {
@@ -515,7 +552,7 @@
           el.style.overflow = 'hidden';
         }
       });
-      
+
       // Remove any existing particles or animations, and also any possible leftover cocktail icon containers
       const removeParticlesAndIcon = () => {
         const particles = document.querySelectorAll('.ambient-particle, .particle, [class*="particle"]');
@@ -528,17 +565,17 @@
         strayIcons.forEach(icon => icon.remove());
       };
       removeParticlesAndIcon();
-      
+
       // Ensure no CSS animations on key elements
       const staticElements = document.querySelectorAll('.glow-text, .decor-line, .nav-card i, .btn-shine i');
       staticElements.forEach(el => {
         el.style.animation = 'none';
         if (el.style.transition) el.style.transition = 'none';
       });
-      
+
       // Monitor for any dynamically added animations or reappearing icons
-      const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
+      const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
           if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
             if (mutation.target.style && mutation.target.style.animation) {
               mutation.target.style.animation = 'none';
@@ -560,19 +597,19 @@
             });
           }
         });
-        
+
         // Always ensure body is fixed and no overflow
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
         window.scrollTo(0, 0);
       });
-      
+
       observer.observe(document.body, { attributes: true, childList: true, subtree: true });
       observer.observe(document.documentElement, { attributes: true });
-      
+
       // Resize handling - maintain no overflow, update responsive sizing & ensure no icon reappears
       let resizeTimeout;
-      window.addEventListener('resize', function() {
+      window.addEventListener('resize', function () {
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
         resetScroll();
@@ -591,13 +628,13 @@
           }
         }, 100);
       });
-      
+
       // Lock viewport meta to allow user-scalable but maintain responsiveness
       const metaViewport = document.querySelector('meta[name="viewport"]');
       if (metaViewport) {
         metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover');
       }
-      
+
       // Disable all intrusive transitions and ensure no top icon movement
       const style = document.createElement('style');
       style.textContent = `
@@ -638,9 +675,9 @@
         }
       `;
       document.head.appendChild(style);
-      
+
       // Force final check on load: no icon appears, content size is slightly scaled down
-      window.addEventListener('load', function() {
+      window.addEventListener('load', function () {
         removeParticlesAndIcon();
         resetScroll();
         // Double-check that no cocktail icon container exists above 404
@@ -659,7 +696,7 @@
           container.style.overflow = 'visible';
         }
       });
-      
+
       // Also re-run removal after a micro second in case any late rendering adds any remnant
       setTimeout(() => {
         removeParticlesAndIcon();
@@ -670,18 +707,30 @@
         const topIcon = document.querySelector('.top-cocktail-icon');
         if (topIcon) topIcon.remove();
       }, 50);
-      
+
       console.log('Page is completely static, fully responsive, cocktail icon removed, content scaled slightly smaller');
     })();
   </script>
-  
+
   <noscript>
     <style>
-      body { background: #0a0a0a; }
-      .background-container img { opacity: 0; }
-      .glow-text { font-size: 90px; }
-      .message-text { font-size: 14px; }
+      body {
+        background: #0a0a0a;
+      }
+
+      .background-container img {
+        opacity: 0;
+      }
+
+      .glow-text {
+        font-size: 90px;
+      }
+
+      .message-text {
+        font-size: 14px;
+      }
     </style>
   </noscript>
 </body>
+
 </html>
