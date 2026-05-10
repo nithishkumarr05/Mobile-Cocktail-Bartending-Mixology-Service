@@ -47,7 +47,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-     
+
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       opacity: 0.35;
@@ -74,7 +75,7 @@
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
-      padding: clamp(12px, 3vh, 24px);
+      padding: 0 16px;
       max-height: 100%;
       display: flex;
       align-items: center;
@@ -83,11 +84,11 @@
     /* Card styling - Liquid Arts Premium */
     .signup-card {
       background: #ffffff;
-      border-radius: clamp(20px, 4vh, 28px);
-      padding: clamp(18px, 3.5vh, 32px) clamp(20px, 5vw, 36px);
+      border-radius: 28px;
+      padding: 24px 28px;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
       width: 100%;
-      max-height: calc(100vh - 40px);
+      max-height: calc(100vh - 32px);
       overflow-y: auto;
       scrollbar-width: thin;
       transition: background 0.2s ease, border-color 0.2s;
@@ -114,12 +115,12 @@
     /* Logo - Liquid Arts */
     .logo {
       text-align: center;
-      margin-bottom: clamp(8px, 2vh, 20px);
+      margin-bottom: 14px;
     }
 
     .logo a {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(20px, 4vh, 26px);
+      font-size: 24px;
       font-weight: 700;
       font-style: italic;
       text-decoration: none;
@@ -141,15 +142,15 @@
     /* Title */
     .title {
       text-align: center;
-      margin-bottom: clamp(8px, 2vh, 18px);
+      margin-bottom: 14px;
     }
 
     .title h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(18px, 3.2vh, 26px);
+      font-size: 24px;
       font-weight: 700;
       color: #1a1a1a;
-      margin-bottom: clamp(2px, 0.5vh, 6px);
+      margin-bottom: 4px;
     }
 
     .dark-mode .title h1 {
@@ -157,7 +158,7 @@
     }
 
     .title p {
-      font-size: clamp(11px, 1.8vh, 13px);
+      font-size: 12px;
       color: #666;
     }
 
@@ -169,14 +170,14 @@
     .social-login {
       display: flex;
       justify-content: center;
-      gap: clamp(6px, 1.8vw, 12px);
-      margin-bottom: clamp(8px, 2vh, 20px);
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
     .social-btn {
       flex: 1;
-      height: clamp(36px, 5vh, 44px);
-      border-radius: clamp(8px, 1.5vh, 40px);
+      height: 42px;
+      border-radius: 40px;
       border: 1px solid #e0e0e0;
       background: #ffffff;
       cursor: pointer;
@@ -184,7 +185,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      font-size: clamp(10px, 1.6vh, 13px);
+      font-size: 12px;
       font-weight: 600;
       color: #333;
       transition: all 0.2s;
@@ -197,7 +198,7 @@
     }
 
     .social-btn i {
-      font-size: clamp(12px, 2vh, 16px);
+      font-size: 14px;
     }
 
     .social-btn.google i {
@@ -219,7 +220,7 @@
     /* Divider */
     .divider {
       text-align: center;
-      margin: clamp(8px, 1.8vh, 16px) 0 clamp(10px, 2vh, 18px);
+      margin: 12px 0 16px;
       position: relative;
     }
 
@@ -241,7 +242,7 @@
       position: relative;
       background: #ffffff;
       padding: 0 12px;
-      font-size: clamp(8px, 1.4vh, 10px);
+      font-size: 9px;
       font-weight: 600;
       color: #888;
       text-transform: uppercase;
@@ -255,17 +256,17 @@
 
     /* Form groups */
     .form-group {
-      margin-bottom: clamp(8px, 1.8vh, 14px);
+      margin-bottom: 10px;
     }
 
     .form-group label {
       display: block;
-      font-size: clamp(10px, 1.5vh, 12px);
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #374151;
-      margin-bottom: clamp(4px, 1vh, 8px);
+      margin-bottom: 5px;
     }
 
     .dark-mode .form-group label {
@@ -273,14 +274,13 @@
     }
 
     /* ========== FIELDS MAKER FONT AS BOLD ========== */
-    /* Applied bold weight to all input field text, placeholder remains lighter but value becomes bold */
     .form-group input {
       width: 100%;
-      padding: clamp(10px, 1.6vh, 14px) clamp(12px, 2vw, 16px);
+      padding: 11px 14px;
       border: 1px solid #e5e7eb;
-      border-radius: clamp(8px, 1.5vh, 12px);
-      font-size: clamp(12px, 1.8vh, 14px);
-      font-weight: 700;       /* BOLD font weight for user input text */
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
       color: #1a1a1a;
       background: #f9fafb;
       font-family: 'Lato', sans-serif;
@@ -291,13 +291,12 @@
       color: #ffffff;
       border-color: rgba(255, 255, 255, 0.1);
       background: rgba(255, 255, 255, 0.05);
-      font-weight: 700;       /* Kept bold in dark mode */
+      font-weight: 700;
     }
 
-    /* Keep placeholder lighter for visual balance */
     .form-group input::placeholder {
       color: #9ca3af;
-      font-weight: 400;       /* normal weight for placeholder */
+      font-weight: 400;
     }
 
     .dark-mode .form-group input::placeholder {
@@ -317,19 +316,19 @@
     }
 
     .password-wrapper input {
-      padding-right: clamp(36px, 5vw, 48px);
+      padding-right: 44px;
     }
 
     .toggle-password {
       position: absolute;
-      right: clamp(8px, 1.5vw, 12px);
+      right: 12px;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
       color: #9ca3af;
       cursor: pointer;
-      font-size: clamp(11px, 1.7vh, 14px);
+      font-size: 13px;
       padding: 6px;
       transition: color 0.2s;
     }
@@ -348,7 +347,7 @@
 
     /* Checkbox */
     .checkbox-group {
-      margin: clamp(8px, 2vh, 16px) 0 clamp(12px, 2.5vh, 20px);
+      margin: 12px 0 16px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -356,15 +355,15 @@
     }
 
     .checkbox-group input {
-      width: clamp(13px, 1.8vh, 15px);
-      height: clamp(13px, 1.8vh, 15px);
+      width: 14px;
+      height: 14px;
       cursor: pointer;
       accent-color: #F59E0B;
       flex-shrink: 0;
     }
 
     .checkbox-group label {
-      font-size: clamp(9px, 1.6vh, 11px);
+      font-size: 10px;
       color: #666;
       cursor: pointer;
       line-height: 1.3;
@@ -383,17 +382,17 @@
 
     .btn-create {
       width: 100%;
-      padding: clamp(9px, 2vh, 13px);
+      padding: 12px;
       background: #F59E0B;
       border: none;
       border-radius: 40px;
       color: white;
-      font-size: clamp(11px, 1.8vh, 13px);
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       cursor: pointer;
-      margin-bottom: clamp(10px, 2vh, 20px);
+      margin-bottom: 16px;
       font-family: 'Lato', sans-serif;
       transition: background 0.2s, transform 0.05s;
     }
@@ -404,9 +403,9 @@
 
     .login-link {
       text-align: center;
-      font-size: clamp(10px, 1.6vh, 12px);
+      font-size: 11px;
       color: #666;
-      padding-top: clamp(8px, 1.8vh, 16px);
+      padding-top: 12px;
       border-top: 1px solid #eee;
     }
 
@@ -425,18 +424,18 @@
     /* Floating controls - Proper spacing, no touch issues */
     .top-controls {
       position: fixed;
-      top: clamp(16px, 3vh, 24px);
-      right: clamp(16px, 3vw, 28px);
+      top: 18px;
+      right: 18px;
       display: flex;
-      gap: 12px;
+      gap: 10px;
       z-index: 200;
       background: transparent;
       isolation: isolate;
     }
 
     .control-btn {
-      width: clamp(38px, 5.5vh, 46px);
-      height: clamp(38px, 5.5vh, 46px);
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: rgba(20, 20, 24, 0.72);
       backdrop-filter: blur(12px);
@@ -446,7 +445,7 @@
       justify-content: center;
       cursor: pointer;
       color: #f5f0e6;
-      font-size: clamp(15px, 2.4vh, 18px);
+      font-size: 16px;
       transition: 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
@@ -482,9 +481,9 @@
       transform: translateX(-50%);
       background: #F59E0B;
       color: white;
-      padding: 12px 26px;
+      padding: 10px 22px;
       border-radius: 60px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       z-index: 300;
       animation: toastFade 2.5s ease forwards;
@@ -518,8 +517,85 @@
       }
     }
 
-    /* responsive spacing for extra small screens */
-    @media (max-width: 480px) {
+    /* ===== EXTRA SPECIFIC: 360x740 & all mobile sizes ===== */
+    @media (max-width: 450px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .signup-card {
+        padding: 18px 20px;
+        border-radius: 24px;
+        max-height: calc(100vh - 24px);
+      }
+
+      .logo {
+        margin-bottom: 8px;
+      }
+
+      .logo a {
+        font-size: 22px;
+      }
+
+      .title {
+        margin-bottom: 8px;
+      }
+
+      .title h1 {
+        font-size: 22px;
+      }
+
+      .title p {
+        font-size: 11px;
+      }
+
+      .social-login {
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .social-btn {
+        height: 38px;
+        font-size: 11px;
+        gap: 4px;
+      }
+
+      .social-btn i {
+        font-size: 12px;
+      }
+
+      .divider {
+        margin: 8px 0 12px;
+      }
+
+      .form-group {
+        margin-bottom: 8px;
+      }
+
+      .form-group input {
+        padding: 9px 12px;
+        font-size: 12px;
+      }
+
+      .checkbox-group {
+        margin: 8px 0 12px;
+      }
+
+      .checkbox-group label {
+        font-size: 9px;
+      }
+
+      .btn-create {
+        padding: 10px;
+        font-size: 11px;
+        margin-bottom: 12px;
+      }
+
+      .login-link {
+        font-size: 10px;
+        padding-top: 10px;
+      }
+
       .top-controls {
         top: 12px;
         right: 12px;
@@ -527,34 +603,160 @@
       }
 
       .control-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
       }
     }
 
-    @media (max-height: 560px) {
-      .top-controls {
-        top: 8px;
-        right: 10px;
+    /* specific height handling for 360*740 and similar compact heights */
+    @media (max-height: 750px) and (min-width: 320px) {
+      .signup-card {
+        padding: 14px 20px;
+        max-height: calc(100vh - 20px);
+      }
+
+      .logo {
+        margin-bottom: 6px;
+      }
+
+      .logo a {
+        font-size: 20px;
+      }
+
+      .title {
+        margin-bottom: 6px;
+      }
+
+      .title h1 {
+        font-size: 20px;
+        margin-bottom: 2px;
+      }
+
+      .title p {
+        font-size: 10px;
+      }
+
+      .social-login {
+        margin-bottom: 8px;
+        gap: 6px;
+      }
+
+      .social-btn {
+        height: 34px;
+        font-size: 10px;
+      }
+
+      .divider {
+        margin: 6px 0 8px;
+      }
+
+      .form-group {
+        margin-bottom: 6px;
+      }
+
+      .form-group label {
+        font-size: 9px;
+        margin-bottom: 3px;
+      }
+
+      .form-group input {
+        padding: 7px 10px;
+        font-size: 11px;
+      }
+
+      .password-wrapper input {
+        padding-right: 36px;
+      }
+
+      .toggle-password {
+        font-size: 11px;
+        right: 8px;
+      }
+
+      .checkbox-group {
+        margin: 6px 0 8px;
+        gap: 6px;
+      }
+
+      .checkbox-group label {
+        font-size: 8px;
+      }
+
+      .btn-create {
+        padding: 8px;
+        font-size: 10px;
+        margin-bottom: 8px;
+      }
+
+      .login-link {
+        font-size: 9px;
+        padding-top: 8px;
       }
 
       .control-btn {
         width: 34px;
         height: 34px;
-        font-size: 14px;
+        font-size: 13px;
+      }
+
+      .top-controls {
+        top: 8px;
+        right: 8px;
       }
     }
 
-    /* Handle RTL properly for the controls */
+    /* additional ultra tiny adjustments for 360x740 precisely */
+    @media (max-device-height: 740px) and (max-device-width: 380px) {
+      .signup-card {
+        padding: 12px 16px;
+      }
+
+      .logo {
+        margin-bottom: 4px;
+      }
+
+      .logo a {
+        font-size: 19px;
+      }
+
+      .title h1 {
+        font-size: 18px;
+      }
+
+      .title p {
+        font-size: 9px;
+      }
+
+      .social-btn {
+        height: 32px;
+        font-size: 9px;
+      }
+
+      .form-group input {
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+
+      .checkbox-group {
+        margin: 4px 0 6px;
+      }
+
+      .btn-create {
+        padding: 7px;
+        font-size: 9px;
+      }
+    }
+
+    /* RTL support */
     [dir="rtl"] .top-controls {
       right: auto;
-      left: clamp(16px, 3vw, 28px);
+      left: 18px;
     }
 
     [dir="rtl"] .toggle-password {
       right: auto;
-      left: clamp(8px, 1.5vw, 12px);
+      left: 12px;
     }
 
     [dir="rtl"] .checkbox-group {
@@ -570,7 +772,18 @@
       flex-direction: row-reverse;
     }
 
-    /* ensure card inner content always respects boundaries */
+    @media (max-width: 450px) {
+      [dir="rtl"] .top-controls {
+        left: 12px;
+        right: auto;
+      }
+
+      [dir="rtl"] .toggle-password {
+        left: 8px;
+        right: auto;
+      }
+    }
+
     .signup-card * {
       max-width: 100%;
     }
@@ -578,37 +791,6 @@
     input,
     button {
       font-family: inherit;
-    }
-
-    @media (max-height: 620px) {
-      .signup-card {
-        padding: 16px 22px;
-        max-height: calc(100vh - 24px);
-      }
-
-      .form-group {
-        margin-bottom: 6px;
-      }
-
-      .checkbox-group {
-        margin: 6px 0 10px;
-      }
-
-      .title {
-        margin-bottom: 4px;
-      }
-
-      .social-login {
-        margin-bottom: 6px;
-      }
-
-      .divider {
-        margin: 6px 0 8px;
-      }
-
-      .btn-create {
-        margin-bottom: 8px;
-      }
     }
   </style>
 </head>
@@ -822,11 +1004,10 @@
 
         const firstName = fullname.split(' ')[0] || "Mixologist";
         showToast(`🍸 Welcome ${firstName}! Your signature cocktail journey begins.`);
-        // Optional: you could reset form or do further logic here
       });
     }
 
-    // Enforce no global body scroll (body already fixed) - safety guard for touch events
+    // Enforce no global body scroll while allowing scroll inside card
     function preventBodyScrollOnOuter(e) {
       const insideCard = e.target.closest('.signup-card');
       if (!insideCard) {

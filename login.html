@@ -10,7 +10,7 @@
     content="Login to Liquid Arts — access your event bookings, signature cocktail menus, and mixology dashboard.">
   <link rel="icon" href="/assets/fav.jpg" type="image/jpeg">
   <!-- Tailwind + Fonts + Icons -->
-  <script src="tailwind.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -212,11 +212,12 @@
       }
     }
 
-    /* Fix for 360px touch & avoid overflow */
+    /* Fix for 360px touch & avoid overflow - EXTREME MOBILE OPTIMIZATION */
     @media (max-width: 400px) {
 
       .glass-card .p-6,
-      .glass-card .p-8 {
+      .glass-card .p-8,
+      .glass-card>div:last-child {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
       }
@@ -231,6 +232,96 @@
 
       .rtl .glass-card {
         border-radius: 1.5rem !important;
+      }
+
+      /* Extra compact for 360px */
+      .glass-card>div:last-child {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+      }
+
+      .glass-card .text-center.mb-6 {
+        margin-bottom: 0.5rem !important;
+      }
+
+      .glass-card .flex.justify-center.gap-3 {
+        margin-bottom: 0.5rem !important;
+      }
+
+      .glass-card .relative.flex.items-center.justify-center.mb-7 {
+        margin-bottom: 0.5rem !important;
+      }
+
+      .glass-card form.space-y-5 {
+        gap: 0.75rem !important;
+      }
+
+      .glass-card form.space-y-5>div {
+        margin-bottom: 0 !important;
+      }
+
+      .glass-card .mt-7 {
+        margin-top: 0.5rem !important;
+      }
+
+      .glass-card .pt-1 {
+        padding-top: 0 !important;
+      }
+    }
+
+    /* Specific 360x740 height optimization */
+    @media (max-height: 750px) and (max-width: 400px) {
+      .glass-card>div:last-child {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+
+      .glass-card .text-center.mb-6 {
+        margin-bottom: 0.25rem !important;
+      }
+
+      .glass-card .text-2xl {
+        font-size: 1.25rem !important;
+      }
+
+      .glass-card .flex.justify-center.gap-3 {
+        margin-bottom: 0.25rem !important;
+      }
+
+      .social-login-btn {
+        height: 2.25rem !important;
+      }
+
+      .glass-card .relative.flex.items-center.justify-center.mb-7 {
+        margin-bottom: 0.25rem !important;
+      }
+
+      .glass-card form.space-y-5 {
+        gap: 0.5rem !important;
+      }
+
+      .glass-card input {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+
+      .glass-card button[type="submit"] {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        margin-top: 0.25rem !important;
+      }
+
+      .glass-card .mt-7 {
+        margin-top: 0.25rem !important;
+      }
+
+      .md\:hidden.text-center.mb-5 {
+        margin-bottom: 0.25rem !important;
+        padding-top: 0 !important;
+      }
+
+      .md\:hidden .text-3xl {
+        font-size: 1.5rem !important;
       }
     }
 
@@ -294,6 +385,25 @@
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;
     }
+
+    /* Ensure proper tap targets for mobile */
+    button,
+    a,
+    [role="button"] {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* Prevent any horizontal scroll */
+    .overflow-x-hidden {
+      overflow-x: hidden !important;
+    }
+
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 
@@ -329,8 +439,8 @@
     <!-- Left Panel: Cocktail Artistry Atmosphere - responsive on desktop, hidden on mobile <md -->
     <div
       class="hidden md:flex w-full md:w-1/2 relative text-white flex-col justify-between h-full overflow-hidden rounded-l-2xl rtl:rounded-l-none rtl:rounded-r-2xl">
-      <img src="assets/home1.5.jpg" alt="Signature cocktail pour" class="absolute inset-0 w-full h-full object-cover"
-        onerror="this.src='https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&q=90&w=2000'">
+      <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&q=90&w=2000"
+        alt="Signature cocktail pour" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70"></div>
       <div class="absolute left-0 top-0 bottom-0 w-1 bg-theme-accent/60 rtl:left-auto rtl:right-0"></div>
 
@@ -506,15 +616,15 @@
         const htmlTag = document.documentElement;
         function updateThemeIcons() {
           const isDark = htmlTag.classList.contains('dark');
-          const sunIcons = document.querySelectorAll('#theme-toggle-login .fa-sun');
-          const moonIcons = document.querySelectorAll('#theme-toggle-login .fa-moon');
-          if (sunIcons.length && moonIcons.length) {
+          const sunIcon = document.querySelector('#theme-toggle-login .fa-sun');
+          const moonIcon = document.querySelector('#theme-toggle-login .fa-moon');
+          if (sunIcon && moonIcon) {
             if (isDark) {
-              sunIcons[0].classList.add('hidden');
-              moonIcons[0].classList.remove('hidden');
+              sunIcon.classList.add('hidden');
+              moonIcon.classList.remove('hidden');
             } else {
-              sunIcons[0].classList.remove('hidden');
-              moonIcons[0].classList.add('hidden');
+              sunIcon.classList.remove('hidden');
+              moonIcon.classList.add('hidden');
             }
           }
         }
@@ -549,11 +659,6 @@
           } else {
             htmlTag.removeAttribute('dir');
             localStorage.setItem('direction', 'ltr');
-          }
-          // Force rerun for all elements that need text alignment fix manually
-          const rightPanel = document.querySelector('.glass-card > div:last-child');
-          if (rightPanel && isRtl) {
-            // ensure consistency
           }
         }
         function toggleRTL() {
@@ -662,17 +767,6 @@
 
     .fa-sun {
       display: inline-block;
-    }
-
-    @media (max-width: 768px) {
-
-      button,
-      a,
-      [role="button"] {
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-      }
     }
 
     .hide-scrollbar {
