@@ -31,7 +31,7 @@
             'theme-accent-light': '#FCD34D',
 
             'dark-gray': '#0a0a0a',
-            'light-peach': '#fdfbf7',
+            'light-peach': '#FFFFFF',
             white: '#FFFFFF'
           },
           fontFamily: {
@@ -191,7 +191,7 @@
 
   <!-- HEADER UPDATED WITH RUBY THEME -->
   <nav
-    class="bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+    class="bg-white dark:bg-[#0a0a0a] fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
     <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
 
@@ -351,20 +351,20 @@
 
   <!-- HERO SECTION - AVANT-GARDE CENTERED -->
   <section
-    class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-light-peach dark:bg-dark-gray z-0">
+    class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0a0a0a] z-0">
     <!-- Radial Gradient Background -->
     <div
-      class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.1)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.15)_0%,transparent_60%)]">
+      class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.15)_0%,transparent_60%)]">
     </div>
 
     <!-- Cinematic Background Image -->
-    <div class="absolute inset-0 w-full h-full opacity-30 dark:opacity-40 mix-blend-multiply dark:mix-blend-luminosity">
+    <div class="absolute inset-0 w-full h-full opacity-40 mix-blend-luminosity">
       <img src="assets/home.jpg" alt="Mixologist Pouring"
         class="w-full h-full object-cover animate-[float_20s_infinite_alternate]">
     </div>
     <!-- Subtle Overlay to pop text -->
     <div
-      class="absolute inset-0 bg-gradient-to-b from-light-peach/80 via-transparent to-light-peach dark:from-dark-gray/90 dark:via-dark-gray/60 dark:to-dark-gray">
+      class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/90 via-[#0a0a0a]/60 to-[#0a0a0a]">
     </div>
 
     <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col items-center mt-10">
@@ -377,15 +377,15 @@
       </div>
 
       <h1
-        class="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-serif font-black text-dark-gray dark:text-white leading-[0.95] mb-8 tracking-tighter animate-fade-in opacity-0"
+        class="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-serif font-black text-white leading-[0.95] mb-8 tracking-tighter animate-fade-in opacity-0"
         style="animation-delay: 0.3s;">
         Liquid <br>
         <span
-          class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-theme-accent to-theme-accent-light text-outline dark:text-outline-white"
+          class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-theme-accent to-theme-accent-light text-outline-white"
           style="-webkit-text-stroke: 1px #F59E0B;">Canvas.</span>
       </h1>
 
-      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm md:text-base lg:text-lg font-light leading-relaxed mb-12 animate-fade-in opacity-0"
+      <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base lg:text-lg font-light leading-relaxed mb-12 animate-fade-in opacity-0"
         style="animation-delay: 0.5s;">
         Redefining event luxury with avant-garde mobile bartending, handcrafted signature cocktails, and a mesmerizing
         bar experience tailored uniquely to your soirée.
@@ -399,7 +399,7 @@
           <span class="relative z-10">Reserve the Bar</span>
         </a>
         <a href="#portfolio"
-          class="text-dark-gray dark:text-white hover:text-theme-accent dark:hover:text-theme-accent flex items-center justify-center gap-4 px-6 py-4 uppercase text-xs tracking-widest transition-all duration-300 font-bold group w-full sm:w-auto">
+          class="text-white hover:text-theme-accent flex items-center justify-center gap-4 px-6 py-4 uppercase text-xs tracking-widest transition-all duration-300 font-bold group w-full sm:w-auto">
           <i
             class="fas fa-play text-theme-accent border border-theme-accent rounded-full w-10 h-10 flex items-center justify-center group-hover:bg-theme-accent group-hover:text-white transition-all shadow-[0_0_15px_rgba(245,158,11,0.2)]"></i>
           Experience
@@ -530,6 +530,59 @@
     </div>
   </section>
 
+  <!-- ========== NEW SECTION 1: THE PROCESS ("THE JOURNEY OF THE POUR") ========== -->
+  <section class="py-24 lg:py-32 bg-white dark:bg-dark-gray transition-colors duration-300 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-20">
+        <span class="text-theme-accent text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold block mb-4">Our Methodology</span>
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white">Curating The Experience</h2>
+        <div class="w-16 h-[2px] bg-theme-accent mx-auto mt-8"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        
+        <!-- Step 1 -->
+        <div class="group relative bg-[#0a0a0a]/5 dark:bg-white/5 p-10 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-theme-accent/50 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between min-h-[320px] shadow-lg">
+          <div>
+            <div class="text-6xl font-serif font-black text-theme-accent/10 group-hover:text-theme-accent/20 transition-colors duration-500 mb-6">01</div>
+            <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-4">Consultation & Concept</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed">
+              We collaborate to understand your theme, guest profile, and preferences. Designing a bespoke drink menu that reflects your unique story.
+            </p>
+          </div>
+          <div class="w-8 h-[2px] bg-gray-200 dark:bg-white/10 group-hover:bg-theme-accent transition-colors duration-500 mt-6"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="group relative bg-[#0a0a0a]/5 dark:bg-white/5 p-10 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-theme-accent/50 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between min-h-[320px] shadow-lg">
+          <div>
+            <div class="text-6xl font-serif font-black text-theme-accent/10 group-hover:text-theme-accent/20 transition-colors duration-500 mb-6">02</div>
+            <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-4">Bespoke Sourcing</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed">
+              Our mixologists hand-select premium boutique spirits, fresh organic citrus, and hand-craft custom syrups, infusions, and floral garnishes.
+            </p>
+          </div>
+          <div class="w-8 h-[2px] bg-gray-200 dark:bg-white/10 group-hover:bg-theme-accent transition-colors duration-500 mt-6"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="group relative bg-[#0a0a0a]/5 dark:bg-white/5 p-10 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-theme-accent/50 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between min-h-[320px] shadow-lg">
+          <div>
+            <div class="text-6xl font-serif font-black text-theme-accent/10 group-hover:text-theme-accent/20 transition-colors duration-500 mb-6">03</div>
+            <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-4">The Theatrical Pour</h3>
+            <p class="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed">
+              We deploy custom-designed mobile bars, signature glassware, and high-performance mixologists who deliver drinks with flame, smoke, and flair.
+            </p>
+          </div>
+          <div class="w-8 h-[2px] bg-gray-200 dark:bg-white/10 group-hover:bg-theme-accent transition-colors duration-500 mt-6"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- PORTFOLIO - STAGGERED MASONRY GRID -->
   <section id="portfolio"
     class="py-24 lg:py-40 bg-light-peach dark:bg-[#080808] transition-colors duration-300 border-t border-gray-200 dark:border-white/5">
@@ -604,6 +657,84 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== NEW SECTION 2: THE TASTING ROOM (SIGNATURE CREATIONS) ========== -->
+  <section class="py-24 lg:py-32 bg-white dark:bg-dark-gray transition-colors duration-300 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 lg:mb-24">
+        <div>
+          <span class="text-theme-accent text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold block mb-4">Bespoke Recipes</span>
+          <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white">The Tasting Room</h2>
+        </div>
+        <a href="cocktail.html" class="inline-flex items-center gap-2 text-theme-accent font-semibold border-b border-theme-accent pb-1 mt-6 lg:mt-0 hover:gap-3 transition-all duration-300 text-xs uppercase tracking-widest">
+          View All Cocktails <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        
+        <!-- Cocktail 1 -->
+        <div class="group relative rounded-[2rem] overflow-hidden bg-[#0a0a0a]/5 dark:bg-white/5 border border-gray-100 dark:border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-1">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="assets/home1.5.jpg" alt="Smoked Sage Old Fashioned" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 bg-[#0a0a0a]/80 backdrop-blur-md text-theme-accent text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-theme-accent/20">Signature</div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif font-bold text-dark-gray dark:text-white mb-2">Smoked Sage Old Fashioned</h3>
+            <p class="text-xs text-theme-accent uppercase tracking-widest font-semibold mb-4">Bourbon • Maple • Burnt Sage</p>
+            <p class="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed mb-6">
+              A theatrical masterpiece featuring oak-barrel bourbon, organic maple reduction, and hand-harvested sage leaf smoked tableside.
+            </p>
+            <div class="border-t border-gray-100 dark:border-white/10 pt-4 flex items-center justify-between text-xs text-gray-400">
+              <span>Glass: Lowball</span>
+              <span class="text-theme-accent">High Drama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cocktail 2 -->
+        <div class="group relative rounded-[2rem] overflow-hidden bg-[#0a0a0a]/5 dark:bg-white/5 border border-gray-100 dark:border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-1">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="assets/home1.6.jpg" alt="Rose Gold Sour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 bg-[#0a0a0a]/80 backdrop-blur-md text-theme-accent text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-theme-accent/20">Aesthetic</div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif font-bold text-dark-gray dark:text-white mb-2">Rose Gold Sour</h3>
+            <p class="text-xs text-theme-accent uppercase tracking-widest font-semibold mb-4">Dry Gin • Elderflower • Rose Petals</p>
+            <p class="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed mb-6">
+              Sophisticated and vibrant. Infused dry gin shaken with fresh lemon juice, elderflower liqueur, finished with 24k gold leaf and rose dust.
+            </p>
+            <div class="border-t border-gray-100 dark:border-white/10 pt-4 flex items-center justify-between text-xs text-gray-400">
+              <span>Glass: Coupe</span>
+              <span class="text-theme-accent">Refined Elegance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cocktail 3 -->
+        <div class="group relative rounded-[2rem] overflow-hidden bg-[#0a0a0a]/5 dark:bg-white/5 border border-gray-100 dark:border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-1">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="assets/home1.4.jpg" alt="Emerald Botanical Mule" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 bg-[#0a0a0a]/80 backdrop-blur-md text-theme-accent text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-theme-accent/20">Refreshing</div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-serif font-bold text-dark-gray dark:text-white mb-2">Emerald Botanical Mule</h3>
+            <p class="text-xs text-theme-accent uppercase tracking-widest font-semibold mb-4">Vodka • Cucumber • Ginger Beer</p>
+            <p class="text-gray-500 dark:text-gray-400 font-light text-sm leading-relaxed mb-6">
+              A zesting botanical infusion using locally distilled vodka, cold-pressed cucumber juice, fresh mint, and fiery ginger root beer.
+            </p>
+            <div class="border-t border-gray-100 dark:border-white/10 pt-4 flex items-center justify-between text-xs text-gray-400">
+              <span>Glass: Copper Mug</span>
+              <span class="text-theme-accent">Crisp & Zesty</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 

@@ -8,7 +8,7 @@
   <title>Liquid Arts | Login — Mobile Cocktail Bartending</title>
   <meta name="description"
     content="Login to Liquid Arts — access your event bookings, signature cocktail menus, and mixology dashboard.">
-  <link rel="icon" href="/assets/fav.jpg" type="image/jpeg">
+  <link class="favicon" rel="icon" href="/assets/fav.jpg" type="image/jpeg">
   <!-- Tailwind + Fonts + Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,7 +28,7 @@
             'theme-accent-dark': '#D97706',
             'theme-accent-light': '#FCD34D',
             'dark-gray': '#0a0a0a',
-            'light-peach': '#fdfbf7',
+            'light-peach': '#FFFFFF',
             white: '#FFFFFF'
           },
           fontFamily: {
@@ -236,92 +236,143 @@
 
       /* Extra compact for 360px */
       .glass-card>div:last-child {
-        padding-top: 0.75rem !important;
-        padding-bottom: 0.75rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
       }
 
-      .glass-card .text-center.mb-6 {
-        margin-bottom: 0.5rem !important;
+      .glass-card .text-center.mb-4 {
+        margin-bottom: 0.35rem !important;
       }
 
       .glass-card .flex.justify-center.gap-3 {
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.35rem !important;
       }
 
-      .glass-card .relative.flex.items-center.justify-center.mb-7 {
-        margin-bottom: 0.5rem !important;
+      .glass-card .relative.flex.items-center.justify-center.my-4 {
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.35rem !important;
       }
 
-      .glass-card form.space-y-5 {
-        gap: 0.75rem !important;
+      .glass-card form.space-y-3\.5 {
+        gap: 0.5rem !important;
       }
 
-      .glass-card form.space-y-5>div {
+      .glass-card form.space-y-3\.5>div {
         margin-bottom: 0 !important;
       }
 
-      .glass-card .mt-7 {
-        margin-top: 0.5rem !important;
-      }
-
-      .glass-card .pt-1 {
-        padding-top: 0 !important;
+      .glass-card .mt-4 {
+        margin-top: 0.35rem !important;
       }
     }
 
     /* Specific 360x740 height optimization */
     @media (max-height: 750px) and (max-width: 400px) {
       .glass-card>div:last-child {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
       }
 
-      .glass-card .text-center.mb-6 {
-        margin-bottom: 0.25rem !important;
+      .glass-card .text-center.mb-4 {
+        margin-bottom: 0.2rem !important;
       }
 
       .glass-card .text-2xl {
-        font-size: 1.25rem !important;
+        font-size: 1.2rem !important;
       }
 
       .glass-card .flex.justify-center.gap-3 {
-        margin-bottom: 0.25rem !important;
+        margin-bottom: 0.2rem !important;
       }
 
       .social-login-btn {
-        height: 2.25rem !important;
+        height: 2.1rem !important;
       }
 
-      .glass-card .relative.flex.items-center.justify-center.mb-7 {
-        margin-bottom: 0.25rem !important;
+      .glass-card .relative.flex.items-center.justify-center.my-4 {
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.2rem !important;
       }
 
-      .glass-card form.space-y-5 {
-        gap: 0.5rem !important;
+      .glass-card form.space-y-3\.5 {
+        gap: 0.4rem !important;
       }
 
       .glass-card input {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
       }
 
       .glass-card button[type="submit"] {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-        margin-top: 0.25rem !important;
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+        margin-top: 0.2rem !important;
       }
 
-      .glass-card .mt-7 {
-        margin-top: 0.25rem !important;
+      .glass-card .mt-4 {
+        margin-top: 0.2rem !important;
       }
 
       .md\:hidden.text-center.mb-5 {
-        margin-bottom: 0.25rem !important;
+        margin-bottom: 0.2rem !important;
         padding-top: 0 !important;
       }
 
       .md\:hidden .text-3xl {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
+      }
+    }
+
+    /* Compact desktop heights (min-width: 768px and max-height: 720px) optimization */
+    @media (min-width: 768px) and (max-height: 720px) {
+      .desktop-compact-hidden {
+        display: none !important;
+      }
+
+      .desktop-compact-space {
+        margin-bottom: 0.4rem !important;
+      }
+
+      #left-panel-content {
+        padding: 1.5rem !important;
+        /* md:p-6 equivalent */
+      }
+
+      #right-panel-content {
+        padding: 1.5rem !important;
+        /* md:p-6 equivalent */
+      }
+
+      form.space-y-3.md\:space-y-2,
+      form.space-y-3.md\:space-y-2.5 {
+        margin-top: 0.4rem !important;
+        gap: 0.4rem !important;
+      }
+
+      form.space-y-3.md\:space-y-2>div,
+      form.space-y-3.md\:space-y-2.5>div {
+        margin-bottom: 0 !important;
+      }
+
+      .glass-card input {
+        padding-top: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+        font-size: 0.7rem !important;
+      }
+
+      .glass-card label {
+        font-size: 0.55rem !important;
+        margin-bottom: 0.1rem !important;
+      }
+
+      .glass-card button[type="submit"] {
+        padding-top: 0.45rem !important;
+        padding-bottom: 0.45rem !important;
+        margin-top: 0.4rem !important;
+      }
+
+      .glass-card .mt-3.md\:mt-2.5 {
+        margin-top: 0.4rem !important;
       }
     }
 
@@ -366,11 +417,6 @@
       flex-direction: row;
     }
 
-    /* Inner scroll fix for main card */
-    .max-h-[95dvh] {
-      max-height: 95dvh;
-    }
-
     /* RTL border radius corrections */
     [dir="rtl"] .rounded-l-2xl {
       border-top-left-radius: 0;
@@ -408,10 +454,10 @@
 </head>
 
 <body
-  class="bg-black dark:bg-black h-[100dvh] w-screen overflow-hidden flex items-center justify-center font-sans antialiased transition-colors duration-300 relative px-3 py-3 sm:py-8">
+  class="bg-black dark:bg-black min-h-[100dvh] w-screen overflow-y-auto md:h-screen md:overflow-hidden flex items-center justify-center font-sans antialiased transition-colors duration-300 relative px-3 py-4 sm:py-8">
 
   <!-- Rich overlay gradients -->
-  <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/85"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/85 pointer-events-none"></div>
   <div class="absolute inset-0 opacity-30 pointer-events-none"
     style="background: radial-gradient(circle at 30% 40%, rgba(245,158,11,0.2) 0%, transparent 60%);"></div>
   <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay"
@@ -432,50 +478,40 @@
     </button>
   </div>
 
-  <!-- Main Card: fixed for 360px & RTL + Dark mode interplay -->
+  <!-- Main Card: responsive without inner scroll, centering gracefully -->
   <main
-    class="w-full max-w-[1000px] glass-card rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row rtl:flex-row-reverse border border-white/20 dark:border-white/10 relative z-10 max-h-[95dvh] md:h-[600px] overflow-y-auto overflow-x-hidden hide-scrollbar">
+    class="w-full max-w-[1000px] glass-card rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row border border-white/20 dark:border-white/10 relative z-10 my-auto h-auto overflow-hidden">
 
     <!-- Left Panel: Cocktail Artistry Atmosphere - responsive on desktop, hidden on mobile <md -->
     <div
-      class="hidden md:flex w-full md:w-1/2 relative text-white flex-col justify-between h-full overflow-hidden rounded-l-2xl rtl:rounded-l-none rtl:rounded-r-2xl">
+      class="hidden md:flex w-full md:w-1/2 relative text-white flex-col justify-between self-stretch overflow-hidden rounded-s-2xl">
       <img src="assets/smoke.jpg" alt="Signature cocktail pour" class="absolute inset-0 w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70"></div>
       <div class="absolute left-0 top-0 bottom-0 w-1 bg-theme-accent/60 rtl:left-auto rtl:right-0"></div>
 
-      <div class="relative z-10 text-left flex flex-col h-full justify-between p-8 lg:p-12">
+      <div id="left-panel-content"
+        class="relative z-10 text-left flex flex-col h-full justify-between p-8 lg:p-12 md:p-8" style="text-align: left !important;">
         <div>
-          <div class="mb-12">
+          <div class="mb-12 md:mb-6 desktop-compact-space">
             <a href="index.html" class="cursor-pointer no-underline hover:opacity-80 transition-opacity">
               <span class="text-2xl font-serif font-bold italic text-theme-accent tracking-wide">Liquid</span>
               <span class="text-2xl font-serif font-bold italic text-theme-accent tracking-wide">Arts</span>
             </a>
           </div>
           <div
-            class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-theme-accent/20 text-theme-accent mb-6">
+            class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-theme-accent/20 text-theme-accent mb-6 desktop-compact-hidden">
             <i class="fas fa-cocktail text-2xl"></i>
           </div>
           <h1 class="text-3xl lg:text-4xl font-serif font-bold leading-tight mb-4">The Art of<br>Mixology</h1>
-          <p class="text-sm text-gray-300 font-light max-w-[280px] leading-relaxed">Access your event bookings,
-            signature cocktail menus, and premium mixology dashboard.</p>
+
         </div>
-        <div
-          class="relative z-10 mt-8 bg-black/40 backdrop-blur-md border border-theme-accent/30 rounded-2xl p-6 shadow-xl">
-          <div class="flex text-theme-accent text-xs gap-1 mb-3"><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p class="text-sm text-gray-200 font-light italic leading-relaxed mb-4">"Absolutely elevated our wedding. The
-            cocktails were masterpieces and the bartenders were pure artistry."</p>
-          <div class="text-[10px] font-bold tracking-wider text-white uppercase opacity-80 flex items-center gap-2">
-            <span class="w-6 h-px bg-theme-accent"></span>JESSICA & MICHAEL, PRIVATE EVENT
-          </div>
-        </div>
+
       </div>
     </div>
+    </div>
 
-    <!-- Right Panel: Login Form - fully responsive, works with RTL & dark mode, no overflow on 360px -->
-    <div
-      class="w-full md:w-1/2 p-5 sm:p-8 lg:p-12 flex flex-col justify-center h-full bg-white/95 dark:bg-dark-gray/95">
+    <div id="right-panel-content"
+      class="w-full md:w-1/2 p-5 sm:p-8 md:p-8 lg:p-12 flex flex-col justify-center bg-white/95 dark:bg-dark-gray/95">
 
       <!-- Mobile Logo with centering and spacing -->
       <div class="md:hidden text-center mb-5 pt-2">
@@ -486,84 +522,89 @@
         <div class="w-12 h-px bg-theme-accent/50 mx-auto mt-3"></div>
       </div>
 
-      <div class="text-center mb-6">
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-dark-gray dark:text-white mb-2">Welcome Back</h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400 font-light">Sign in to continue your liquid journey.</p>
+      <div class="text-center mb-3 md:mb-2.5">
+        <h2
+          class="text-2xl sm:text-3xl md:text-xl lg:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-0.5">
+          Welcome Back</h2>
+        <p class="text-xs md:text-[10px] lg:text-xs text-gray-500 dark:text-gray-400 font-light">Sign in to continue
+          your liquid journey.&lrm;</p>
       </div>
 
       <!-- Social login row - touch friendly -->
-      <div class="flex justify-center md:justify-start gap-3 sm:gap-4 mb-7">
+      <div class="flex justify-center md:justify-start gap-3 mb-3 md:mb-2.5">
         <button
-          class="social-login-btn flex-1 h-11 sm:h-12 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
-          <i class="fab fa-google text-[#DB4437] text-base sm:text-lg group-hover:scale-105 transition-transform"></i>
+          class="social-login-btn flex-1 h-10 md:h-8.5 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
+          <i class="fab fa-google text-[#DB4437] text-base md:text-sm group-hover:scale-105 transition-transform"></i>
         </button>
         <button
-          class="social-login-btn flex-1 h-11 sm:h-12 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
+          class="social-login-btn flex-1 h-10 md:h-8.5 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
           <i
-            class="fab fa-facebook-f text-[#1877F2] text-base sm:text-lg group-hover:scale-105 transition-transform"></i>
+            class="fab fa-facebook-f text-[#1877F2] text-base md:text-sm group-hover:scale-105 transition-transform"></i>
         </button>
         <button
-          class="social-login-btn flex-1 h-11 sm:h-12 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
+          class="social-login-btn flex-1 h-10 md:h-8.5 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
           <i
-            class="fab fa-apple text-gray-900 dark:text-white text-xl pb-0.5 group-hover:scale-105 transition-transform"></i>
+            class="fab fa-apple text-gray-900 dark:text-white text-xl md:text-base pb-0.5 group-hover:scale-105 transition-transform"></i>
         </button>
       </div>
 
-      <div class="relative flex items-center justify-center my-5">
+      <div class="relative flex items-center justify-center my-3.5 md:my-2.5">
         <div class="w-full border-t border-gray-200 dark:border-white/10"></div>
         <div
-          class="absolute bg-white dark:bg-dark-gray px-4 text-[10px] font-bold text-gray-400 tracking-widest uppercase">
+          class="absolute bg-white dark:bg-dark-gray px-4 text-[9px] font-bold text-gray-400 tracking-widest uppercase">
           Or login with email</div>
       </div>
 
-      <form class="space-y-5" id="loginForm">
+      <form class="space-y-3 md:space-y-2.5" id="loginForm">
         <div class="text-left">
-          <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-2"><i
+          <label
+            class="block text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1 md:mb-0.5"><i
               class="fas fa-envelope me-2 text-theme-accent"></i> Email Address</label>
           <input type="email" id="loginEmail" placeholder="cheers@liquidarts.com"
-            class="w-full px-4 py-3.5 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
+            class="w-full px-4 py-2.5 md:py-1.5 md:px-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
             required>
         </div>
 
         <div class="text-left">
-          <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-2"><i
+          <label
+            class="block text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1 md:mb-0.5"><i
               class="fas fa-lock me-2 text-theme-accent"></i> Password</label>
           <div class="relative">
             <input type="password" id="loginPassword" placeholder="••••••••"
-              class="w-full px-4 py-3.5 pe-12 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
+              class="w-full px-4 py-2.5 pe-12 md:py-1.5 md:px-3 md:pe-10 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
               required>
             <button type="button" id="togglePasswordBtn"
-              class="absolute inset-y-0 right-0 pe-4 flex items-center text-gray-400 hover:text-theme-accent transition-colors focus:outline-none ltr:right-0 rtl:left-0 rtl:right-auto rtl:ps-4 rtl:pe-0">
+              class="absolute inset-y-0 end-0 pe-4 flex items-center text-gray-400 hover:text-theme-accent transition-colors focus:outline-none">
               <i class="fas fa-eye-slash" id="toggleIcon"></i>
             </button>
           </div>
         </div>
 
-        <div class="flex items-center justify-between pt-1 flex-wrap gap-2">
+        <div class="flex items-center justify-between pt-0.5 flex-wrap gap-2">
           <label class="flex items-center cursor-pointer group">
             <input type="checkbox" id="rememberCheckbox"
               class="w-4 h-4 rounded border-gray-300 text-theme-accent focus:ring-theme-accent cursor-pointer bg-transparent">
             <span
-              class="ms-2 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-dark-gray dark:group-hover:text-white transition-colors">Remember
+              class="ms-2 text-[11px] md:text-[10px] lg:text-[11px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-dark-gray dark:group-hover:text-white transition-colors">Remember
               me</span>
           </label>
           <a href="#" id="forgotPasswordLink"
-            class="text-xs font-bold text-dark-gray dark:text-gray-300 uppercase tracking-wide hover:text-theme-accent dark:hover:text-theme-accent transition-colors">Forgot
+            class="text-[11px] md:text-[10px] lg:text-[11px] font-bold text-dark-gray dark:text-gray-300 uppercase tracking-wide hover:text-theme-accent dark:hover:text-theme-accent transition-colors">Forgot
             Password</a>
         </div>
 
         <button type="submit"
-          class="btn-shine w-full mt-4 bg-theme-accent hover:bg-theme-accent-dark text-white font-bold text-sm py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-accent dark:focus:ring-offset-dark-gray active:scale-[0.98]">
-          <i class="fas fa-wine-glass-alt rtl:rotate-180 transform group-hover:scale-110 transition-transform"></i>
+          class="btn-shine w-full mt-2.5 md:mt-2 bg-theme-accent hover:bg-theme-accent-dark text-white font-bold text-xs py-3 md:py-2 rounded-xl flex items-center justify-center transition-all shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-accent dark:focus:ring-offset-dark-gray active:scale-[0.98]">
           Access The Bar
         </button>
       </form>
 
-      <div class="mt-7 text-center md:text-left">
-        <p class="text-[13px] font-medium text-gray-500 dark:text-gray-400">New to Liquid Arts?
+      <div class="mt-3 md:mt-2.5 text-center md:text-left font-sans">
+        <p class="text-[12px] md:text-[10px] lg:text-[12px] font-medium text-gray-500 dark:text-gray-400">New to Liquid
+          Arts?
           <a href="signup.html"
             class="font-bold text-theme-accent hover:text-theme-accent-dark transition-colors border-b border-transparent hover:border-theme-accent pb-0.5 ml-1">Start
-            your journey →</a>
+            your journey <span class="inline-block rtl:rotate-180">→</span></a>
         </p>
       </div>
     </div>
@@ -703,12 +744,10 @@
             }
             const userName = email.split('@')[0];
             showToast(`🍸 Welcome back, ${userName}! Your signature cocktail awaits.`, 'success');
-            // redirect simulation could be uncommented: 
-            // setTimeout(() => { window.location.href = "dashboard.html"; }, 1200);
           });
         }
 
-        // Social login demo (with additional RTL friendly toasts)
+        // Social login demo
         document.querySelectorAll('.social-login-btn').forEach(btn => {
           btn.addEventListener('click', () => { showToast('Social login demo — integrate your auth provider', 'info'); });
         });
@@ -719,21 +758,6 @@
           forgotLink.addEventListener('click', (e) => {
             e.preventDefault();
             showToast('Password reset link will be sent to your email', 'info');
-          });
-        }
-
-        // Fix for keyboard open — ensure visibility of form inside scroll container on small devices
-        const mainCard = document.querySelector('main');
-        if (mainCard) {
-          const inputs = mainCard.querySelectorAll('input');
-          inputs.forEach(inp => {
-            inp.addEventListener('focus', () => {
-              setTimeout(() => {
-                if (mainCard) {
-                  mainCard.scrollTo({ top: mainCard.scrollHeight, behavior: 'smooth' });
-                }
-              }, 200);
-            });
           });
         }
 
@@ -777,7 +801,7 @@
     }
 
     [dir="rtl"] .flex.items-center.justify-between {
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
 
     [dir="rtl"] .gap-2 {
@@ -797,11 +821,6 @@
     [dir="rtl"] .ml-1 {
       margin-right: 0.25rem;
       margin-left: 0;
-    }
-
-    [dir="rtl"] .mr-1 {
-      margin-left: 0.25rem;
-      margin-right: 0;
     }
   </style>
 </body>

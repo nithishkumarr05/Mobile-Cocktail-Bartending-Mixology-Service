@@ -27,7 +27,7 @@
             'theme-accent-dark': '#D97706',
             'theme-accent-light': '#FCD34D',
             'dark-gray': '#0a0a0a',
-            'light-peach': '#fdfbf7',
+            'light-peach': '#FFFFFF',
             white: '#FFFFFF'
           },
           fontFamily: {
@@ -138,7 +138,7 @@
 
   <!-- ========== HEADER (IDENTICAL TO INDEX) ========== -->
   <nav
-    class="bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+    class="bg-white dark:bg-[#0a0a0a] fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
     <div class="max-w-[1400px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <div class="flex-shrink-0">
@@ -480,64 +480,130 @@
     </div>
   </section>
 
-  <!-- NEW SECTION 2: INDUSTRIES WE SERVE + CLIENTS SHOWCASE -->
-  <section class="py-24 bg-white dark:bg-dark-gray">
+  <!-- ========== SECTION: TRUSTED PARTNERS & INDUSTRIES WE SERVE ========== -->
+  <section class="py-24 bg-white dark:bg-dark-gray transition-colors duration-300 border-t border-gray-100 dark:border-white/5">
     <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-          <span class="text-theme-accent text-[11px] uppercase tracking-[0.3em] font-semibold">Trusted partners</span>
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mt-4 mb-6">
-            Industries we serve</h2>
-          <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">Liquid Arts has delivered elevated beverage
-            experiences across a diverse range of sectors, from luxury weddings to corporate activations and hospitality
-            venues.</p>
+      <div class="grid lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left Column: Trust Curation -->
+        <div class="lg:col-span-5 reveal">
+          <span class="text-theme-accent text-[11px] uppercase tracking-[0.3em] font-semibold block mb-4">Trusted Partners</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark-gray dark:text-white mb-6 leading-tight">
+            Tailored For Prestigious Industries
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+            Liquid Arts is the definitive beverage partner for global luxury brands, high-profile event planners, and discerning hosts. We design custom bars and curated mixology programs built specifically to reflect and elevate each sector's unique vision and operational standards.
+          </p>
 
-          <div class="grid grid-cols-2 gap-5 mb-8">
-            <div class="flex items-center gap-3"><i class="fas fa-ring text-theme-accent w-5"></i><span
-                class="text-sm font-medium">Luxury Weddings</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-building text-theme-accent w-5"></i><span
-                class="text-sm font-medium">Corporate Events</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-hotel text-theme-accent w-5"></i><span
-                class="text-sm font-medium">Hotels & Resorts</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-calendar-alt text-theme-accent w-5"></i><span
-                class="text-sm font-medium">Private Parties</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-champagne-glass text-theme-accent w-5"></i><span
-                class="text-sm font-medium">Festivals & Galas</span></div>
-            <div class="flex items-center gap-3"><i class="fas fa-film text-theme-accent w-5"></i><span
-                class="text-sm font-medium">Production Launches</span></div>
+          <!-- Core Trust Pillars -->
+          <div class="space-y-6 mb-10">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-theme-accent/10 flex items-center justify-center text-theme-accent shrink-0">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-1">Fully Certified & Insured</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Comprehensive liquor liability and general insurance coverages up to $5M for all luxury venues.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-theme-accent/10 flex items-center justify-center text-theme-accent shrink-0">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-1">Elite, Vetted Mixologists</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Our professionals are trained in luxury hospitality, mixology chemistry, and white-glove etiquette.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-theme-accent/10 flex items-center justify-center text-theme-accent shrink-0">
+                <i class="fas fa-star"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-dark-gray dark:text-white mb-1">Five-Star Guest Ratings</h4>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Flawless planning support, seamless back-of-house logistics, and theatrical execution.</p>
+              </div>
+            </div>
           </div>
 
-          <a href="contact.html"
-            class="inline-flex items-center gap-2 bg-theme-accent hover:bg-theme-accent-dark text-white px-8 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg">Request
-            a consultation <i class="fas fa-arrow-right"></i></a>
+          <a href="contact.html" class="inline-flex items-center gap-2 bg-theme-accent hover:bg-theme-accent-dark text-white px-8 py-3.5 rounded-full text-xs uppercase tracking-widest font-bold transition-all shadow-lg shadow-theme-accent/20">
+            Request Partnership <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 reveal">
-          <div
-            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
-            <i class="fas fa-star-of-life text-3xl text-theme-accent mb-3 block"></i>
-            <p class="text-xs uppercase tracking-wider font-bold">Michelin-Starred</p>
-            <p class="text-gray-500 text-xs mt-1">Partnerships</p>
+        <!-- Right Column: Specific Targeted Industries Cards -->
+        <div class="lg:col-span-7 space-y-6 reveal">
+          
+          <!-- Card 1: Corporate & Brands -->
+          <div class="group relative bg-[#0a0a0a]/5 dark:bg-white/5 p-8 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-theme-accent/40 hover:shadow-2xl transition-all duration-500">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+              <div class="w-16 h-16 rounded-2xl bg-theme-accent/10 flex items-center justify-center text-theme-accent text-2xl shrink-0 group-hover:bg-theme-accent group-hover:text-white transition-colors duration-500">
+                <i class="fas fa-building"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-3 mb-1">
+                  <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">Corporate Activations & Luxury Brands</h3>
+                  <span class="hidden sm:inline bg-theme-accent/10 dark:bg-theme-accent/20 text-theme-accent text-[9px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full font-sans">High Impact</span>
+                </div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-light leading-relaxed mb-3">
+                  Custom cocktail menu engineering, logo stencil prints on edible garnish foam, custom brand-matching mobile bars, and highly professional high-volume execution.
+                </p>
+                <div class="flex gap-4 text-[10px] text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wider font-sans">
+                  <span><i class="fas fa-check text-theme-accent mr-1"></i> Custom Branding</span>
+                  <span><i class="fas fa-check text-theme-accent mr-1"></i> Multi-Day Support</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
-            <i class="fas fa-globe-americas text-3xl text-theme-accent mb-3 block"></i>
-            <p class="text-xs uppercase tracking-wider font-bold">Global Reach</p>
-            <p class="text-gray-500 text-xs mt-1">4 Continents</p>
+
+          <!-- Card 2: Weddings -->
+          <div class="group relative bg-[#0a0a0a]/5 dark:bg-white/5 p-8 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-theme-accent/40 hover:shadow-2xl transition-all duration-500">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+              <div class="w-16 h-16 rounded-2xl bg-theme-accent/10 flex items-center justify-center text-theme-accent text-2xl shrink-0 group-hover:bg-theme-accent group-hover:text-white transition-colors duration-500">
+                <i class="fas fa-ring"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-3 mb-1">
+                  <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">Luxury Weddings & Milestone Galas</h3>
+                  <span class="hidden sm:inline bg-theme-accent/10 dark:bg-theme-accent/20 text-theme-accent text-[9px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full font-sans">Milestone</span>
+                </div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-light leading-relaxed mb-3">
+                  Elegant matching bar designs, signature couple's recipes, bespoke floral garnishes, absolute hospitality warmth, and spectacular champagne towers.
+                </p>
+                <div class="flex gap-4 text-[10px] text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wider font-sans">
+                  <span><i class="fas fa-check text-theme-accent mr-1"></i> Planners' Choice</span>
+                  <span><i class="fas fa-check text-theme-accent mr-1"></i> Champagne Towers</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
-            <i class="fas fa-trophy text-3xl text-theme-accent mb-3 block"></i>
-            <p class="text-xs uppercase tracking-wider font-bold">Industry Awards</p>
-            <p class="text-gray-500 text-xs mt-1">Best Mobile Bar 2025</p>
+
+          <!-- Card 3: Private Estates -->
+          <div class="group relative bg-[#0a0a0a]/5 dark:bg-white/5 p-8 rounded-[2rem] border border-gray-100 dark:border-white/5 hover:border-theme-accent/40 hover:shadow-2xl transition-all duration-500">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+              <div class="w-16 h-16 rounded-2xl bg-theme-accent/10 flex items-center justify-center text-theme-accent text-2xl shrink-0 group-hover:bg-theme-accent group-hover:text-white transition-colors duration-500">
+                <i class="fas fa-hotel"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-3 mb-1">
+                  <h3 class="text-xl font-serif font-bold text-dark-gray dark:text-white">Private Estates & Soirées</h3>
+                  <span class="hidden sm:inline bg-theme-accent/10 dark:bg-theme-accent/20 text-theme-accent text-[9px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full font-sans font-sans">Intimate</span>
+                </div>
+                <p class="text-xs text-gray-500 dark:text-gray-400 font-light leading-relaxed mb-3">
+                  Discreet, white-glove cocktail experiences featuring rare single malts, botanical infusions, hand-carved crystal clear ice, and intimate mixology storytelling.
+                </p>
+                <div class="flex gap-4 text-[10px] text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wider font-sans">
+                  <span><i class="fas fa-check text-theme-accent mr-1"></i> Rare Spirits</span>
+                  <span><i class="fas fa-check text-theme-accent mr-1"></i> NDA Protected</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="bg-light-peach dark:bg-[#0f0f0f] p-6 rounded-2xl text-center border border-gray-100 dark:border-white/5">
-            <i class="fas fa-heart text-3xl text-theme-accent mb-3 block"></i>
-            <p class="text-xs uppercase tracking-wider font-bold">100% Custom</p>
-            <p class="text-gray-500 text-xs mt-1">Tailored experiences</p>
-          </div>
+
         </div>
+
       </div>
     </div>
   </section>

@@ -1,497 +1,122 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
   <title>Liquid Arts | Create Account — Mobile Cocktail Bartending</title>
-  <link rel="icon" href="/assets/fav.jpg" type="image/jpeg">
+  <meta name="description"
+    content="Create an account with Liquid Arts — start your premium mobile cocktail bartending and mixology journey.">
+  <link class="favicon" rel="icon" href="/assets/fav.jpg" type="image/jpeg">
+  <!-- Tailwind + Fonts + Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@300;400;700;900&display=swap"
     rel="stylesheet">
 
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'theme-accent': '#F59E0B',
+            'theme-accent-dark': '#D97706',
+            'theme-accent-light': '#FCD34D',
+            'dark-gray': '#0a0a0a',
+            'light-peach': '#FFFFFF',
+            white: '#FFFFFF'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Lato"', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            'widest-xl': '0.3em',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
+    body {
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    /* ===== ABSOLUTELY FIXED NO-SCROLL BODY ===== */
-    body {
-      font-family: 'Lato', sans-serif;
-      background: #0a0a0a;
-      position: fixed;
+    /* Enhanced scrollbar for dark & rtl */
+    .hide-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar-thumb {
+      background: #F59E0B;
+      border-radius: 10px;
+    }
+
+    .hide-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: #F59E0B transparent;
+    }
+
+    @keyframes slowZoom {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.08);
+      }
+    }
+
+    .slow-zoom {
+      animation: slowZoom 28s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatCocktail {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(3deg);
+      }
+    }
+
+    .float-cocktail {
+      animation: floatCocktail 6s ease-in-out infinite;
+    }
+
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-shine::after {
+      content: '';
+      position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      left: -100%;
       width: 100%;
       height: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
     }
 
-    /* Fixed Background Image & Overlay - Cocktail / Liquid Arts Theme */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.35;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* Main container — perfectly centered */
-    .container {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 0 16px;
-      max-height: 100%;
-      display: flex;
-      align-items: center;
-    }
-
-    /* Card styling - Liquid Arts Premium */
-    .signup-card {
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 24px 28px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-      width: 100%;
-      max-height: calc(100vh - 32px);
-      overflow-y: auto;
-      scrollbar-width: thin;
-      transition: background 0.2s ease, border-color 0.2s;
-    }
-
-    .signup-card::-webkit-scrollbar {
-      width: 3px;
-    }
-
-    .signup-card::-webkit-scrollbar-track {
-      background: #e0e0e0;
-      border-radius: 10px;
-    }
-
-    .signup-card::-webkit-scrollbar-thumb {
-      background: #F59E0B;
-      border-radius: 10px;
-    }
-
-    .dark-mode .signup-card {
-      background: #121212;
-    }
-
-    /* Logo - Liquid Arts */
-    .logo {
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .logo a {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 700;
-      font-style: italic;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .logo a span:first-child {
-      color: #F59E0B;
-    }
-
-    .logo a span:last-child {
-      color: #F59E0B;
-    }
-
-    .dark-mode .logo a span:last-child {
-      color: #F59E0B;
-    }
-
-    /* Title */
-    .title {
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .title h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
-
-    .dark-mode .title h1 {
-      color: #ffffff;
-    }
-
-    .title p {
-      font-size: 12px;
-      color: #666;
-    }
-
-    .dark-mode .title p {
-      color: #aaa;
-    }
-
-    /* Social buttons */
-    .social-login {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .social-btn {
-      flex: 1;
-      height: 42px;
-      border-radius: 40px;
-      border: 1px solid #e0e0e0;
-      background: #ffffff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #333;
-      transition: all 0.2s;
-    }
-
-    .dark-mode .social-btn {
-      background: #1e1e1e;
-      border-color: #333;
-      color: #ddd;
-    }
-
-    .social-btn i {
-      font-size: 14px;
-    }
-
-    .social-btn.google i {
-      color: #DB4437;
-    }
-
-    .social-btn.facebook i {
-      color: #1877F2;
-    }
-
-    .social-btn.apple i {
-      color: #000;
-    }
-
-    .dark-mode .social-btn.apple i {
-      color: #fff;
-    }
-
-    /* Divider */
-    .divider {
-      text-align: center;
-      margin: 12px 0 16px;
-      position: relative;
-    }
-
-    .divider::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px;
-      background: #e0e0e0;
-    }
-
-    .dark-mode .divider::before {
-      background: #333;
-    }
-
-    .divider span {
-      position: relative;
-      background: #ffffff;
-      padding: 0 12px;
-      font-size: 9px;
-      font-weight: 600;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .dark-mode .divider span {
-      background: #121212;
-      color: #777;
-    }
-
-    /* Form groups */
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #374151;
-      margin-bottom: 5px;
-    }
-
-    .dark-mode .form-group label {
-      color: #d1d5db;
-    }
-
-    /* ========== FIELDS MAKER FONT AS BOLD ========== */
-    .form-group input {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #1a1a1a;
-      background: #f9fafb;
-      font-family: 'Lato', sans-serif;
-      transition: all 0.2s;
-    }
-
-    .dark-mode .form-group input {
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
-      font-weight: 700;
-    }
-
-    .form-group input::placeholder {
-      color: #9ca3af;
-      font-weight: 400;
-    }
-
-    .dark-mode .form-group input::placeholder {
-      color: #6b7280;
-      font-weight: 400;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #F59E0B;
-      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25);
-    }
-
-    .password-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
-    .password-wrapper input {
-      padding-right: 44px;
-    }
-
-    .toggle-password {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #9ca3af;
-      cursor: pointer;
-      font-size: 13px;
-      padding: 6px;
-      transition: color 0.2s;
-    }
-
-    .toggle-password:hover {
-      color: #F59E0B;
-    }
-
-    .dark-mode .toggle-password {
-      color: #6b7280;
-    }
-
-    .dark-mode .toggle-password:hover {
-      color: #F59E0B;
-    }
-
-    /* Checkbox */
-    .checkbox-group {
-      margin: 12px 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .checkbox-group input {
-      width: 14px;
-      height: 14px;
-      cursor: pointer;
-      accent-color: #F59E0B;
-      flex-shrink: 0;
-    }
-
-    .checkbox-group label {
-      font-size: 10px;
-      color: #666;
-      cursor: pointer;
-      line-height: 1.3;
-      font-weight: 500;
-    }
-
-    .dark-mode .checkbox-group label {
-      color: #aaa;
-    }
-
-    .checkbox-group a {
-      color: #F59E0B;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .btn-create {
-      width: 100%;
-      padding: 12px;
-      background: #F59E0B;
-      border: none;
-      border-radius: 40px;
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      cursor: pointer;
-      margin-bottom: 16px;
-      font-family: 'Lato', sans-serif;
-      transition: background 0.2s, transform 0.05s;
-    }
-
-    .btn-create:active {
-      transform: scale(0.98);
-    }
-
-    .login-link {
-      text-align: center;
-      font-size: 11px;
-      color: #666;
-      padding-top: 12px;
-      border-top: 1px solid #eee;
-    }
-
-    .dark-mode .login-link {
-      border-top-color: #2a2a2a;
-      color: #aaa;
-    }
-
-    .login-link a {
-      color: #F59E0B;
-      text-decoration: none;
-      font-weight: 700;
-      margin-left: 5px;
-    }
-
-    /* Floating controls - Proper spacing, no touch issues */
-    .top-controls {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      display: flex;
-      gap: 10px;
-      z-index: 200;
-      background: transparent;
-      isolation: isolate;
-    }
-
-    .control-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(20, 20, 24, 0.72);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(245, 158, 11, 0.55);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #f5f0e6;
-      font-size: 16px;
-      transition: 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .control-btn:hover {
-      background: rgba(245, 158, 11, 0.85);
-      border-color: rgba(255, 245, 225, 0.8);
-      transform: scale(1.02);
-      color: white;
-    }
-
-    .control-btn:active {
-      transform: scale(0.96);
-    }
-
-    .dark-mode .control-btn {
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(12px);
-      border-color: rgba(245, 158, 11, 0.7);
-      color: #f0e7da;
-    }
-
-    .dark-mode .control-btn:hover {
-      background: #F59E0B;
-      color: #ffffff;
-    }
-
-    /* Toast */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #F59E0B;
-      color: white;
-      padding: 10px 22px;
-      border-radius: 60px;
-      font-size: 12px;
-      font-weight: 700;
-      z-index: 300;
-      animation: toastFade 2.5s ease forwards;
-      white-space: nowrap;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-      pointer-events: none;
-      font-family: 'Lato', sans-serif;
-      letter-spacing: 0.3px;
+    .btn-shine:hover::after {
+      left: 100%;
     }
 
     @keyframes toastFade {
@@ -500,540 +125,721 @@
         transform: translateX(-50%) translateY(20px);
       }
 
-      12% {
+      15% {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
 
-      88% {
+      85% {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
       }
 
       100% {
         opacity: 0;
-        transform: translateX(-50%) translateY(-6px);
-        visibility: hidden;
+        transform: translateX(-50%) translateY(-10px);
       }
     }
 
-    /* ===== EXTRA SPECIFIC: 360x740 & all mobile sizes ===== */
-    @media (max-width: 450px) {
-      .container {
-        padding: 0 12px;
-      }
-
-      .signup-card {
-        padding: 18px 20px;
-        border-radius: 24px;
-        max-height: calc(100vh - 24px);
-      }
-
-      .logo {
-        margin-bottom: 8px;
-      }
-
-      .logo a {
-        font-size: 22px;
-      }
-
-      .title {
-        margin-bottom: 8px;
-      }
-
-      .title h1 {
-        font-size: 22px;
-      }
-
-      .title p {
-        font-size: 11px;
-      }
-
-      .social-login {
-        gap: 8px;
-        margin-bottom: 12px;
-      }
-
-      .social-btn {
-        height: 38px;
-        font-size: 11px;
-        gap: 4px;
-      }
-
-      .social-btn i {
-        font-size: 12px;
-      }
-
-      .divider {
-        margin: 8px 0 12px;
-      }
-
-      .form-group {
-        margin-bottom: 8px;
-      }
-
-      .form-group input {
-        padding: 9px 12px;
-        font-size: 12px;
-      }
-
-      .checkbox-group {
-        margin: 8px 0 12px;
-      }
-
-      .checkbox-group label {
-        font-size: 9px;
-      }
-
-      .btn-create {
-        padding: 10px;
-        font-size: 11px;
-        margin-bottom: 12px;
-      }
-
-      .login-link {
-        font-size: 10px;
-        padding-top: 10px;
-      }
-
-      .top-controls {
-        top: 12px;
-        right: 12px;
-        gap: 8px;
-      }
-
-      .control-btn {
-        width: 38px;
-        height: 38px;
-        font-size: 14px;
-      }
+    .toast-animation {
+      animation: toastFade 2.5s ease forwards;
     }
 
-    /* specific height handling for 360*740 and similar compact heights */
-    @media (max-height: 750px) and (min-width: 320px) {
-      .signup-card {
-        padding: 14px 20px;
-        max-height: calc(100vh - 20px);
-      }
-
-      .logo {
-        margin-bottom: 6px;
-      }
-
-      .logo a {
-        font-size: 20px;
-      }
-
-      .title {
-        margin-bottom: 6px;
-      }
-
-      .title h1 {
-        font-size: 20px;
-        margin-bottom: 2px;
-      }
-
-      .title p {
-        font-size: 10px;
-      }
-
-      .social-login {
-        margin-bottom: 8px;
-        gap: 6px;
-      }
-
-      .social-btn {
-        height: 34px;
-        font-size: 10px;
-      }
-
-      .divider {
-        margin: 6px 0 8px;
-      }
-
-      .form-group {
-        margin-bottom: 6px;
-      }
-
-      .form-group label {
-        font-size: 9px;
-        margin-bottom: 3px;
-      }
-
-      .form-group input {
-        padding: 7px 10px;
-        font-size: 11px;
-      }
-
-      .password-wrapper input {
-        padding-right: 36px;
-      }
-
-      .toggle-password {
-        font-size: 11px;
-        right: 8px;
-      }
-
-      .checkbox-group {
-        margin: 6px 0 8px;
-        gap: 6px;
-      }
-
-      .checkbox-group label {
-        font-size: 8px;
-      }
-
-      .btn-create {
-        padding: 8px;
-        font-size: 10px;
-        margin-bottom: 8px;
-      }
-
-      .login-link {
-        font-size: 9px;
-        padding-top: 8px;
-      }
-
-      .control-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 13px;
-      }
-
-      .top-controls {
-        top: 8px;
-        right: 8px;
-      }
-    }
-
-    /* additional ultra tiny adjustments for 360x740 precisely */
-    @media (max-device-height: 740px) and (max-device-width: 380px) {
-      .signup-card {
-        padding: 12px 16px;
-      }
-
-      .logo {
-        margin-bottom: 4px;
-      }
-
-      .logo a {
-        font-size: 19px;
-      }
-
-      .title h1 {
-        font-size: 18px;
-      }
-
-      .title p {
-        font-size: 9px;
-      }
-
-      .social-btn {
-        height: 32px;
-        font-size: 9px;
-      }
-
-      .form-group input {
-        padding: 6px 8px;
-        font-size: 11px;
-      }
-
-      .checkbox-group {
-        margin: 4px 0 6px;
-      }
-
-      .btn-create {
-        padding: 7px;
-        font-size: 9px;
-      }
-    }
-
-    /* RTL support */
-    [dir="rtl"] .top-controls {
+    /* RTL overrides - full touch compatibility for 360px */
+    [dir="rtl"] .rtl\:right-auto {
       right: auto;
-      left: 18px;
     }
 
-    [dir="rtl"] .toggle-password {
-      right: auto;
-      left: 12px;
+    [dir="rtl"] .rtl\:left-0 {
+      left: 0;
     }
 
-    [dir="rtl"] .checkbox-group {
-      flex-direction: row-reverse;
+    [dir="rtl"] .rtl\:rotate-180 {
+      transform: rotate(180deg);
     }
 
-    [dir="rtl"] .login-link a {
+    [dir="rtl"] .me-2 {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+
+    [dir="rtl"] .ms-2 {
+      margin-right: 0.5rem;
       margin-left: 0;
-      margin-right: 5px;
     }
 
-    [dir="rtl"] .social-login {
-      flex-direction: row-reverse;
+    /* Fix autofill */
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #f9f9f9 inset !important;
     }
 
-    @media (max-width: 450px) {
-      [dir="rtl"] .top-controls {
-        left: 12px;
-        right: auto;
+    .dark input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #0a0a0a inset !important;
+      -webkit-text-fill-color: #e5e5e5 !important;
+    }
+
+    /* Glass card with improved responsiveness */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(2px);
+      transition: all 0.2s ease;
+    }
+
+    .dark .glass-card {
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(2px);
+    }
+
+    /* Animated border */
+    .animated-border {
+      position: relative;
+      background: linear-gradient(60deg, #F59E0B, #FCD34D, #F59E0B);
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
       }
 
-      [dir="rtl"] .toggle-password {
-        left: 8px;
-        right: auto;
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
       }
     }
 
-    .signup-card * {
+    /* Fix for 360px touch & avoid overflow - EXTREME MOBILE OPTIMIZATION */
+    @media (max-width: 400px) {
+
+      .glass-card .p-6,
+      .glass-card .p-8,
+      .glass-card>div:last-child {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .social-login-btn i {
+        font-size: 1rem;
+      }
+
+      .glass-card {
+        border-radius: 1.5rem !important;
+      }
+
+      .rtl .glass-card {
+        border-radius: 1.5rem !important;
+      }
+
+      /* Extra compact for 360px */
+      .glass-card>div:last-child {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+
+      .glass-card .text-center.mb-4 {
+        margin-bottom: 0.35rem !important;
+      }
+
+      .glass-card .flex.justify-center.gap-3 {
+        margin-bottom: 0.35rem !important;
+      }
+
+      .glass-card .relative.flex.items-center.justify-center.my-4 {
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.35rem !important;
+      }
+
+      .glass-card form.space-y-3\.5 {
+        gap: 0.5rem !important;
+      }
+
+      .glass-card form.space-y-3\.5>div {
+        margin-bottom: 0 !important;
+      }
+
+      .glass-card .mt-4 {
+        margin-top: 0.35rem !important;
+      }
+    }
+
+    /* Specific 360x740 height optimization */
+    @media (max-height: 750px) and (max-width: 400px) {
+      .glass-card>div:last-child {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+      }
+
+      .glass-card .text-center.mb-4 {
+        margin-bottom: 0.2rem !important;
+      }
+
+      .glass-card .text-2xl {
+        font-size: 1.2rem !important;
+      }
+
+      .glass-card .flex.justify-center.gap-3 {
+        margin-bottom: 0.2rem !important;
+      }
+
+      .social-login-btn {
+        height: 2.1rem !important;
+      }
+
+      .glass-card .relative.flex.items-center.justify-center.my-4 {
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.2rem !important;
+      }
+
+      .glass-card form.space-y-3\.5 {
+        gap: 0.4rem !important;
+      }
+
+      .glass-card input {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+      }
+
+      .glass-card button[type="submit"] {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+        margin-top: 0.2rem !important;
+      }
+
+      .glass-card .mt-4 {
+        margin-top: 0.2rem !important;
+      }
+
+      .md\:hidden.text-center.mb-5 {
+        margin-bottom: 0.2rem !important;
+        padding-top: 0 !important;
+      }
+
+      .md\:hidden .text-3xl {
+        font-size: 1.4rem !important;
+      }
+    }
+
+    /* Compact desktop heights (min-width: 768px and max-height: 720px) optimization */
+    @media (min-width: 768px) and (max-height: 720px) {
+      .desktop-compact-hidden {
+        display: none !important;
+      }
+
+      .desktop-compact-space {
+        margin-bottom: 0.4rem !important;
+      }
+
+      #left-panel-content {
+        padding: 1.5rem !important;
+        /* md:p-6 equivalent */
+      }
+
+      #right-panel-content {
+        padding: 1.5rem !important;
+        /* md:p-6 equivalent */
+      }
+
+      form.space-y-3.md\:space-y-2,
+      form.space-y-3.md\:space-y-2.5 {
+        margin-top: 0.4rem !important;
+        gap: 0.4rem !important;
+      }
+
+      form.space-y-3.md\:space-y-2>div,
+      form.space-y-3.md\:space-y-2.5>div {
+        margin-bottom: 0 !important;
+      }
+
+      .glass-card input {
+        padding-top: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+        font-size: 0.7rem !important;
+      }
+
+      .glass-card label {
+        font-size: 0.55rem !important;
+        margin-bottom: 0.1rem !important;
+      }
+
+      .glass-card button[type="submit"] {
+        padding-top: 0.45rem !important;
+        padding-bottom: 0.45rem !important;
+        margin-top: 0.4rem !important;
+      }
+
+      .glass-card .mt-3.md\:mt-2.5 {
+        margin-top: 0.4rem !important;
+      }
+    }
+
+    /* ensure that main container never overflows horizontally */
+    body {
+      overflow-x: hidden;
+    }
+
+    .w-screen {
+      width: 100vw;
+      overflow-x: hidden;
+    }
+
+    /* rtl text alignment for inputs consistent */
+    [dir="rtl"] input,
+    [dir="rtl"] label,
+    [dir="rtl"] button,
+    [dir="rtl"] p,
+    [dir="rtl"] h2 {
+      text-align: right;
+    }
+
+    [dir="rtl"] .text-center {
+      text-align: center;
+    }
+
+    [dir="rtl"] .flex.items-center.justify-between {
+      flex-direction: row;
+    }
+
+    [dir="rtl"] .me-2 {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+
+    [dir="rtl"] .ms-2 {
+      margin-right: 0.5rem;
+      margin-left: 0;
+    }
+
+    [dir="rtl"] .gap-2 {
+      flex-direction: row;
+    }
+
+    /* RTL border radius corrections */
+    [dir="rtl"] .rounded-l-2xl {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    [dir="rtl"] .rounded-r-2xl {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
+    /* Ensure proper tap targets for mobile */
+    button,
+    a,
+    [role="button"] {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* Prevent any horizontal scroll */
+    .overflow-x-hidden {
+      overflow-x: hidden !important;
+    }
+
+    * {
       max-width: 100%;
-    }
-
-    input,
-    button {
-      font-family: inherit;
+      box-sizing: border-box;
     }
   </style>
 </head>
 
-<body>
+<body
+  class="bg-black dark:bg-black min-h-[100dvh] w-screen overflow-y-auto md:h-screen md:overflow-hidden flex items-center justify-center font-sans antialiased transition-colors duration-300 relative px-3 py-4 sm:py-8">
 
-  <!-- Top controls with proper spacing -->
-  <div class="top-controls">
-    <button class="control-btn" id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Dark mode toggle">
-      <i class="fas fa-moon" id="themeIcon"></i>
+  <!-- Rich overlay gradients -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-black/85 pointer-events-none"></div>
+  <div class="absolute inset-0 opacity-30 pointer-events-none"
+    style="background: radial-gradient(circle at 30% 40%, rgba(245,158,11,0.2) 0%, transparent 60%);"></div>
+  <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay"
+    style="background: radial-gradient(circle at 70% 60%, rgba(245,158,11,0.15) 0%, transparent 55%);"></div>
+
+  <!-- Top Controls (RTL / Theme) with bigger tap area for mobile -->
+  <div class="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-3 z-50 pointer-events-auto">
+    <button id="rtl-toggle-signup"
+      class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md shadow-sm border border-theme-accent/40 flex items-center justify-center text-white hover:text-theme-accent hover:border-theme-accent transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-theme-accent active:scale-95"
+      title="Toggle RTL">
+      <i class="fas fa-exchange-alt text-xs"></i>
     </button>
-    <button class="control-btn" id="rtlToggle" title="Toggle RTL Layout" aria-label="RTL toggle">
-      <i class="fas fa-exchange-alt"></i>
+    <button id="theme-toggle-signup"
+      class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md shadow-sm border border-theme-accent/40 flex items-center justify-center text-white hover:text-theme-accent hover:border-theme-accent transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-theme-accent active:scale-95"
+      title="Toggle Theme">
+      <i class="fas fa-sun text-sm"></i>
+      <i class="fas fa-moon hidden text-sm"></i>
     </button>
   </div>
 
-  <div class="container">
-    <div class="signup-card">
-      <div class="logo">
+  <!-- Main Card: responsive without inner scroll, centering gracefully -->
+  <main
+    class="w-full max-w-[1000px] glass-card rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row border border-white/20 dark:border-white/10 relative z-10 my-auto h-auto overflow-hidden">
+
+    <!-- Left Panel: Cocktail Artistry Atmosphere - responsive on desktop, hidden on mobile <md -->
+    <div
+      class="hidden md:flex w-full md:w-1/2 relative text-white flex-col justify-between self-stretch overflow-hidden rounded-s-2xl">
+      <img src="assets/smoke.jpg" alt="Signature cocktail pour" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70"></div>
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-theme-accent/60 rtl:left-auto rtl:right-0"></div>
+
+      <div id="left-panel-content"
+        class="relative z-10 text-left flex flex-col h-full justify-between p-8 lg:p-12 md:p-8" style="text-align: left !important;">
+        <div>
+          <div class="mb-12 md:mb-6 desktop-compact-space">
+            <a href="index.html" class="cursor-pointer no-underline hover:opacity-80 transition-opacity">
+              <span class="text-2xl font-serif font-bold italic text-theme-accent tracking-wide">Liquid</span>
+              <span class="text-2xl font-serif font-bold italic text-theme-accent tracking-wide">Arts</span>
+            </a>
+          </div>
+          <div
+            class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-theme-accent/20 text-theme-accent mb-6 desktop-compact-hidden">
+            <i class="fas fa-cocktail text-2xl"></i>
+          </div>
+          <h1 class="text-3xl lg:text-4xl font-serif font-bold leading-tight mb-4">The Art of<br>Mixology</h1>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+    <div id="right-panel-content"
+      class="w-full md:w-1/2 p-5 sm:p-8 md:p-8 lg:p-12 flex flex-col justify-center bg-white/95 dark:bg-dark-gray/95">
+
+      <!-- Mobile Logo with centering and spacing -->
+      <div class="md:hidden text-center mb-5 pt-2">
         <a href="index.html">
-          <span>Liquid</span><span>Arts</span>
+          <div class="text-3xl font-serif font-bold italic"><span class="text-theme-accent">Liquid</span><span
+              class="text-theme-accent">Arts</span></div>
         </a>
+        <div class="w-12 h-px bg-theme-accent/50 mx-auto mt-3"></div>
       </div>
 
-      <div class="title">
-        <h1>Create Account</h1>
-        <p>Start your mixology journey with us</p>
+      <div class="text-center mb-3 md:mb-2.5">
+        <h2
+          class="text-2xl sm:text-3xl md:text-xl lg:text-2xl font-serif font-bold text-dark-gray dark:text-white mb-0.5">
+          Create Account</h2>
+        <p class="text-xs md:text-[10px] lg:text-xs text-gray-500 dark:text-gray-400 font-light">Start your mixology
+          journey with us.&lrm;</p>
       </div>
 
-      <div class="social-login">
-        <button class="social-btn google" id="googleSignup">
-          <i class="fab fa-google"></i><span>Google</span>
+      <!-- Social login row - touch friendly -->
+      <div class="flex justify-center md:justify-start gap-3 mb-3 md:mb-2.5">
+        <button id="googleSignup"
+          class="social-login-btn flex-1 h-10 md:h-8.5 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
+          <i class="fab fa-google text-[#DB4437] text-base md:text-sm group-hover:scale-105 transition-transform"></i>
         </button>
-        <button class="social-btn facebook" id="facebookSignup">
-          <i class="fab fa-facebook-f"></i><span>Facebook</span>
+        <button id="facebookSignup"
+          class="social-login-btn flex-1 h-10 md:h-8.5 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
+          <i
+            class="fab fa-facebook-f text-[#1877F2] text-base md:text-sm group-hover:scale-105 transition-transform"></i>
         </button>
-        <button class="social-btn apple" id="appleSignup">
-          <i class="fab fa-apple"></i><span>Apple</span>
+        <button id="appleSignup"
+          class="social-login-btn flex-1 h-10 md:h-8.5 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-theme-accent/10 dark:hover:bg-theme-accent/20 transition-all duration-300 focus:ring-2 focus:ring-theme-accent focus:outline-none group active:scale-95">
+          <i
+            class="fab fa-apple text-gray-900 dark:text-white text-xl md:text-base pb-0.5 group-hover:scale-105 transition-transform"></i>
         </button>
       </div>
 
-      <div class="divider"><span>Or sign up with email</span></div>
+      <div class="relative flex items-center justify-center my-3.5 md:my-2.5">
+        <div class="w-full border-t border-gray-200 dark:border-white/10"></div>
+        <div
+          class="absolute bg-white dark:bg-dark-gray px-4 text-[9px] font-bold text-gray-400 tracking-widest uppercase">
+          Or sign up with email</div>
+      </div>
 
-      <form id="signupForm" novalidate>
-        <div class="form-group">
-          <label>FULL NAME</label>
-          <input type="text" id="fullname" placeholder="Jerry Thomas" autocomplete="name">
+      <form class="space-y-3 md:space-y-2" id="signupForm" novalidate>
+        <div class="text-left">
+          <label
+            class="block text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1 md:mb-0.5"><i
+              class="fas fa-user me-2 text-theme-accent"></i> Full Name</label>
+          <input type="text" id="fullname" placeholder="Jerry Thomas" autocomplete="name"
+            class="w-full px-4 py-2.5 md:py-1.5 md:px-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
+            required>
         </div>
 
-        <div class="form-group">
-          <label>EMAIL ADDRESS</label>
-          <input type="email" id="email" placeholder="cheers@liquidarts.com" autocomplete="email" required>
+        <div class="text-left">
+          <label
+            class="block text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1 md:mb-0.5"><i
+              class="fas fa-envelope me-2 text-theme-accent"></i> Email Address</label>
+          <input type="email" id="email" placeholder="cheers@liquidarts.com" autocomplete="email"
+            class="w-full px-4 py-2.5 md:py-1.5 md:px-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
+            required>
         </div>
 
-        <div class="form-group">
-          <label>PASSWORD</label>
-          <div class="password-wrapper">
+        <div class="text-left">
+          <label
+            class="block text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1 md:mb-0.5"><i
+              class="fas fa-lock me-2 text-theme-accent"></i> Password</label>
+          <div class="relative">
             <input type="password" id="password" placeholder="Create a strong password" autocomplete="new-password"
+              class="w-full px-4 py-2.5 pe-12 md:py-1.5 md:px-3 md:pe-10 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
               required>
-            <button type="button" class="toggle-password" data-target="password" aria-label="Show password">
+            <button type="button"
+              class="toggle-password absolute inset-y-0 end-0 pe-4 flex items-center text-gray-400 hover:text-theme-accent transition-colors focus:outline-none"
+              data-target="password">
               <i class="fas fa-eye-slash"></i>
             </button>
           </div>
         </div>
 
-        <div class="form-group">
-          <label>CONFIRM PASSWORD</label>
-          <div class="password-wrapper">
+        <div class="text-left">
+          <label
+            class="block text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-1 md:mb-0.5"><i
+              class="fas fa-lock me-2 text-theme-accent"></i> Confirm Password</label>
+          <div class="relative">
             <input type="password" id="confirmPassword" placeholder="Repeat your password" autocomplete="new-password"
+              class="w-full px-4 py-2.5 pe-12 md:py-1.5 md:px-3 md:pe-10 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent dark:text-white transition-all"
               required>
-            <button type="button" class="toggle-password" data-target="confirmPassword"
-              aria-label="Show confirm password">
+            <button type="button"
+              class="toggle-password absolute inset-y-0 end-0 pe-4 flex items-center text-gray-400 hover:text-theme-accent transition-colors focus:outline-none"
+              data-target="confirmPassword">
               <i class="fas fa-eye-slash"></i>
             </button>
           </div>
         </div>
 
-        <div class="checkbox-group">
-          <input type="checkbox" id="termsCheckbox" required>
-          <label for="termsCheckbox">
-            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        <div class="flex items-center justify-between pt-0.5 flex-wrap gap-2">
+          <label class="flex items-center cursor-pointer group">
+            <input type="checkbox" id="termsCheckbox"
+              class="w-4 h-4 rounded border-gray-300 text-theme-accent focus:ring-theme-accent cursor-pointer bg-transparent"
+              required>
+            <span
+              class="ms-2 text-[11px] md:text-[10px] lg:text-[11px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-dark-gray dark:group-hover:text-white transition-colors">I
+              agree to the <a href="#" class="text-theme-accent hover:underline">Terms of Service</a> & <a href="#"
+                class="text-theme-accent hover:underline">Privacy Policy</a></span>
           </label>
         </div>
 
-        <button type="submit" class="btn-create">Create Account</button>
+        <button type="submit"
+          class="btn-shine w-full mt-2.5 md:mt-2 bg-theme-accent hover:bg-theme-accent-dark text-white font-bold text-xs py-3 md:py-2 rounded-xl flex items-center justify-center transition-all shadow-lg hover:shadow-xl group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-accent dark:focus:ring-offset-dark-gray active:scale-[0.98]">
+          Create Account
+        </button>
       </form>
 
-      <div class="login-link">
-        Already have an account? <a href="login.html">Log In</a>
+      <div class="mt-3 md:mt-2.5 text-center md:text-left font-sans">
+        <p class="text-[12px] md:text-[10px] lg:text-[12px] font-medium text-gray-500 dark:text-gray-400">Already have
+          an account?
+          <a href="login.html"
+            class="font-bold text-theme-accent hover:text-theme-accent-dark transition-colors border-b border-transparent hover:border-theme-accent pb-0.5 ml-1">Log
+            In <span class="inline-block rtl:rotate-180">→</span></a>
+        </p>
       </div>
     </div>
-  </div>
+  </main>
+
+  <!-- Toast Container -->
+  <div id="toastContainer"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-auto max-w-[90vw]"></div>
 
   <script>
-    // Toast helper
-    function showToast(message) {
-      const existingToast = document.querySelector('.toast');
-      if (existingToast) existingToast.remove();
-      const toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.textContent = message;
-      document.body.appendChild(toast);
-      setTimeout(() => { if (toast && toast.parentNode) toast.remove(); }, 2600);
-    }
+      // Global DOM ready
+      (function () {
+        // Toast function
+        function showToast(message, type = 'success') {
+          const container = document.getElementById('toastContainer');
+          if (!container) return;
+          const toast = document.createElement('div');
+          let bgColor = 'bg-emerald-600';
+          let icon = '<i class="fas fa-check-circle text-white text-sm"></i>';
+          if (type === 'error') { bgColor = 'bg-red-500'; icon = '<i class="fas fa-times-circle text-white text-sm"></i>'; }
+          else if (type === 'warning') { bgColor = 'bg-amber-500'; icon = '<i class="fas fa-exclamation-triangle text-white text-sm"></i>'; }
+          else if (type === 'info') { bgColor = 'bg-theme-accent'; icon = '<i class="fas fa-info-circle text-white text-sm"></i>'; }
+          toast.className = `toast-animation mb-2 px-5 py-3 rounded-xl shadow-lg text-xs sm:text-sm font-medium flex items-center gap-2 pointer-events-auto ${bgColor} text-white max-w-full`;
+          toast.innerHTML = `${icon} <span class="break-words">${message}</span>`;
+          container.appendChild(toast);
+          setTimeout(() => { if (toast && toast.remove) toast.remove(); }, 2600);
+        }
 
-    // Password visibility toggles
-    function initPasswordToggles() {
-      document.querySelectorAll('.toggle-password').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const wrapper = btn.closest('.password-wrapper');
-          if (!wrapper) return;
-          const input = wrapper.querySelector('input');
-          const icon = btn.querySelector('i');
-          if (input.type === 'password') {
-            input.type = 'text';
-            if (icon) icon.className = 'fas fa-eye';
-          } else {
-            input.type = 'password';
-            if (icon) icon.className = 'fas fa-eye-slash';
+        // Password toggles for both fields
+        const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+        togglePasswordBtns.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = btn.getAttribute('data-target');
+            const passwordInput = document.getElementById(targetId);
+            const toggleIcon = btn.querySelector('i');
+            if (passwordInput && toggleIcon) {
+              if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+              } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+              }
+            }
+          });
+        });
+
+        // Theme toggle with proper sync
+        const themeToggle = document.getElementById('theme-toggle-signup');
+        const htmlTag = document.documentElement;
+        function updateThemeIcons() {
+          const isDark = htmlTag.classList.contains('dark');
+          const sunIcon = document.querySelector('#theme-toggle-signup .fa-sun');
+          const moonIcon = document.querySelector('#theme-toggle-signup .fa-moon');
+          if (sunIcon && moonIcon) {
+            if (isDark) {
+              sunIcon.classList.add('hidden');
+              moonIcon.classList.remove('hidden');
+            } else {
+              sunIcon.classList.remove('hidden');
+              moonIcon.classList.add('hidden');
+            }
           }
-        });
-      });
-    }
+        }
+        function toggleTheme() {
+          if (htmlTag.classList.contains('dark')) {
+            htmlTag.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            showToast('Light mode activated — cheers!', 'info');
+          } else {
+            htmlTag.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            showToast('Dark mode activated — smooth vibes', 'info');
+          }
+          updateThemeIcons();
+        }
+        if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-    // Dark Mode Logic
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const bodyEl = document.body;
-
-    function updateThemeIcon() {
-      if (bodyEl.classList.contains('dark-mode')) {
-        themeIcon.className = 'fas fa-sun';
-      } else {
-        themeIcon.className = 'fas fa-moon';
-      }
-    }
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        bodyEl.classList.toggle('dark-mode');
-        localStorage.setItem('theme', bodyEl.classList.contains('dark-mode') ? 'dark' : 'light');
-        updateThemeIcon();
-        showToast(bodyEl.classList.contains('dark-mode') ? 'Dark mode activated — smooth vibes' : 'Light mode activated — cheers!');
-      });
-    }
-
-    // Load theme preference
-    if (localStorage.getItem('theme') === 'dark') bodyEl.classList.add('dark-mode');
-    updateThemeIcon();
-
-    // RTL Toggle with enhanced UX
-    const rtlToggle = document.getElementById('rtlToggle');
-    if (rtlToggle) {
-      rtlToggle.addEventListener('click', () => {
-        const currentDir = document.documentElement.getAttribute('dir');
-        if (currentDir === 'rtl') {
-          document.documentElement.removeAttribute('dir');
-          localStorage.setItem('dir', 'ltr');
-          showToast('Layout set to LTR');
+        // Initialize theme
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          htmlTag.classList.add('dark');
         } else {
-          document.documentElement.setAttribute('dir', 'rtl');
-          localStorage.setItem('dir', 'rtl');
-          showToast('Layout set to RTL');
+          htmlTag.classList.remove('dark');
         }
-      });
-    }
-    if (localStorage.getItem('dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+        updateThemeIcons();
 
-    // Social sign-up demo handlers
-    const socialHandlers = {
-      google: 'Google', facebook: 'Facebook', apple: 'Apple'
-    };
-    Object.keys(socialHandlers).forEach(provider => {
-      const btn = document.getElementById(`${provider}Signup`);
-      if (btn) {
-        btn.addEventListener('click', () => {
-          showToast(`${socialHandlers[provider]} sign-up — coming soon`);
+        // RTL Toggle with full RTL alignment updates
+        const rtlToggle = document.getElementById('rtl-toggle-signup');
+        function applyRTLStyles(isRtl) {
+          if (isRtl) {
+            htmlTag.setAttribute('dir', 'rtl');
+            localStorage.setItem('direction', 'rtl');
+          } else {
+            htmlTag.removeAttribute('dir');
+            localStorage.setItem('direction', 'ltr');
+          }
+        }
+        function toggleRTL() {
+          const currentDir = htmlTag.getAttribute('dir');
+          if (currentDir === 'rtl') {
+            applyRTLStyles(false);
+            showToast('LTR layout activated', 'info');
+          } else {
+            applyRTLStyles(true);
+            showToast('RTL layout for Arabic/Hebrew', 'info');
+          }
+        }
+        if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+        if (localStorage.getItem('direction') === 'rtl') {
+          htmlTag.setAttribute('dir', 'rtl');
+        } else if (localStorage.getItem('direction') === 'ltr') {
+          htmlTag.removeAttribute('dir');
+        }
+
+        // Signup form validation & submission
+        const signupForm = document.getElementById('signupForm');
+        if (signupForm) {
+          signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            const termsChecked = document.getElementById('termsCheckbox').checked;
+
+            if (!fullname) { showToast('Please enter your full name', 'warning'); return; }
+            if (fullname.length < 2) { showToast('Please enter a valid full name', 'warning'); return; }
+            if (!email) { showToast('Please enter your email address', 'warning'); return; }
+            if (!email.includes('@') || !email.includes('.')) { showToast('Please enter a valid email address', 'error'); return; }
+            if (!password) { showToast('Please enter a password', 'warning'); return; }
+            if (password.length < 6) { showToast('Password must be at least 6 characters', 'warning'); return; }
+            if (password !== confirm) { showToast('Passwords do not match', 'error'); return; }
+            if (!termsChecked) { showToast('Please agree to the Terms & Conditions', 'warning'); return; }
+
+            const firstName = fullname.split(' ')[0] || "Mixologist";
+            showToast(`🍸 Welcome ${firstName}! Your signature cocktail journey begins.`, 'success');
+          });
+        }
+
+        // Social signup demo
+        document.querySelectorAll('.social-login-btn').forEach(btn => {
+          btn.addEventListener('click', () => { showToast('Social sign-up demo — integrate your auth provider', 'info'); });
         });
-      }
-    });
 
-    // Form validation and account creation demo
-    const signupForm = document.getElementById('signupForm');
-    if (signupForm) {
-      signupForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const fullname = document.getElementById('fullname').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        const confirm = document.getElementById('confirmPassword').value;
-        const termsChecked = document.getElementById('termsCheckbox').checked;
-
-        if (!fullname || fullname.length < 2) {
-          return showToast('Please enter a valid full name');
+        // Additional dynamic fix: On window resize or orientation, ensure no layout overflow
+        function adjustFor360() {
+          if (window.innerWidth <= 380) {
+            const formContainer = document.querySelector('.glass-card .w-full.md\\:w-1\\/2');
+            if (formContainer) formContainer.classList.add('px-3');
+          } else {
+            const formContainer = document.querySelector('.glass-card .w-full.md\\:w-1\\/2');
+            if (formContainer) formContainer.classList.remove('px-3');
+          }
         }
-        const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          return showToast('Please enter a valid email address');
-        }
-        if (!password || password.length < 6) {
-          return showToast('Password must be at least 6 characters');
-        }
-        if (password !== confirm) {
-          return showToast('Passwords do not match');
-        }
-        if (!termsChecked) {
-          return showToast('Please agree to the Terms of Service');
-        }
-
-        const firstName = fullname.split(' ')[0] || "Mixologist";
-        showToast(`🍸 Welcome ${firstName}! Your signature cocktail journey begins.`);
-      });
-    }
-
-    // Enforce no global body scroll while allowing scroll inside card
-    function preventBodyScrollOnOuter(e) {
-      const insideCard = e.target.closest('.signup-card');
-      if (!insideCard) {
-        e.preventDefault();
-        return false;
-      }
-      return true;
-    }
-
-    document.body.addEventListener('touchmove', preventBodyScrollOnOuter, { passive: false });
-    document.body.addEventListener('wheel', (e) => {
-      const insideScrollable = e.target.closest('.signup-card');
-      if (!insideScrollable) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    initPasswordToggles();
-
-    const signupCard = document.querySelector('.signup-card');
-    if (signupCard) {
-      signupCard.addEventListener('wheel', (e) => {
-        e.stopPropagation();
-      }, { passive: false });
-    }
+        window.addEventListener('resize', adjustFor360);
+        adjustFor360();
+      })();
   </script>
+  <style>
+    .dark .fa-sun {
+      display: none !important;
+    }
+
+    .dark .fa-moon {
+      display: inline-block !important;
+    }
+
+    .fa-moon {
+      display: none;
+    }
+
+    .fa-sun {
+      display: inline-block;
+    }
+
+    .hide-scrollbar {
+      scrollbar-width: thin;
+    }
+
+    [dir="rtl"] .text-left {
+      text-align: right;
+    }
+
+    [dir="rtl"] .flex.items-center.justify-between {
+      flex-direction: row;
+    }
+
+    [dir="rtl"] .gap-2 {
+      gap: 0.5rem;
+    }
+
+    [dir="rtl"] .me-2 {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+
+    [dir="rtl"] .ms-2 {
+      margin-right: 0.5rem;
+      margin-left: 0;
+    }
+
+    [dir="rtl"] .ml-1 {
+      margin-right: 0.25rem;
+      margin-left: 0;
+    }
+  </style>
 </body>
 
 </html>
