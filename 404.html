@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-  <title>Liquid Arts | 404 — Cocktail Not Found</title>
-  <link rel="icon" href="/assets/fav.png" type="image/jpeg">
+  <title>BarHouse | 404 — Bar Setup Not Found</title>
+  <link rel="icon" href="assets/fav.png" type="image/png">
   <meta name="description"
-    content="Page not found — The cocktail you're looking for has been shaken, stirred, and lost in transit. Return to Liquid Arts for premium mobile bartending experiences.">
+    content="Page not found — The bar setup you're looking for has been dismantled or moved. Return to BarHouse for premium home bar setups and accessories.">
 
   <script src="tailwind.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,11 +16,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@300;400;700&display=swap"
     rel="stylesheet">
 
   <style>
-    /* CRITICAL: COMPLETELY STATIC — NO MOVEMENT, FULLY RESPONSIVE, NO TOP COCKTAIL ICON */
+    /* Static, fully responsive 404 page — no animations, no top icon, matches BarHouse brand */
     * {
       margin: 0;
       padding: 0;
@@ -41,14 +41,14 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Lato', sans-serif;
       overflow: hidden;
       position: fixed;
       width: 100%;
       height: 100%;
     }
 
-    /* BACKGROUND: perfectly static, responsive cover */
+    /* Background: perfectly static, responsive cover */
     .background-container {
       position: fixed;
       top: 0;
@@ -75,7 +75,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.75) 50%, rgba(10, 10, 10, 0.88) 100%);
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.78) 50%, rgba(10, 10, 10, 0.9) 100%);
       z-index: 1;
       pointer-events: none;
     }
@@ -86,12 +86,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(10, 10, 10, 0.5) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.55) 0%, transparent 60%);
       z-index: 1;
       pointer-events: none;
     }
 
-    /* MAIN CONTENT CONTAINER — absolute centering, responsive, smaller overall size */
+    /* MAIN CONTENT CONTAINER — absolute centering, responsive */
     .fixed-container {
       position: fixed;
       top: 0;
@@ -107,7 +107,6 @@
       pointer-events: auto;
     }
 
-    /* Content wrapper — responsive, centered, slightly scaled down */
     .content-wrapper {
       width: 100%;
       max-width: 880px;
@@ -117,7 +116,7 @@
       overflow: visible;
     }
 
-    /* 404 Number - responsive font size, slightly smaller */
+    /* 404 Number - responsive, brand amber */
     .four-zero-four {
       position: relative;
       margin-bottom: clamp(0.5rem, 3vw, 1.25rem);
@@ -136,7 +135,7 @@
       z-index: 10;
     }
 
-    /* Decorative lines - responsive positioning, smaller */
+    /* Decorative lines — static, amber */
     .decor-left,
     .decor-right {
       position: absolute;
@@ -193,7 +192,7 @@
       height: clamp(8px, 2.4vw, 15px);
     }
 
-    /* Navigation cards - responsive, no movement, compact */
+    /* Navigation cards — BarHouse style */
     .nav-card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(8px);
@@ -226,7 +225,7 @@
       font-weight: 500;
     }
 
-    /* Button - responsive, slightly smaller, no icon movement */
+    /* Button — BarHouse amber */
     .btn-shine {
       background: #F59E0B;
       transition: background-color 0.2s ease;
@@ -271,13 +270,18 @@
       font-size: clamp(0.6rem, 2.2vw, 0.8rem);
     }
 
-    /* Text responsive, smaller scale */
+    /* Text responsive */
     .message-title {
       font-size: clamp(1.2rem, 5vw, 2rem);
       font-weight: 700;
       color: white;
       letter-spacing: -0.025em;
       margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .message-title span {
+      color: #F59E0B;
     }
 
     .message-text {
@@ -286,6 +290,7 @@
       line-height: 1.45;
       max-width: 460px;
       margin: 0 auto;
+      font-weight: 300;
     }
 
     .help-text {
@@ -304,7 +309,7 @@
       text-decoration: underline;
     }
 
-    /* Grid responsive, compact */
+    /* Grid responsive */
     .nav-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -319,7 +324,6 @@
       display: none;
     }
 
-    /* Responsive adjustments for very small devices */
     @media (max-width: 480px) {
       .nav-grid {
         max-width: 210px;
@@ -338,7 +342,6 @@
       }
     }
 
-    /* Medium screens fine tuning */
     @media (min-width: 1280px) {
       .glow-text {
         font-size: 160px;
@@ -357,7 +360,6 @@
       }
     }
 
-    /* Extra small devices (phones < 380px) */
     @media (max-width: 380px) {
       .glow-text {
         font-size: 55px;
@@ -385,7 +387,7 @@
       }
     }
 
-    /* No movement anywhere */
+    /* No movement anywhere — matches static requirement */
     .glow-text,
     .decor-line,
     .nav-card i,
@@ -402,19 +404,14 @@
     .btn-shine:hover .cocktail-icon-btn {
       transform: none !important;
     }
-
-    /* Ensure no floating or extra icons */
-    .removed-icon-space {
-      display: none;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- Background Image Container -->
+  <!-- Background Image Container — using a home bar / cocktail related image from assets -->
   <div class="background-container">
-    <img src="assets/about1.jpg" alt="Cocktail background"
+    <img src="assets/home.jpg" alt="Home bar background"
       onerror="this.style.opacity='0'; this.parentElement.style.backgroundColor='#0a0a0a';">
   </div>
 
@@ -422,12 +419,12 @@
   <div class="overlay-gradient"></div>
   <div class="overlay-gradient-bottom"></div>
 
-  <!-- Fixed Container - Content stays perfectly centered, NO top cocktail icon -->
+  <!-- Fixed Container - Content stays perfectly centered -->
   <div class="fixed-container">
     <div class="content-wrapper">
       <div class="text-center w-full">
 
-        <!-- 404 Number with Decorative Lines - ICON COMPLETELY REMOVED -->
+        <!-- 404 Number with Decorative Lines -->
         <div class="four-zero-four">
           <div class="decor-left">
             <div class="decor-line"></div>
@@ -446,18 +443,18 @@
           </div>
         </div>
 
-        <!-- Clever 404 message - slightly reduced text size for balanced proportion -->
+        <!-- Message adapted for BarHouse -->
         <div>
           <h1 class="message-title">
-            <span class="text-[#F59E0B]">Cocktail Not Found</span>
+            <span>Bar Setup Not Found</span>
           </h1>
           <p class="message-text">
             This page has been shaken, stirred, and lost in transit.
-            The cocktail you're looking for might have evaporated or moved to another menu.
+            The home bar setup or accessory you're looking for might have been moved or never existed.
           </p>
         </div>
 
-        <!-- Quick Navigation Links - Responsive Grid, smaller card sizing -->
+        <!-- Quick Navigation Links - Home + Contact -->
         <div class="nav-grid">
           <a href="index.html" class="nav-card">
             <i class="fas fa-home"></i>
@@ -469,27 +466,26 @@
           </a>
         </div>
 
-        <!-- Back to Home Button with minimal icon, compact -->
+        <!-- Back to Home Button -->
         <div>
           <a href="index.html" class="btn-shine">
             <i class="fas fa-arrow-left"></i>
-            <span>Back to Liquid Arts</span>
-            <i class="fas fa-cocktail"></i>
+            <span>Back to BarHouse</span>
+            <i class="fas fa-martini-glass"></i>
           </a>
         </div>
 
-        <!-- Help Text - fine print assistance -->
+        <!-- Help Text -->
         <p class="help-text">
-          Need assistance? <a href="contact.html">Contact our team</a> and we'll point you in the right direction.
+          Need assistance? <a href="contact.html">Contact our team</a> and we'll help you find the perfect setup.
         </p>
       </div>
     </div>
   </div>
 
-  <!-- NO MOVEMENT SCRIPT - completely static page, fully responsive, ensures no floating icon -->
+  <!-- Static script — locks page, no movement, no extra icons -->
   <script>
     (function () {
-      // Lock body to ensure no scrolling whatsoever
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
@@ -501,25 +497,18 @@
       document.body.style.width = '100%';
       document.body.style.height = '100%';
 
-      // Prevent all touch movements that could cause scrolling
       function preventAllMovement(e) {
         e.preventDefault();
         return false;
       }
 
-      // Prevent touchmove on entire document (only if needed, but keep static)
       document.body.addEventListener('touchmove', preventAllMovement, { passive: false });
-      // Allow taps but no drag scrolling: we still want links to be clickable, so only prevent touchmove but not touchstart completely
-      // We adjust: touchstart only blocks if it's a two-finger or non-link element? to keep UX we only block move, not all touches.
-      // Refine: Let links be clickable but no scrolling: we already lock body position fixed. Touchmove prevents accidental scroll.
 
-      // Prevent wheel scrolling
       window.addEventListener('wheel', function (e) {
         e.preventDefault();
         return false;
       }, { passive: false });
 
-      // Prevent keyboard scrolling
       window.addEventListener('keydown', function (e) {
         const keys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' ', 'Space', 'PageUp', 'PageDown', 'Home', 'End'];
         if (keys.includes(e.key) || e.key === 'Space' || e.key === ' ') {
@@ -528,7 +517,6 @@
         }
       });
 
-      // Constantly reset scroll position to 0,0
       function resetScroll() {
         window.scrollTo(0, 0);
         document.documentElement.scrollTop = 0;
@@ -538,7 +526,6 @@
       resetScroll();
       window.addEventListener('scroll', resetScroll);
 
-      // Fix for any elements that might inadvertently cause overflow
       const allParents = [document.documentElement, document.body];
       allParents.forEach(el => {
         if (el) {
@@ -553,89 +540,36 @@
         }
       });
 
-      // Remove any existing particles or animations, and also any possible leftover cocktail icon containers
-      const removeParticlesAndIcon = () => {
-        const particles = document.querySelectorAll('.ambient-particle, .particle, [class*="particle"]');
-        particles.forEach(p => p.remove());
-        // Ensure no hidden icon container from previous version exists
-        const iconContainers = document.querySelectorAll('.cocktail-icon-container, .top-cocktail-icon, .icon-ring');
-        iconContainers.forEach(container => container.remove());
-        // Also any accidental font awesome cocktail icons that might appear before 404? we explicitly removed markup but double check.
-        const strayIcons = document.querySelectorAll('.pre-404-icon, .floating-cocktail');
-        strayIcons.forEach(icon => icon.remove());
-      };
-      removeParticlesAndIcon();
-
-      // Ensure no CSS animations on key elements
+      // Ensure no stray animations
       const staticElements = document.querySelectorAll('.glow-text, .decor-line, .nav-card i, .btn-shine i');
       staticElements.forEach(el => {
         el.style.animation = 'none';
-        if (el.style.transition) el.style.transition = 'none';
       });
 
-      // Monitor for any dynamically added animations or reappearing icons
-      const observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-          if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-            if (mutation.target.style && mutation.target.style.animation) {
-              mutation.target.style.animation = 'none';
-            }
-          }
-          // Remove any added icon containers that might be inserted dynamically
-          if (mutation.addedNodes && mutation.addedNodes.length) {
-            mutation.addedNodes.forEach(node => {
-              if (node.nodeType === 1) {
-                if (node.classList && (node.classList.contains('cocktail-icon-container') || node.classList.contains('top-cocktail-icon') || node.classList.contains('icon-ring'))) {
-                  node.remove();
-                }
-                // Also check for any child icons with cocktail class
-                if (node.querySelectorAll) {
-                  const dangerousIcons = node.querySelectorAll('.cocktail-icon-container, .top-cocktail-icon, .icon-ring');
-                  dangerousIcons.forEach(icon => icon.remove());
-                }
-              }
-            });
-          }
-        });
-
-        // Always ensure body is fixed and no overflow
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
-        window.scrollTo(0, 0);
+      window.addEventListener('load', function () {
+        resetScroll();
+        if (window.innerWidth <= 480) {
+          const messageText = document.querySelector('.message-text');
+          if (messageText) messageText.style.lineHeight = '1.4';
+        }
+        const container = document.querySelector('.fixed-container');
+        if (container) {
+          container.style.overflow = 'visible';
+        }
       });
 
-      observer.observe(document.body, { attributes: true, childList: true, subtree: true });
-      observer.observe(document.documentElement, { attributes: true });
-
-      // Resize handling - maintain no overflow, update responsive sizing & ensure no icon reappears
-      let resizeTimeout;
       window.addEventListener('resize', function () {
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
         resetScroll();
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          resetScroll();
-          removeParticlesAndIcon();
-          // Re-check that 404 text is fully visible and no margin issues
-          const glow = document.querySelector('.glow-text');
-          if (glow) glow.style.transform = 'none';
-          // Adjust the decor lines position if necessary to avoid clipping on extreme dimensions
-          const leftDecor = document.querySelector('.decor-left');
-          const rightDecor = document.querySelector('.decor-right');
-          if (leftDecor && rightDecor && window.innerWidth < 480) {
-            // fine tune positions dynamically (already handled by CSS)
-          }
-        }, 100);
       });
 
-      // Lock viewport meta to allow user-scalable but maintain responsiveness
       const metaViewport = document.querySelector('meta[name="viewport"]');
       if (metaViewport) {
         metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover');
       }
 
-      // Disable all intrusive transitions and ensure no top icon movement
+      // Additional style to ensure no unexpected animations
       const style = document.createElement('style');
       style.textContent = `
         .glow-text, .decor-line, .nav-card i, .btn-shine i, .nav-card, .btn-shine {
@@ -654,61 +588,8 @@
           transform: translateZ(0);
           -webkit-transform: translateZ(0);
         }
-        /* completely hide any possible remaining cocktail icon containers */
-        .cocktail-icon-container, .top-cocktail-icon, .icon-ring {
-          display: none !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
-          pointer-events: none !important;
-          position: absolute !important;
-          width: 0 !important;
-          height: 0 !important;
-          overflow: hidden !important;
-        }
-        body .fa-cocktail:first-child:before {
-          /* but not kill button icons, only prevent extra floating icons */
-        }
-        /* ensure any prepended cocktail icon that is standalone (not inside btn) hidden */
-        .text-center > .fa-cocktail:first-child,
-        .four-zero-four + .fa-cocktail {
-          display: none;
-        }
       `;
       document.head.appendChild(style);
-
-      // Force final check on load: no icon appears, content size is slightly scaled down
-      window.addEventListener('load', function () {
-        removeParticlesAndIcon();
-        resetScroll();
-        // Double-check that no cocktail icon container exists above 404
-        const possibleIconParent = document.querySelector('.four-zero-four')?.previousElementSibling;
-        if (possibleIconParent && (possibleIconParent.classList?.contains('cocktail-icon-container') || possibleIconParent.classList?.contains('top-cocktail-icon'))) {
-          possibleIconParent.remove();
-        }
-        // Additional responsive fine-tuning: adjust line heights for smaller devices
-        if (window.innerWidth <= 480) {
-          const messageText = document.querySelector('.message-text');
-          if (messageText) messageText.style.lineHeight = '1.4';
-        }
-        // Ensure overall content container never exceeds viewport boundaries
-        const container = document.querySelector('.fixed-container');
-        if (container) {
-          container.style.overflow = 'visible';
-        }
-      });
-
-      // Also re-run removal after a micro second in case any late rendering adds any remnant
-      setTimeout(() => {
-        removeParticlesAndIcon();
-        const anyRing = document.querySelector('.icon-ring');
-        if (anyRing) anyRing.remove();
-        const anyCocktailContainer = document.querySelector('.cocktail-icon-container');
-        if (anyCocktailContainer) anyCocktailContainer.remove();
-        const topIcon = document.querySelector('.top-cocktail-icon');
-        if (topIcon) topIcon.remove();
-      }, 50);
-
-      console.log('Page is completely static, fully responsive, cocktail icon removed, content scaled slightly smaller');
     })();
   </script>
 
