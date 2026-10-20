@@ -28,7 +28,7 @@
             'theme-accent-dark': '#D97706',
             'theme-accent-light': '#FCD34D',
             'dark-gray': '#0a0a0a',
-            'light-peach': '#FFFFFF',
+            'light-peach': '#F8F9FA',
             white: '#FFFFFF'
           },
           fontFamily: {
@@ -337,6 +337,7 @@
       <div class="flex justify-between items-center h-20">
         <div class="flex-shrink-0">
           <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/fav.png" alt="BarHouse Logo" class="w-10 h-10 object-contain">
             <div class="flex flex-col">
               <span
                 class="text-2xl font-serif font-bold text-dark-gray dark:text-white nav-logo-text tracking-wide transition-colors duration-300 group-hover:opacity-80"><span
@@ -387,33 +388,27 @@
           </div>
         </div>
 
-        <div class="hidden xl:flex items-center gap-2">
-
-          <!-- RTL & Dark Mode Left Side -->
+        <div class="hidden xl:flex items-center gap-3">
+          <!-- RTL & Theme Toggle -->
           <div
-            class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5">
-
+            class="h-10 flex items-center gap-3 px-2 bg-gray-50/50 dark:bg-white/5 rounded-full border border-gray-100 dark:border-white/5">
             <button id="rtl-toggle"
-              class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+              class="h-8 px-2.5 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
               title="Toggle RTL">
               <span class="text-[10px] font-bold">RTL</span>
             </button>
-
             <button id="theme-toggle"
               class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
               title="Toggle Theme">
               <i class="fas fa-moon dark:hidden text-xs"></i>
               <i class="fas fa-sun hidden dark:inline text-xs"></i>
             </button>
-
           </div>
-
           <!-- Book Now -->
           <a href="contact.html"
-            class="whitespace-nowrap bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-2 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
+            class="h-10 px-5 inline-flex items-center justify-center whitespace-nowrap bg-theme-accent hover:bg-theme-accent-dark text-white rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
             Book Now
           </a>
-
         </div>
 
         <div class="xl:hidden flex items-center">
@@ -623,11 +618,11 @@
             src="https://s.yimg.com/ny/api/res/1.2/n4Q8PQlSIAo7ni4Hwn4S8Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk7Y2Y9d2VicA--/https://media.zenfs.com/en/robb_report_967/5e962e18880c4f1f5a53fbd4143cdbc7"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
           <div
-            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
-            <div class="text-center text-white"><i
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 transition-all duration-300 flex flex-col justify-end items-center text-center p-6 sm:p-7">
+            <div class="text-center text-white w-full"><i
                 class="fas fa-whiskey-glass text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
               <h3 class="text-xl sm:text-2xl font-serif font-bold">Muddling Tools</h3>
-              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Walnut & Steel</p>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-200 mt-1">Walnut & Steel</p>
             </div>
           </div>
         </div>
@@ -636,11 +631,11 @@
           <img src="assets/gin.png"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
           <div
-            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
-            <div class="text-center text-white"><i
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 transition-all duration-300 flex flex-col justify-end items-center text-center p-6 sm:p-7">
+            <div class="text-center text-white w-full"><i
                 class="fas fa-wine-glass text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
               <h3 class="text-xl sm:text-2xl font-serif font-bold">Shaking Sets</h3>
-              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Boston & Cobbler</p>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-200 mt-1">Boston & Cobbler</p>
             </div>
           </div>
         </div>
@@ -650,11 +645,11 @@
             src="https://images.buyagift.co.uk/common/client/Images/Product/Extralarge/en-GB/distilling_spirit_flight_for_two_BAG_4.jpg"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
           <div
-            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
-            <div class="text-center text-white"><i
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 transition-all duration-300 flex flex-col justify-end items-center text-center p-6 sm:p-7">
+            <div class="text-center text-white w-full"><i
                 class="fas fa-cocktail text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
               <h3 class="text-xl sm:text-2xl font-serif font-bold">Measurement</h3>
-              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Jiggers & Spoons</p>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-200 mt-1">Jiggers & Spoons</p>
             </div>
           </div>
         </div>
@@ -663,11 +658,11 @@
           <img src="assets/home.jpg"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
           <div
-            class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition flex items-center justify-center p-4">
-            <div class="text-center text-white"><i
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 transition-all duration-300 flex flex-col justify-end items-center text-center p-6 sm:p-7">
+            <div class="text-center text-white w-full"><i
                 class="fas fa-wine-bottle text-3xl sm:text-4xl mb-2 sm:mb-3 text-theme-accent"></i>
               <h3 class="text-xl sm:text-2xl font-serif font-bold">Glassware</h3>
-              <p class="text-[10px] sm:text-xs uppercase tracking-wider">Crystal & Coupe</p>
+              <p class="text-[10px] sm:text-xs uppercase tracking-wider text-gray-200 mt-1">Crystal & Coupe</p>
             </div>
           </div>
         </div>
@@ -797,7 +792,19 @@
 
         <!-- Left Section -->
         <div class="lg:col-span-5 flex flex-col items-start">
-          <div class="flex gap-4 mb-8">
+          <a href="index.html" class="flex items-center gap-3 mb-6 group">
+            <img src="assets/fav.png" alt="BarHouse Logo" class="w-10 h-10 object-contain">
+            <span class="text-2xl font-serif font-bold tracking-wide">
+              <span class="text-theme-accent italic">BarHouse</span>
+            </span>
+          </a>
+
+          <p class="text-gray-400 text-sm leading-relaxed font-light max-w-md mb-8">
+            Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails,
+            aesthetic perfection, and exceptional service.
+          </p>
+
+          <div class="flex gap-4">
             <a href="#"
               class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all">
               <i class="fab fa-instagram"></i>
@@ -813,17 +820,6 @@
               <i class="fab fa-pinterest-p"></i>
             </a>
           </div>
-
-          <a href="index.html" class="inline-block mb-8">
-            <span class="text-2xl font-serif font-bold tracking-wide">
-              <span class="text-theme-accent italic">BarHouse</span>
-            </span>
-          </a>
-
-          <p class="text-gray-400 text-sm leading-relaxed font-light max-w-md">
-            Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails,
-            aesthetic perfection, and exceptional service.
-          </p>
         </div>
 
         <!-- Explore -->

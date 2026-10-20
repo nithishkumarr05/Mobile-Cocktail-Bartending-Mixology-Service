@@ -28,7 +28,7 @@
             'theme-accent-dark': '#D97706',
             'theme-accent-light': '#FCD34D',
             'dark-gray': '#0a0a0a',
-            'light-peach': '#FFFFFF',
+            'light-peach': '#F8F9FA',
             white: '#FFFFFF'
           },
           fontFamily: {
@@ -223,6 +223,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/fav.png" alt="BarHouse Logo" class="w-10 h-10 object-contain">
             <div class="flex flex-col">
               <span
                 class="text-2xl font-serif font-bold text-dark-gray dark:text-white nav-logo-text tracking-wide transition-colors duration-300 group-hover:opacity-80"><span
@@ -274,12 +275,15 @@
         </div>
 
         <!-- Desktop right side: RTL + Dark mode LEFT side, Login and Register LAST (rightmost) -->
-        <div class="hidden xl:flex items-center gap-2">
+        <div class="hidden xl:flex items-center gap-3">
+          <!-- RTL & Theme Toggle -->
           <div
-            class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5">
+            class="h-10 flex items-center gap-3 px-2 bg-gray-50/50 dark:bg-white/5 rounded-full border border-gray-100 dark:border-white/5">
             <button id="rtl-toggle"
-              class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
-              title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
+              class="h-8 px-2.5 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+              title="Toggle RTL">
+              <span class="text-[10px] font-bold">RTL</span>
+            </button>
             <button id="theme-toggle"
               class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
               title="Toggle Theme">
@@ -289,7 +293,7 @@
           </div>
           <!-- Book Now -->
           <a href="contact.html"
-            class="whitespace-nowrap bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-2 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
+            class="h-10 px-5 inline-flex items-center justify-center whitespace-nowrap bg-theme-accent hover:bg-theme-accent-dark text-white rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
             Book Now
           </a>
         </div>
@@ -595,7 +599,19 @@
 
         <!-- Left Section -->
         <div class="lg:col-span-5 flex flex-col items-start">
-          <div class="flex gap-4 mb-8">
+          <a href="index.html" class="flex items-center gap-3 mb-6 group">
+            <img src="assets/fav.png" alt="BarHouse Logo" class="w-10 h-10 object-contain">
+            <span class="text-2xl font-serif font-bold tracking-wide">
+              <span class="text-theme-accent italic">BarHouse</span>
+            </span>
+          </a>
+
+          <p class="text-gray-400 text-sm leading-relaxed font-light max-w-md mb-8">
+            Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails,
+            aesthetic perfection, and exceptional service.
+          </p>
+
+          <div class="flex gap-4">
             <a href="#"
               class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all">
               <i class="fab fa-instagram"></i>
@@ -611,17 +627,6 @@
               <i class="fab fa-pinterest-p"></i>
             </a>
           </div>
-
-          <a href="index.html" class="inline-block mb-8">
-            <span class="text-2xl font-serif font-bold tracking-wide">
-              <span class="text-theme-accent italic">BarHouse</span>
-            </span>
-          </a>
-
-          <p class="text-gray-400 text-sm leading-relaxed font-light max-w-md">
-            Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails,
-            aesthetic perfection, and exceptional service.
-          </p>
         </div>
 
         <!-- Explore -->

@@ -27,7 +27,7 @@
             'theme-accent-dark': '#D97706',
             'theme-accent-light': '#FCD34D',
             'dark-gray': '#0a0a0a',
-            'light-peach': '#FFFFFF',
+            'light-peach': '#F8F9FA',
             white: '#FFFFFF'
           },
           fontFamily: {
@@ -304,6 +304,7 @@
       <div class="flex justify-between items-center h-20">
         <div class="flex-shrink-0">
           <a href="index.html" class="flex items-center gap-3 group">
+            <img src="assets/fav.png" alt="BarHouse Logo" class="w-10 h-10 object-contain">
             <div class="flex flex-col">
               <span
                 class="text-2xl font-serif font-bold text-dark-gray dark:text-white nav-logo-text tracking-wide transition-colors duration-300 group-hover:opacity-80"><span
@@ -353,12 +354,15 @@
           </div>
         </div>
 
-        <div class="hidden xl:flex items-center gap-2">
+        <div class="hidden xl:flex items-center gap-3">
+          <!-- RTL & Theme Toggle -->
           <div
-            class="flex items-center bg-gray-50/50 dark:bg-white/5 rounded-full p-1 border border-gray-100 dark:border-white/5">
+            class="h-10 flex items-center gap-3 px-2 bg-gray-50/50 dark:bg-white/5 rounded-full border border-gray-100 dark:border-white/5">
             <button id="rtl-toggle"
-              class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
-              title="Toggle RTL"><span class="text-[10px] font-bold">RTL</span></button>
+              class="h-8 px-2.5 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
+              title="Toggle RTL">
+              <span class="text-[10px] font-bold">RTL</span>
+            </button>
             <button id="theme-toggle"
               class="w-8 h-8 rounded-full hover:bg-white dark:hover:bg-white/10 flex items-center justify-center text-dark-gray dark:text-white transition duration-300"
               title="Toggle Theme">
@@ -368,7 +372,7 @@
           </div>
           <!-- Book Now -->
           <a href="contact.html"
-            class="whitespace-nowrap bg-theme-accent hover:bg-theme-accent-dark text-white px-4 py-2 rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
+            class="h-10 px-5 inline-flex items-center justify-center whitespace-nowrap bg-theme-accent hover:bg-theme-accent-dark text-white rounded-full font-medium transition duration-300 text-xs uppercase tracking-widest shadow-lg shadow-theme-accent/30 hover:shadow-theme-accent/50 hover:-translate-y-0.5 transform">
             Book Now
           </a>
         </div>
@@ -631,24 +635,62 @@
 
   <!-- INSTAGRAM WALL -->
   <section class="py-20 bg-light-peach dark:bg-[#0f0f0f]">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center reveal"><i
-        class="fab fa-instagram text-5xl text-theme-accent mb-4"></i>
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+        class="inline-block hover:scale-110 transition-transform duration-300" title="Follow us on Instagram">
+        <i class="fab fa-instagram text-5xl text-theme-accent mb-4"></i>
+      </a>
       <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white">Follow Our Journey</h2>
-      <p class="text-gray-500 dark:text-gray-400 mt-2 mb-8">@barhouse — daily home mixology inspiration</p>
+      <p class="text-gray-500 dark:text-gray-400 mt-2 mb-8">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="text-theme-accent hover:underline font-medium">@barhouse</a> — daily home mixology inspiration
+      </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group"><img
-            src="assets/servicebb.jpeg"
-            class="w-full h-full object-cover transition duration-700 group-hover:scale-110"></div>
-        <div class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group"><img
-            src="assets/servicebb.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-        </div>
-        <div class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group"><img
-            src="assets/event.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-        </div>
-        <div class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group"><img src="assets/gin.png"
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group relative block">
+          <img src="assets/servicebb.jpeg" alt="BarHouse Gallery"
             class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-        </div>
+          <div
+            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-2xl">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group relative block">
+          <img src="assets/servicebb.jpg" alt="BarHouse Gallery"
+            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-2xl">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group relative block">
+          <img src="assets/event.jpg" alt="BarHouse Gallery"
+            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-2xl">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="aspect-square rounded-2xl overflow-hidden shadow-md cursor-pointer group relative block">
+          <img src="assets/gin.png" alt="BarHouse Gallery"
+            class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-2xl">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
       </div>
+      <div class="mt-8">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-theme-accent hover:bg-theme-accent-dark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-theme-accent/30 hover:-translate-y-0.5">
+          <i class="fab fa-instagram text-sm"></i>
+          <span>Follow Us on Instagram</span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- CTA -->
@@ -657,7 +699,7 @@
         class="fas fa-camera-retro text-5xl text-theme-accent mb-6"></i>
       <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark-gray dark:text-white mb-4">Build Your Dream Bar</h2>
       <p class="text-gray-600 dark:text-gray-400 font-light mb-8 max-w-lg mx-auto">Book BarHouse for your next event
-        and let us create unforgettable visuals that will live in our gallery.</p><a href="#"
+        and let us create unforgettable visuals that will live in our gallery.</p><a href="contact.html"
         class="inline-block bg-theme-accent hover:bg-theme-accent-dark text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-theme-accent/30">Book
         Your Experience</a>
     </div>
@@ -675,7 +717,19 @@
 
         <!-- Left Section -->
         <div class="lg:col-span-5 flex flex-col items-start">
-          <div class="flex gap-4 mb-8">
+          <a href="index.html" class="flex items-center gap-3 mb-6 group">
+            <img src="assets/fav.png" alt="BarHouse Logo" class="w-10 h-10 object-contain">
+            <span class="text-2xl font-serif font-bold tracking-wide">
+              <span class="text-theme-accent italic">BarHouse</span>
+            </span>
+          </a>
+
+          <p class="text-gray-400 text-sm leading-relaxed font-light max-w-md mb-8">
+            Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails,
+            aesthetic perfection, and exceptional service.
+          </p>
+
+          <div class="flex gap-4">
             <a href="#"
               class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-theme-accent hover:text-theme-accent transition-all">
               <i class="fab fa-instagram"></i>
@@ -691,16 +745,6 @@
               <i class="fab fa-pinterest-p"></i>
             </a>
           </div>
-
-          <a href="index.html" class="inline-block mb-8">
-            <span class="text-2xl font-serif font-bold tracking-wide">
-              <span class="text-theme-accent italic">BarHouse</span>
-            </span>
-          </a>
-          <p class="text-gray-400 text-sm leading-relaxed font-light max-w-md">
-            Curating high-end beverage experiences. Elevating events globally with handcrafted cocktails,
-            aesthetic perfection, and exceptional service.
-          </p>
         </div>
 
         <!-- Explore -->
